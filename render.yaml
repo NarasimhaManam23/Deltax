@@ -1,8 +1,9 @@
 services:
-  # 1. FastAPI Backend Web Service
+  # 1. FastAPI Backend Web Service (Free Tier)
   - type: web
     name: deltax-prep-backend
     runtime: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     rootDir: backend
@@ -16,7 +17,7 @@ services:
       - key: CORS_ORIGINS
         value: "https://deltax-prep-frontend.onrender.com,http://localhost:5173,http://localhost:3000"
 
-  # 2. React / Vite Frontend Static Site
+  # 2. React / Vite Frontend Static Site (Free Tier)
   - type: web
     name: deltax-prep-frontend
     runtime: static
@@ -32,7 +33,7 @@ services:
         source: "/*"
         destination: "/index.html"
 
-# 3. Render Managed PostgreSQL Database
+# 3. Render Managed PostgreSQL Database (Free Tier)
 databases:
   - name: deltax-prep-db
     databaseName: deltax_prep
