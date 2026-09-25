@@ -24,6 +24,7 @@ export default function QuizRunnerPage() {
   const { refreshDashboard } = useLearner();
 
   const [quizData, setQuizData] = useState(null);
+  const [error, setError] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState({});
   const [flagged, setFlagged] = useState(new Set());
@@ -35,14 +36,23 @@ export default function QuizRunnerPage() {
   useEffect(() => {
     async function initQuiz() {
       const state = location.state || {};
+      const params = new URLSearchParams(location.search);
+      const mockId = state.mock_id || state.mockId || params.get('mock_id') || params.get('mockId');
+      const subject = state.subject || params.get('subject') || undefined;
+      const topic = state.topic || params.get('topic') || undefined;
+      const quizType = state.quiz_type || params.get('type') || (mockId ? 'mock_test' : 'topic_practice');
+      const count = state.question_count || state.count || (mockId ? 50 : 20);
+      const diff = state.difficulty || 'Mixed';
+
+      setError(null);
       try {
         const data = await api.startQuiz({
-          quiz_type: state.quiz_type || 'topic_practice',
-          subject: state.subject,
-          topic: state.topic,
-          mock_id: state.mock_id,
-          question_count: state.question_count || 10,
-          difficulty: state.difficulty || 'Mixed'
+          quiz_type: quizType,
+          subject: subject,
+          topic: topic,
+          mock_id: mockId ? parseInt(mockId) || mockId : undefined,
+          question_count: count,
+          difficulty: diff
         });
         setQuizData(data);
 
@@ -53,10 +63,11 @@ export default function QuizRunnerPage() {
         }
       } catch (err) {
         console.error('Failed to start quiz:', err);
+        setError(err.message || 'Failed to assemble quiz questions');
       }
     }
     initQuiz();
-  }, [location.state]);
+  }, [location.state, location.search]);
 
   // Persist answers
   const selectOption = (qId, option) => {
@@ -108,6 +119,32 @@ export default function QuizRunnerPage() {
       setSubmitting(false);
     }
   };
+
+  if (error) {
+    return (
+      <div className="py-20 text-center space-y-4 max-w-md mx-auto">
+        <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-300">
+          <AlertTriangle className="w-8 h-8 mx-auto mb-2 text-rose-400" />
+          <p className="font-semibold text-sm">Failed to Load Quiz</p>
+          <p className="text-xs text-rose-200/70 mt-1">{error}</p>
+        </div>
+        <div className="flex items-center justify-center gap-3">
+          <button
+            onClick={() => window.location.reload()}
+            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white"
+          >
+            Retry
+          </button>
+          <button
+            onClick={() => navigate('/round-1')}
+            className="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-xs font-semibold text-white"
+          >
+            Back to Question Bank
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   if (!quizData) {
     return (

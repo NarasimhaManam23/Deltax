@@ -38,6 +38,8 @@ export default function App() {
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/round-1" element={<Round1MCQPage />} />
               <Route path="/quiz" element={<QuizRunnerPage />} />
+              <Route path="/quiz/run" element={<QuizRunnerPage />} />
+              <Route path="/quiz/result" element={<QuizResultPage />} />
               <Route path="/quiz/result/:attemptId" element={<QuizResultPage />} />
               <Route path="/mocks" element={<MockTestsPage />} />
               <Route path="/round-2" element={<Round2AIPage />} />

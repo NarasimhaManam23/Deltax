@@ -130,7 +130,7 @@ export default function MockTestsPage() {
 
                 <div className="mt-6 pt-4 border-t border-slate-800">
                   <button
-                    onClick={() => navigate('/quiz', { state: { mockId: mock.mock_id, timed: true, count: 50, duration: 45 } })}
+                    onClick={() => navigate('/quiz', { state: { mock_id: mock.mock_id, mockId: mock.mock_id, quiz_type: 'mock_test', timed: true, count: 50, duration: 45 } })}
                     className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-600/20 group-hover:shadow-blue-600/40"
                   >
                     <Play className="w-4 h-4 fill-white" />

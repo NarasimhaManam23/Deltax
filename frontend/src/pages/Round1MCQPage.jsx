@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import {
   HelpCircle,
   Play,
@@ -24,6 +24,7 @@ export default function Round1MCQPage() {
   const [isInstantFeedback, setIsInstantFeedback] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   const subjectMeta = {
     Programming: {
@@ -98,6 +99,13 @@ export default function Round1MCQPage() {
     load();
   }, []);
 
+  useEffect(() => {
+    const subj = searchParams.get('subject');
+    if (subj && subjectMeta[subj]) {
+      setSelectedSubject(subj);
+    }
+  }, [searchParams]);
+
   const openPractice = (subject = null, topic = null) => {
     setSelectedSubject(subject);
     setSelectedTopic(topic);
@@ -106,7 +114,7 @@ export default function Round1MCQPage() {
 
   const startQuiz = async (type = 'topic_practice') => {
     setModalOpen(false);
-    navigate(`/quiz/run`, {
+    navigate(`/quiz`, {
       state: {
         quiz_type: type,
         subject: selectedSubject,
@@ -223,6 +231,25 @@ export default function Round1MCQPage() {
             </div>
 
             <div className="space-y-4">
+              {/* Subtopic Selector */}
+              {selectedSubject && (
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-2">Focus Topic (Optional)</label>
+                  <select
+                    value={selectedTopic || ''}
+                    onChange={(e) => setSelectedTopic(e.target.value || null)}
+                    className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-brand-500"
+                  >
+                    <option value="">All {selectedSubject} Topics</option>
+                    {(topics.find(t => t.subject === selectedSubject)?.topics || []).map(t => (
+                      <option key={t.topic} value={t.topic}>
+                        {t.topic} ({t.count} Qs)
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
               {/* Question Count Selector */}
               <div>
                 <label className="block text-xs font-semibold text-slate-300 mb-2">Number of Questions</label>

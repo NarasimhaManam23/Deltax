@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, useParams, Link, useNavigate } from 'react-router-dom';
 import {
   CheckCircle2,
   XCircle,
@@ -13,16 +13,34 @@ import {
   Award
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { api } from '../api';
 import { useBookmarks } from '../context/BookmarkContext';
 import MarkdownViewer from '../components/MarkdownViewer';
 
 export default function QuizResultPage() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { attemptId } = useParams();
   const { toggleBookmark, isBookmarked } = useBookmarks();
   const [filterMode, setFilterMode] = useState('all'); // all, incorrect, correct
+  const [result, setResult] = useState(location.state?.result || null);
+  const [loading, setLoading] = useState(!location.state?.result && !!attemptId);
 
-  const result = location.state?.result;
+  useEffect(() => {
+    if (!result && attemptId) {
+      setLoading(true);
+      api.getQuizResult(attemptId)
+        .then(data => {
+          if (data) setResult(data);
+        })
+        .catch(err => {
+          console.error('Failed to fetch result by ID:', err);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
+  }, [attemptId, result]);
 
   useEffect(() => {
     if (result && result.accuracy >= 70) {
@@ -33,6 +51,15 @@ export default function QuizResultPage() {
       });
     }
   }, [result]);
+
+  if (loading) {
+    return (
+      <div className="py-24 text-center space-y-3">
+        <div className="w-10 h-10 border-4 border-brand-500 border-t-transparent rounded-full animate-spin mx-auto" />
+        <p className="text-sm font-mono text-slate-400">Loading assessment report...</p>
+      </div>
+    );
+  }
 
   if (!result) {
     return (
