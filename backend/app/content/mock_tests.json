@@ -1,0 +1,3547 @@
+[
+  {
+    "mock_id": 1,
+    "title": "DeltaX Round 1 Full Mock 1",
+    "duration_minutes": 45,
+    "total_questions": 50,
+    "instructions": "45 Minutes strict timer (54 seconds per question). 50 Questions covering Programming, DSA, Networks, Microprocessors, Cybersecurity, DBMS, OS, OOP.",
+    "questions": [
+      {
+        "id": "mock_1_q_1",
+        "q_number": 1,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int a = 10, b = 5;\n    int c = a > b ? a++ : b++;\n    printf(\"%d %d %d\", a, b, c);\n    return 0;\n}\n```",
+        "options": {
+          "A": "`11 5 10`",
+          "B": "`10 5 10`",
+          "C": "`11 6 10`",
+          "D": "`11 5 11`"
+        },
+        "correct_answer": "A",
+        "topic": "Operators",
+        "explanation": "Official Mock 1 question testing Operators."
+      },
+      {
+        "id": "mock_1_q_2",
+        "q_number": 2,
+        "question": "What will be the output of this Java snippet?\n```java\nint x = 2;\nint y = x++ + x++ * --x;\nSystem.out.println(y);\n```",
+        "options": {
+          "A": "11",
+          "B": "8",
+          "C": "9",
+          "D": "10"
+        },
+        "correct_answer": "B",
+        "topic": "Java Eval",
+        "explanation": "Official Mock 1 question testing Java Eval."
+      },
+      {
+        "id": "mock_1_q_3",
+        "q_number": 3,
+        "question": "What will be printed by the following C program?\n```c\n#include <stdio.h>\nint main() {\n    int arr[] = {100, 200, 300};\n    int *p = arr;\n    printf(\"%d\", *(p++) + *(++p));\n    return 0;\n}\n```",
+        "options": {
+          "A": "400",
+          "B": "Undefined Behavior in C",
+          "C": "300",
+          "D": "500"
+        },
+        "correct_answer": "B",
+        "topic": "Pointers",
+        "explanation": "Official Mock 1 question testing Pointers."
+      },
+      {
+        "id": "mock_1_q_4",
+        "q_number": 4,
+        "question": "What is the output of this Python code?\n```python\ndef f(a, b=[]):\n    b.append(a)\n    return len(b)\nprint(f(10) + f(20))\n```",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4",
+          "D": "1"
+        },
+        "correct_answer": "B",
+        "topic": "Python Def",
+        "explanation": "Official Mock 1 question testing Python Def."
+      },
+      {
+        "id": "mock_1_q_5",
+        "q_number": 5,
+        "question": "What is printed by this recursive C function when executed with `f(4)`?\n```c\nint f(int n) {\n    if (n <= 1) return 1;\n    return f(n - 1) + f(n - 2);\n}\n```",
+        "options": {
+          "A": "3",
+          "B": "5",
+          "C": "8",
+          "D": "4"
+        },
+        "correct_answer": "B",
+        "topic": "Recursion",
+        "explanation": "Official Mock 1 question testing Recursion."
+      },
+      {
+        "id": "mock_1_q_6",
+        "q_number": 6,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int i = 0;\n    while (++i < 3) {\n        printf(\"%d \", i);\n    }\n    return 0;\n}\n```",
+        "options": {
+          "A": "`1 2 `",
+          "B": "`0 1 2 `",
+          "C": "`1 2 3 `",
+          "D": "`0 1 `"
+        },
+        "correct_answer": "A",
+        "topic": "Loops",
+        "explanation": "Official Mock 1 question testing Loops."
+      },
+      {
+        "id": "mock_1_q_7",
+        "q_number": 7,
+        "question": "What is printed by the following C snippet?\n```c\n#include <stdio.h>\nint main() {\n    char s[] = \"DeltaX\";\n    printf(\"%s\", s + 2);\n    return 0;\n}\n```",
+        "options": {
+          "A": "`ltaX`",
+          "B": "`DeltaX`",
+          "C": "`taX`",
+          "D": "`el`"
+        },
+        "correct_answer": "C",
+        "topic": "Strings",
+        "explanation": "Official Mock 1 question testing Strings."
+      },
+      {
+        "id": "mock_1_q_8",
+        "q_number": 8,
+        "question": "What will be the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int x = 1;\n    if (x == 2);\n    {\n        printf(\"Hello\");\n    }\n    return 0;\n}\n```",
+        "options": {
+          "A": "Prints nothing",
+          "B": "Prints \"Hello\"",
+          "C": "Compilation error",
+          "D": "Runtime exception"
+        },
+        "correct_answer": "B",
+        "topic": "Control",
+        "explanation": "Official Mock 1 question testing Control."
+      },
+      {
+        "id": "mock_1_q_9",
+        "q_number": 9,
+        "question": "What is the result of `~0` in standard two's complement 32-bit integer arithmetic?",
+        "options": {
+          "A": "0",
+          "B": "-1",
+          "C": "1",
+          "D": "$2^{32} - 1$"
+        },
+        "correct_answer": "B",
+        "topic": "Bitwise",
+        "explanation": "Official Mock 1 question testing Bitwise."
+      },
+      {
+        "id": "mock_1_q_10",
+        "q_number": 10,
+        "question": "What is the value of `b` after executing: `int a = 0; int b = (a++ != 0) && (++a > 0);`?",
+        "options": {
+          "A": "1",
+          "B": "0",
+          "C": "-1",
+          "D": "2"
+        },
+        "correct_answer": "B",
+        "topic": "Short-circ",
+        "explanation": "Official Mock 1 question testing Short-circ."
+      },
+      {
+        "id": "mock_1_q_11",
+        "q_number": 11,
+        "question": "What is the output of the following Python slice: `\"ProductEngine\"[2:8:2]`?",
+        "options": {
+          "A": "`odc`",
+          "B": "`ouc`",
+          "C": "`ode`",
+          "D": "`puc`"
+        },
+        "correct_answer": "B",
+        "topic": "Python Slice",
+        "explanation": "Official Mock 1 question testing Python Slice."
+      },
+      {
+        "id": "mock_1_q_12",
+        "q_number": 12,
+        "question": "What does `sizeof(void)` return in GNU C?",
+        "options": {
+          "A": "0",
+          "B": "1",
+          "C": "4",
+          "D": "Compilation error in standard ISO C"
+        },
+        "correct_answer": "B",
+        "topic": "C sizeof",
+        "explanation": "Official Mock 1 question testing C sizeof."
+      },
+      {
+        "id": "mock_1_q_13",
+        "q_number": 13,
+        "question": "What is the output of this Java statement: `System.out.println(1 + 2 + \"3\" + 4 + 5);`?",
+        "options": {
+          "A": "`3345`",
+          "B": "`339`",
+          "C": "`12345`",
+          "D": "`15`"
+        },
+        "correct_answer": "A",
+        "topic": "Java String",
+        "explanation": "Official Mock 1 question testing Java String."
+      },
+      {
+        "id": "mock_1_q_14",
+        "q_number": 14,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int a = 5;\n    printf(\"%d\", a << 2 >> 1);\n    return 0;\n}\n```",
+        "options": {
+          "A": "5",
+          "B": "10",
+          "C": "20",
+          "D": "2"
+        },
+        "correct_answer": "B",
+        "topic": "Bitwise",
+        "explanation": "Official Mock 1 question testing Bitwise."
+      },
+      {
+        "id": "mock_1_q_15",
+        "q_number": 15,
+        "question": "What is the worst-case time complexity of MergeSort?",
+        "options": {
+          "A": "$O(N)$",
+          "B": "$O(N \\log N)$",
+          "C": "$O(N^2)$",
+          "D": "$O(\\log N)$"
+        },
+        "correct_answer": "B",
+        "topic": "MergeSort",
+        "explanation": "Official Mock 1 question testing MergeSort."
+      },
+      {
+        "id": "mock_1_q_16",
+        "q_number": 16,
+        "question": "What is the time complexity of finding the maximum element in a Min-Heap with $N$ elements?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(N \\log N)$"
+        },
+        "correct_answer": "C",
+        "topic": "Min-Heap",
+        "explanation": "Official Mock 1 question testing Min-Heap."
+      },
+      {
+        "id": "mock_1_q_17",
+        "q_number": 17,
+        "question": "In a singly linked list, which pointer operation checks if a node `p` is the last node?",
+        "options": {
+          "A": "`p == NULL`",
+          "B": "`p->next == NULL`",
+          "C": "`p->next == head`",
+          "D": "`p->prev == NULL`"
+        },
+        "correct_answer": "B",
+        "topic": "Linked List",
+        "explanation": "Official Mock 1 question testing Linked List."
+      },
+      {
+        "id": "mock_1_q_18",
+        "q_number": 18,
+        "question": "Which data structure is utilized to evaluate an arithmetic expression written in postfix notation?",
+        "options": {
+          "A": "Queue",
+          "B": "Stack",
+          "C": "Deque",
+          "D": "Binary Tree"
+        },
+        "correct_answer": "B",
+        "topic": "Stacks",
+        "explanation": "Official Mock 1 question testing Stacks."
+      },
+      {
+        "id": "mock_1_q_19",
+        "q_number": 19,
+        "question": "What is the height of an AVL tree containing 7 nodes?",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4",
+          "D": "5"
+        },
+        "correct_answer": "B",
+        "topic": "AVL Height",
+        "explanation": "Official Mock 1 question testing AVL Height."
+      },
+      {
+        "id": "mock_1_q_20",
+        "q_number": 20,
+        "question": "What is the maximum number of edges in a connected undirected graph with $V$ vertices that does NOT contain any cycle?",
+        "options": {
+          "A": "$V$",
+          "B": "$V - 1$",
+          "C": "$V(V - 1) / 2$",
+          "D": "$2V - 1$"
+        },
+        "correct_answer": "B",
+        "topic": "Trees/Graph",
+        "explanation": "Official Mock 1 question testing Trees/Graph."
+      },
+      {
+        "id": "mock_1_q_21",
+        "q_number": 21,
+        "question": "What is the best-case time complexity of Insertion Sort on an array of size $N$ that is already sorted?",
+        "options": {
+          "A": "$O(N^2)$",
+          "B": "$O(N \\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(1)$"
+        },
+        "correct_answer": "C",
+        "topic": "Sorting",
+        "explanation": "Official Mock 1 question testing Sorting."
+      },
+      {
+        "id": "mock_1_q_22",
+        "q_number": 22,
+        "question": "What is the result of applying Kadane's algorithm to array `[-5, -2, -8, -1, -4]`?",
+        "options": {
+          "A": "0",
+          "B": "-1",
+          "C": "-2",
+          "D": "-20"
+        },
+        "correct_answer": "B",
+        "topic": "Kadane",
+        "explanation": "Official Mock 1 question testing Kadane."
+      },
+      {
+        "id": "mock_1_q_23",
+        "q_number": 23,
+        "question": "What is the time complexity of searching for a key in a hash table of size $M$ containing $N$ keys under the assumption of Simple Uniform Hashing?",
+        "options": {
+          "A": "$O(N)$",
+          "B": "$O(1 + N/M)$",
+          "C": "$O(\\log N)$",
+          "D": "$O(M)$"
+        },
+        "correct_answer": "B",
+        "topic": "Hashing",
+        "explanation": "Official Mock 1 question testing Hashing."
+      },
+      {
+        "id": "mock_1_q_24",
+        "q_number": 24,
+        "question": "How many null pointer fields exist in a non-empty Binary Tree with $N$ total nodes?",
+        "options": {
+          "A": "$N - 1$",
+          "B": "$N$",
+          "C": "$N + 1$",
+          "D": "$2N$"
+        },
+        "correct_answer": "C",
+        "topic": "Trees",
+        "explanation": "Official Mock 1 question testing Trees."
+      },
+      {
+        "id": "mock_1_q_25",
+        "q_number": 25,
+        "question": "What is the time complexity of finding the shortest path between two nodes in an unweighted graph with $V$ vertices and $E$ edges?",
+        "options": {
+          "A": "$O(V \\times E)$",
+          "B": "$O(V + E)$ using BFS",
+          "C": "$O(V \\log V)$ using Dijkstra",
+          "D": "$O(V^3)$ using Floyd-Warshall"
+        },
+        "correct_answer": "B",
+        "topic": "Graph BFS",
+        "explanation": "Official Mock 1 question testing Graph BFS."
+      },
+      {
+        "id": "mock_1_q_26",
+        "q_number": 26,
+        "question": "What is the length of the Longest Increasing Subsequence of `[10, 9, 2, 5, 3, 7, 101, 18]`?",
+        "options": {
+          "A": "3",
+          "B": "4",
+          "C": "5",
+          "D": "6"
+        },
+        "correct_answer": "B",
+        "topic": "LIS",
+        "explanation": "Official Mock 1 question testing LIS."
+      },
+      {
+        "id": "mock_1_q_27",
+        "q_number": 27,
+        "question": "Which OSI layer does a Layer 2 Network Switch operate on?",
+        "options": {
+          "A": "Physical Layer",
+          "B": "Data Link Layer",
+          "C": "Network Layer",
+          "D": "Transport Layer"
+        },
+        "correct_answer": "B",
+        "topic": "OSI Layer 2",
+        "explanation": "Official Mock 1 question testing OSI Layer 2."
+      },
+      {
+        "id": "mock_1_q_28",
+        "q_number": 28,
+        "question": "What is the acknowledgment number in a TCP segment?",
+        "options": {
+          "A": "The sequence number of the segment just received",
+          "B": "The next sequence number the receiver expects to receive",
+          "C": "The count of lost packets",
+          "D": "The receiver's advertised window size"
+        },
+        "correct_answer": "B",
+        "topic": "TCP Ack",
+        "explanation": "Official Mock 1 question testing TCP Ack."
+      },
+      {
+        "id": "mock_1_q_29",
+        "q_number": 29,
+        "question": "Which HTTP response status code signifies that a resource has permanently moved to a new URI?",
+        "options": {
+          "A": "301 Moved Permanently",
+          "B": "302 Found",
+          "C": "304 Not Modified",
+          "D": "307 Temporary Redirect"
+        },
+        "correct_answer": "A",
+        "topic": "HTTP 301",
+        "explanation": "Official Mock 1 question testing HTTP 301."
+      },
+      {
+        "id": "mock_1_q_30",
+        "q_number": 30,
+        "question": "What is the default port used by the Simple Mail Transfer Protocol (SMTP)?",
+        "options": {
+          "A": "21",
+          "B": "22",
+          "C": "25",
+          "D": "110"
+        },
+        "correct_answer": "C",
+        "topic": "SMTP Port",
+        "explanation": "Official Mock 1 question testing SMTP Port."
+      },
+      {
+        "id": "mock_1_q_31",
+        "q_number": 31,
+        "question": "What protocol uses port 53 and translates human-readable hostnames to IP addresses?",
+        "options": {
+          "A": "ARP",
+          "B": "DNS",
+          "C": "DHCP",
+          "D": "ICMP"
+        },
+        "correct_answer": "B",
+        "topic": "DNS",
+        "explanation": "Official Mock 1 question testing DNS."
+      },
+      {
+        "id": "mock_1_q_32",
+        "q_number": 32,
+        "question": "In TCP flow control, who advertises the receive window size?",
+        "options": {
+          "A": "The sender",
+          "B": "The receiver",
+          "C": "The intermediate gateway router",
+          "D": "The DNS server"
+        },
+        "correct_answer": "B",
+        "topic": "TCP Window",
+        "explanation": "Official Mock 1 question testing TCP Window."
+      },
+      {
+        "id": "mock_1_q_33",
+        "q_number": 33,
+        "question": "What is the size of an IPv4 address in bits?",
+        "options": {
+          "A": "16 bits",
+          "B": "32 bits",
+          "C": "64 bits",
+          "D": "128 bits"
+        },
+        "correct_answer": "B",
+        "topic": "IPv4",
+        "explanation": "Official Mock 1 question testing IPv4."
+      },
+      {
+        "id": "mock_1_q_34",
+        "q_number": 34,
+        "question": "What is the primary difference between TCP and UDP?",
+        "options": {
+          "A": "TCP is connectionless; UDP is connection-oriented",
+          "B": "TCP provides reliable, ordered byte streams; UDP provides lightweight, connectionless datagram delivery without retransmission guarantees",
+          "C": "UDP has larger headers than TCP",
+          "D": "TCP does not support flow control"
+        },
+        "correct_answer": "B",
+        "topic": "TCP vs UDP",
+        "explanation": "Official Mock 1 question testing TCP vs UDP."
+      },
+      {
+        "id": "mock_1_q_35",
+        "q_number": 35,
+        "question": "How many general-purpose 8-bit registers (excluding Accumulator and Flags) does the Intel 8085 contain?",
+        "options": {
+          "A": "4",
+          "B": "6 (B, C, D, E, H, L)",
+          "C": "8",
+          "D": "16"
+        },
+        "correct_answer": "B",
+        "topic": "8085 Regs",
+        "explanation": "Official Mock 1 question testing 8085 Regs."
+      },
+      {
+        "id": "mock_1_q_36",
+        "q_number": 36,
+        "question": "What is the restart vector address of 8085 hardware interrupt `RST 5.5`?",
+        "options": {
+          "A": "`002CH`",
+          "B": "`0034H`",
+          "C": "`003CH`",
+          "D": "`0024H`"
+        },
+        "correct_answer": "A",
+        "topic": "Interrupts",
+        "explanation": "Official Mock 1 question testing Interrupts."
+      },
+      {
+        "id": "mock_1_q_37",
+        "q_number": 37,
+        "question": "Which 8085 flag is NOT affected by executing `INR B`?",
+        "options": {
+          "A": "Sign Flag",
+          "B": "Zero Flag",
+          "C": "Carry Flag",
+          "D": "Parity Flag"
+        },
+        "correct_answer": "C",
+        "topic": "Flags",
+        "explanation": "Official Mock 1 question testing Flags."
+      },
+      {
+        "id": "mock_1_q_38",
+        "q_number": 38,
+        "question": "Identify the addressing mode of `LDA 2000H` in 8085.",
+        "options": {
+          "A": "Immediate Addressing",
+          "B": "Direct Addressing",
+          "C": "Register Indirect Addressing",
+          "D": "Implicit Addressing"
+        },
+        "correct_answer": "B",
+        "topic": "Addressing",
+        "explanation": "Official Mock 1 question testing Addressing."
+      },
+      {
+        "id": "mock_1_q_39",
+        "q_number": 39,
+        "question": "In a direct-mapped cache with 32 lines, which cache line does memory block 69 map to?",
+        "options": {
+          "A": "Line 3",
+          "B": "Line 5",
+          "C": "Line 7",
+          "D": "Line 1"
+        },
+        "correct_answer": "B",
+        "topic": "Caching",
+        "explanation": "Official Mock 1 question testing Caching."
+      },
+      {
+        "id": "mock_1_q_40",
+        "q_number": 40,
+        "question": "What type of pipeline hazard is caused by conditional branch instructions?",
+        "options": {
+          "A": "Structural Hazard",
+          "B": "Data Hazard",
+          "C": "Control / Branch Hazard",
+          "D": "Memory Hazard"
+        },
+        "correct_answer": "C",
+        "topic": "Pipelining",
+        "explanation": "Official Mock 1 question testing Pipelining."
+      },
+      {
+        "id": "mock_1_q_41",
+        "q_number": 41,
+        "question": "What is the primary defense against SQL Injection in web applications?",
+        "options": {
+          "A": "Storing passwords in cookies",
+          "B": "Using Parameterized Queries (Prepared Statements)",
+          "C": "Disabling HTTPS",
+          "D": "Using client-side JavaScript validation only"
+        },
+        "correct_answer": "B",
+        "topic": "SQLi",
+        "explanation": "Official Mock 1 question testing SQLi."
+      },
+      {
+        "id": "mock_1_q_42",
+        "q_number": 42,
+        "question": "Which cryptographic algorithm is an asymmetric public-key cryptosystem?",
+        "options": {
+          "A": "AES",
+          "B": "DES",
+          "C": "RSA",
+          "D": "ChaCha20"
+        },
+        "correct_answer": "C",
+        "topic": "RSA",
+        "explanation": "Official Mock 1 question testing RSA."
+      },
+      {
+        "id": "mock_1_q_43",
+        "q_number": 43,
+        "question": "What is the purpose of adding a salt to passwords before hashing?",
+        "options": {
+          "A": "Making hashing reversible",
+          "B": "Preventing precomputed Rainbow Table lookup attacks",
+          "C": "Increasing network throughput",
+          "D": "Encrypting database backups"
+        },
+        "correct_answer": "B",
+        "topic": "Salting",
+        "explanation": "Official Mock 1 question testing Salting."
+      },
+      {
+        "id": "mock_1_q_44",
+        "q_number": 44,
+        "question": "What cookie attribute prevents JavaScript from reading session cookies via `document.cookie`?",
+        "options": {
+          "A": "`Secure`",
+          "B": "`HttpOnly`",
+          "C": "`SameSite`",
+          "D": "`Domain`"
+        },
+        "correct_answer": "B",
+        "topic": "HttpOnly",
+        "explanation": "Official Mock 1 question testing HttpOnly."
+      },
+      {
+        "id": "mock_1_q_45",
+        "q_number": 45,
+        "question": "What does the 'I' in ACID properties of database transactions represent?",
+        "options": {
+          "A": "Integrity",
+          "B": "Isolation",
+          "C": "Idempotency",
+          "D": "Indexing"
+        },
+        "correct_answer": "B",
+        "topic": "ACID",
+        "explanation": "Official Mock 1 question testing ACID."
+      },
+      {
+        "id": "mock_1_q_46",
+        "q_number": 46,
+        "question": "Which SQL clause is used to filter rows BEFORE grouping?",
+        "options": {
+          "A": "`HAVING`",
+          "B": "`WHERE`",
+          "C": "`ORDER BY`",
+          "D": "`GROUP BY`"
+        },
+        "correct_answer": "B",
+        "topic": "SQL Where",
+        "explanation": "Official Mock 1 question testing SQL Where."
+      },
+      {
+        "id": "mock_1_q_47",
+        "q_number": 47,
+        "question": "What is a Deadlock in an operating system?",
+        "options": {
+          "A": "A crash caused by a power surge",
+          "B": "A permanent stall where two or more processes are unable to proceed because each holds resources needed by another in a circular wait",
+          "C": "Running out of virtual memory",
+          "D": "A disk write error"
+        },
+        "correct_answer": "B",
+        "topic": "Deadlock",
+        "explanation": "Official Mock 1 question testing Deadlock."
+      },
+      {
+        "id": "mock_1_q_48",
+        "q_number": 48,
+        "question": "Which page replacement algorithm can suffer from Belady's Anomaly?",
+        "options": {
+          "A": "LRU",
+          "B": "FIFO",
+          "C": "Optimal",
+          "D": "LFU"
+        },
+        "correct_answer": "B",
+        "topic": "Paging",
+        "explanation": "Official Mock 1 question testing Paging."
+      },
+      {
+        "id": "mock_1_q_49",
+        "q_number": 49,
+        "question": "What OOP principle is exemplified by declaring fields `private` and exposing public getters and setters?",
+        "options": {
+          "A": "Abstraction",
+          "B": "Encapsulation",
+          "C": "Polymorphism",
+          "D": "Multiple Inheritance"
+        },
+        "correct_answer": "B",
+        "topic": "OOP Encaps",
+        "explanation": "Official Mock 1 question testing OOP Encaps."
+      },
+      {
+        "id": "mock_1_q_50",
+        "q_number": 50,
+        "question": "Can a static method be overridden in Java?",
+        "options": {
+          "A": "Yes, always",
+          "B": "No, static methods are hidden (method hiding), not overridden via dynamic dispatch",
+          "C": "Only if the parent class is abstract",
+          "D": "Only if declared public"
+        },
+        "correct_answer": "B",
+        "topic": "Static Mtd",
+        "explanation": "Official Mock 1 question testing Static Mtd."
+      }
+    ]
+  },
+  {
+    "mock_id": 2,
+    "title": "DeltaX Round 1 Full Mock 2",
+    "duration_minutes": 45,
+    "total_questions": 50,
+    "instructions": "45 Minutes strict timer (54 seconds per question). 50 Questions covering Programming, DSA, Networks, Microprocessors, Cybersecurity, DBMS, OS, OOP.",
+    "questions": [
+      {
+        "id": "mock_2_q_1",
+        "q_number": 1,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int i = 5;\n    printf(\"%d %d\", i, ++i);\n    return 0;\n}\n```",
+        "options": {
+          "A": "`5 6`",
+          "B": "`6 6`",
+          "C": "Unspecified / Undefined Behavior in C standard",
+          "D": "`5 5`"
+        },
+        "correct_answer": "C",
+        "topic": "Sequence Pt",
+        "explanation": "Official Mock 2 question testing Sequence Pt."
+      },
+      {
+        "id": "mock_2_q_2",
+        "q_number": 2,
+        "question": "What is the output of this Java code?\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int x = 10;\n        int y = x > 5 ? (x < 15 ? 1 : 2) : 3;\n        System.out.println(y);\n    }\n}\n```",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "Compilation Error"
+        },
+        "correct_answer": "A",
+        "topic": "Ternary",
+        "explanation": "Official Mock 2 question testing Ternary."
+      },
+      {
+        "id": "mock_2_q_3",
+        "q_number": 3,
+        "question": "What will be the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int a[] = {1, 2, 3, 4};\n    printf(\"%d\", *(a + 2));\n    return 0;\n}\n```",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "4"
+        },
+        "correct_answer": "C",
+        "topic": "Pointers",
+        "explanation": "Official Mock 2 question testing Pointers."
+      },
+      {
+        "id": "mock_2_q_4",
+        "q_number": 4,
+        "question": "What will be printed by this C program?\n```c\n#include <stdio.h>\nint main() {\n    int x = 10, y = 20;\n    if (x = 5 && y == 20) {\n        printf(\"TRUE\");\n    } else {\n        printf(\"FALSE\");\n    }\n    return 0;\n}\n```",
+        "options": {
+          "A": "TRUE",
+          "B": "FALSE",
+          "C": "Compilation Error",
+          "D": "Undefined"
+        },
+        "correct_answer": "A",
+        "topic": "Conditionals",
+        "explanation": "Official Mock 2 question testing Conditionals."
+      },
+      {
+        "id": "mock_2_q_5",
+        "q_number": 5,
+        "question": "What is the return value of `foo(3, 2)`?\n```c\nint foo(int a, int b) {\n    if (b == 0) return 0;\n    return a + foo(a, b - 1);\n}\n```",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "9",
+          "D": "1"
+        },
+        "correct_answer": "B",
+        "topic": "Recursion",
+        "explanation": "Official Mock 2 question testing Recursion."
+      },
+      {
+        "id": "mock_2_q_6",
+        "q_number": 6,
+        "question": "What is the output of the following Python snippet?\n```python\nx = [1, 2, 3]\nprint(x * 2)\n```",
+        "options": {
+          "A": "`[2, 4, 6]`",
+          "B": "`[1, 2, 3, 1, 2, 3]`",
+          "C": "`[[1, 2, 3], [1, 2, 3]]`",
+          "D": "TypeError"
+        },
+        "correct_answer": "B",
+        "topic": "Python List",
+        "explanation": "Official Mock 2 question testing Python List."
+      },
+      {
+        "id": "mock_2_q_7",
+        "q_number": 7,
+        "question": "What is printed by this C snippet?\n```c\n#include <stdio.h>\nint main() {\n    int a = 0;\n    for (; a < 3; a++);\n    printf(\"%d\", a);\n    return 0;\n}\n```",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "0",
+          "D": "Compilation error"
+        },
+        "correct_answer": "B",
+        "topic": "Loop Semicol",
+        "explanation": "Official Mock 2 question testing Loop Semicol."
+      },
+      {
+        "id": "mock_2_q_8",
+        "q_number": 8,
+        "question": "What will be the output of the following C program?\n```c\n#include <stdio.h>\nint main() {\n    char *p = \"DeltaX\";\n    printf(\"%c\", *p + 1);\n    return 0;\n}\n```",
+        "options": {
+          "A": "`e`",
+          "B": "`E`",
+          "C": "`D`",
+          "D": "`eltaX`"
+        },
+        "correct_answer": "B",
+        "topic": "Pointers",
+        "explanation": "Official Mock 2 question testing Pointers."
+      },
+      {
+        "id": "mock_2_q_9",
+        "q_number": 9,
+        "question": "What is the output of the Python expression: `print(bool(0), bool(-1), bool(\"\"))`?",
+        "options": {
+          "A": "`False True False`",
+          "B": "`False False False`",
+          "C": "`False True True`",
+          "D": "`True True False`"
+        },
+        "correct_answer": "A",
+        "topic": "Python Bool",
+        "explanation": "Official Mock 2 question testing Python Bool."
+      },
+      {
+        "id": "mock_2_q_10",
+        "q_number": 10,
+        "question": "What does `sizeof(char)` evaluate to in C?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "4",
+          "D": "Platform-dependent"
+        },
+        "correct_answer": "A",
+        "topic": "sizeof(char)",
+        "explanation": "Official Mock 2 question testing sizeof(char)."
+      },
+      {
+        "id": "mock_2_q_11",
+        "q_number": 11,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int x = 7;\n    int count = 0;\n    while (x) {\n        count += (x & 1);\n        x >>= 1;\n    }\n    printf(\"%d\", count);\n    return 0;\n}\n```",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "7"
+        },
+        "correct_answer": "C",
+        "topic": "Bitwise Count",
+        "explanation": "Official Mock 2 question testing Bitwise Count."
+      },
+      {
+        "id": "mock_2_q_12",
+        "q_number": 12,
+        "question": "What is the output of the following Java snippet?\n```java\nString s1 = \"APE\";\nString s2 = \"APE\";\nSystem.out.println(s1 == s2);\n```",
+        "options": {
+          "A": "true",
+          "B": "false",
+          "C": "Compilation Error",
+          "D": "Runtime Exception"
+        },
+        "correct_answer": "A",
+        "topic": "String Pool",
+        "explanation": "Official Mock 2 question testing String Pool."
+      },
+      {
+        "id": "mock_2_q_13",
+        "q_number": 13,
+        "question": "What is the value of `x` after: `int x = 16 >> 2;`?",
+        "options": {
+          "A": "64",
+          "B": "4",
+          "C": "8",
+          "D": "2"
+        },
+        "correct_answer": "B",
+        "topic": "Shift",
+        "explanation": "Official Mock 2 question testing Shift."
+      },
+      {
+        "id": "mock_2_q_14",
+        "q_number": 14,
+        "question": "What is the output of the following C program?\n```c\n#include <stdio.h>\nvoid func() {\n    static int x = 0;\n    x++;\n    printf(\"%d \", x);\n}\nint main() {\n    func();\n    func();\n    return 0;\n}\n```",
+        "options": {
+          "A": "`1 1 `",
+          "B": "`1 2 `",
+          "C": "`0 1 `",
+          "D": "`2 2 `"
+        },
+        "correct_answer": "B",
+        "topic": "Static Var",
+        "explanation": "Official Mock 2 question testing Static Var."
+      },
+      {
+        "id": "mock_2_q_15",
+        "q_number": 15,
+        "question": "What is the worst-case time complexity of QuickSort when the pivot is always chosen as the first element and the array is already sorted?",
+        "options": {
+          "A": "$O(N \\log N)$",
+          "B": "$O(N)$",
+          "C": "$O(N^2)$",
+          "D": "$O(\\log N)$"
+        },
+        "correct_answer": "C",
+        "topic": "QuickSort",
+        "explanation": "Official Mock 2 question testing QuickSort."
+      },
+      {
+        "id": "mock_2_q_16",
+        "q_number": 16,
+        "question": "In a max-heap of size $N$, where is the minimum element located?",
+        "options": {
+          "A": "At the root node (index 0)",
+          "B": "At one of the leaf nodes ($\\lfloor N/2 \\rfloor$ to $N - 1$)",
+          "C": "At index 1",
+          "D": "At index $N - 1$ exclusively"
+        },
+        "correct_answer": "B",
+        "topic": "Max-Heap",
+        "explanation": "Official Mock 2 question testing Max-Heap."
+      },
+      {
+        "id": "mock_2_q_17",
+        "q_number": 17,
+        "question": "Which data structure represents the optimal choice for implementing a LIFO mechanism?",
+        "options": {
+          "A": "Queue",
+          "B": "Stack",
+          "C": "Priority Queue",
+          "D": "Doubly Linked List"
+        },
+        "correct_answer": "B",
+        "topic": "Stack LIFO",
+        "explanation": "Official Mock 2 question testing Stack LIFO."
+      },
+      {
+        "id": "mock_2_q_18",
+        "q_number": 18,
+        "question": "What is the maximum number of nodes on level $k$ of a binary tree (where the root is at level 0)?",
+        "options": {
+          "A": "$2^k$",
+          "B": "$2^{k-1}$",
+          "C": "$2k$",
+          "D": "$2^{k+1}$"
+        },
+        "correct_answer": "A",
+        "topic": "Tree Levels",
+        "explanation": "Official Mock 2 question testing Tree Levels."
+      },
+      {
+        "id": "mock_2_q_19",
+        "q_number": 19,
+        "question": "What is the time complexity to reverse an array of size $N$ in-place using two pointers?",
+        "options": {
+          "A": "$O(N^2)$ Time, $O(1)$ Space",
+          "B": "$O(N)$ Time, $O(1)$ Space",
+          "C": "$O(N)$ Time, $O(N)$ Space",
+          "D": "$O(\\log N)$ Time, $O(1)$ Space"
+        },
+        "correct_answer": "B",
+        "topic": "Two Pointer",
+        "explanation": "Official Mock 2 question testing Two Pointer."
+      },
+      {
+        "id": "mock_2_q_20",
+        "q_number": 20,
+        "question": "In a circular queue of size $N$, how is the `rear` pointer updated upon enqueuing an item?",
+        "options": {
+          "A": "`rear = rear + 1`",
+          "B": "`rear = (rear + 1) % N`",
+          "C": "`rear = (rear - 1) % N`",
+          "D": "`rear = rear % N`"
+        },
+        "correct_answer": "B",
+        "topic": "Circular Q",
+        "explanation": "Official Mock 2 question testing Circular Q."
+      },
+      {
+        "id": "mock_2_q_21",
+        "q_number": 21,
+        "question": "What is the time complexity of Breadth-First Search on a graph with $V$ vertices and $E$ edges represented via an Adjacency Matrix?",
+        "options": {
+          "A": "$O(V + E)$",
+          "B": "$O(V^2)$",
+          "C": "$O(E \\log V)$",
+          "D": "$O(V \\times E)$"
+        },
+        "correct_answer": "B",
+        "topic": "Graph Matrix",
+        "explanation": "Official Mock 2 question testing Graph Matrix."
+      },
+      {
+        "id": "mock_2_q_22",
+        "q_number": 22,
+        "question": "What is the number of leaves in a full binary tree with $I$ internal nodes?",
+        "options": {
+          "A": "$I$",
+          "B": "$I + 1$",
+          "C": "$2I$",
+          "D": "$I - 1$"
+        },
+        "correct_answer": "B",
+        "topic": "Full Tree",
+        "explanation": "Official Mock 2 question testing Full Tree."
+      },
+      {
+        "id": "mock_2_q_23",
+        "q_number": 23,
+        "question": "Which technique solves the 0/1 Knapsack problem optimally?",
+        "options": {
+          "A": "Greedy Algorithm",
+          "B": "Dynamic Programming",
+          "C": "Linear Search",
+          "D": "Two-Pointer Technique"
+        },
+        "correct_answer": "B",
+        "topic": "Knapsack",
+        "explanation": "Official Mock 2 question testing Knapsack."
+      },
+      {
+        "id": "mock_2_q_24",
+        "q_number": 24,
+        "question": "What does the Floyd-Warshall algorithm compute?",
+        "options": {
+          "A": "Single-source shortest path",
+          "B": "Minimum spanning tree",
+          "C": "All-pairs shortest paths",
+          "D": "Topological order"
+        },
+        "correct_answer": "C",
+        "topic": "All-Pairs",
+        "explanation": "Official Mock 2 question testing All-Pairs."
+      },
+      {
+        "id": "mock_2_q_25",
+        "q_number": 25,
+        "question": "What is the time complexity of searching in a Hash Map with linear probing when the table is full?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(N)$",
+          "C": "$O(\\log N)$",
+          "D": "Undefined"
+        },
+        "correct_answer": "B",
+        "topic": "Hash Probe",
+        "explanation": "Official Mock 2 question testing Hash Probe."
+      },
+      {
+        "id": "mock_2_q_26",
+        "q_number": 26,
+        "question": "Given array `[2, 3, -8, 7, -1, 2, 3]`, what is the maximum subarray sum?",
+        "options": {
+          "A": "11",
+          "B": "12",
+          "C": "7",
+          "D": "15"
+        },
+        "correct_answer": "A",
+        "topic": "Max Subarr",
+        "explanation": "Official Mock 2 question testing Max Subarr."
+      },
+      {
+        "id": "mock_2_q_27",
+        "q_number": 27,
+        "question": "Which layer of the OSI model handles logical IP routing and packet forwarding?",
+        "options": {
+          "A": "Data Link Layer",
+          "B": "Network Layer",
+          "C": "Transport Layer",
+          "D": "Physical Layer"
+        },
+        "correct_answer": "B",
+        "topic": "OSI Layer 3",
+        "explanation": "Official Mock 2 question testing OSI Layer 3."
+      },
+      {
+        "id": "mock_2_q_28",
+        "q_number": 28,
+        "question": "What is the role of the `FIN` flag in TCP?",
+        "options": {
+          "A": "Initiates connection establishment",
+          "B": "Initiates graceful connection termination",
+          "C": "Resets the connection immediately",
+          "D": "Synchronizes sequence numbers"
+        },
+        "correct_answer": "B",
+        "topic": "TCP FIN",
+        "explanation": "Official Mock 2 question testing TCP FIN."
+      },
+      {
+        "id": "mock_2_q_29",
+        "q_number": 29,
+        "question": "What HTTP status code is returned when a client submits a payload that violates schema constraints or is syntactically invalid?",
+        "options": {
+          "A": "400 Bad Request",
+          "B": "401 Unauthorized",
+          "C": "403 Forbidden",
+          "D": "500 Internal Server Error"
+        },
+        "correct_answer": "A",
+        "topic": "HTTP 400",
+        "explanation": "Official Mock 2 question testing HTTP 400."
+      },
+      {
+        "id": "mock_2_q_30",
+        "q_number": 30,
+        "question": "What is the standard port for Secure Shell (SSH)?",
+        "options": {
+          "A": "20",
+          "B": "21",
+          "C": "22",
+          "D": "23"
+        },
+        "correct_answer": "C",
+        "topic": "SSH Port",
+        "explanation": "Official Mock 2 question testing SSH Port."
+      },
+      {
+        "id": "mock_2_q_31",
+        "q_number": 31,
+        "question": "Which protocol resolves an IP address to a hardware MAC address on a local area network?",
+        "options": {
+          "A": "DNS",
+          "B": "DHCP",
+          "C": "ARP",
+          "D": "RARP"
+        },
+        "correct_answer": "C",
+        "topic": "ARP",
+        "explanation": "Official Mock 2 question testing ARP."
+      },
+      {
+        "id": "mock_2_q_32",
+        "q_number": 32,
+        "question": "What is the size of the UDP header?",
+        "options": {
+          "A": "8 bytes",
+          "B": "20 bytes",
+          "C": "16 bytes",
+          "D": "Variable"
+        },
+        "correct_answer": "A",
+        "topic": "UDP Header",
+        "explanation": "Official Mock 2 question testing UDP Header."
+      },
+      {
+        "id": "mock_2_q_33",
+        "q_number": 33,
+        "question": "Which HTTP method is designed to replace an entire resource representation?",
+        "options": {
+          "A": "POST",
+          "B": "PUT",
+          "C": "PATCH",
+          "D": "GET"
+        },
+        "correct_answer": "B",
+        "topic": "HTTP PUT",
+        "explanation": "Official Mock 2 question testing HTTP PUT."
+      },
+      {
+        "id": "mock_2_q_34",
+        "q_number": 34,
+        "question": "What does TTL (Time to Live) in an IPv4 packet header signify?",
+        "options": {
+          "A": "The time in seconds a packet can remain in RAM",
+          "B": "The maximum number of router hops remaining before the packet is discarded",
+          "C": "The download speed of the connection",
+          "D": "The transmission frequency"
+        },
+        "correct_answer": "B",
+        "topic": "IPv4 TTL",
+        "explanation": "Official Mock 2 question testing IPv4 TTL."
+      },
+      {
+        "id": "mock_2_q_35",
+        "q_number": 35,
+        "question": "How many address bits does the Intel 8085 microprocessor have?",
+        "options": {
+          "A": "8",
+          "B": "16",
+          "C": "20",
+          "D": "32"
+        },
+        "correct_answer": "B",
+        "topic": "8085 Bus",
+        "explanation": "Official Mock 2 question testing 8085 Bus."
+      },
+      {
+        "id": "mock_2_q_36",
+        "q_number": 36,
+        "question": "Which 8085 interrupt has the restart vector address `003CH`?",
+        "options": {
+          "A": "RST 5.5",
+          "B": "RST 6.5",
+          "C": "RST 7.5",
+          "D": "TRAP"
+        },
+        "correct_answer": "C",
+        "topic": "Interrupts",
+        "explanation": "Official Mock 2 question testing Interrupts."
+      },
+      {
+        "id": "mock_2_q_37",
+        "q_number": 37,
+        "question": "Identify the addressing mode of `MOV A, B` in 8085.",
+        "options": {
+          "A": "Direct Addressing",
+          "B": "Register Addressing",
+          "C": "Immediate Addressing",
+          "D": "Register Indirect Addressing"
+        },
+        "correct_answer": "B",
+        "topic": "Addressing",
+        "explanation": "Official Mock 2 question testing Addressing."
+      },
+      {
+        "id": "mock_2_q_38",
+        "q_number": 38,
+        "question": "In a computer memory hierarchy, which memory tier is the fastest and closest to the ALU?",
+        "options": {
+          "A": "L1 Cache",
+          "B": "Registers",
+          "C": "L2 Cache",
+          "D": "DRAM"
+        },
+        "correct_answer": "B",
+        "topic": "Registers",
+        "explanation": "Official Mock 2 question testing Registers."
+      },
+      {
+        "id": "mock_2_q_39",
+        "q_number": 39,
+        "question": "What type of pipeline hazard is caused by true data dependencies (RAW)?",
+        "options": {
+          "A": "Structural Hazard",
+          "B": "Data Hazard",
+          "C": "Control Hazard",
+          "D": "Interrupt Hazard"
+        },
+        "correct_answer": "B",
+        "topic": "RAW Hazard",
+        "explanation": "Official Mock 2 question testing RAW Hazard."
+      },
+      {
+        "id": "mock_2_q_40",
+        "q_number": 40,
+        "question": "What is the restart vector address for TRAP in 8085?",
+        "options": {
+          "A": "`0024H`",
+          "B": "`003CH`",
+          "C": "`0034H`",
+          "D": "`002CH`"
+        },
+        "correct_answer": "A",
+        "topic": "TRAP Vector",
+        "explanation": "Official Mock 2 question testing TRAP Vector."
+      },
+      {
+        "id": "mock_2_q_41",
+        "q_number": 41,
+        "question": "What is the main security purpose of HTTPS over HTTP?",
+        "options": {
+          "A": "Compressing web traffic",
+          "B": "Providing encryption, confidentiality, and authentication of data in transit using TLS",
+          "C": "Bypassing ISP data limits",
+          "D": "Enhancing SEO rankings only"
+        },
+        "correct_answer": "B",
+        "topic": "HTTPS/TLS",
+        "explanation": "Official Mock 2 question testing HTTPS/TLS."
+      },
+      {
+        "id": "mock_2_q_42",
+        "q_number": 42,
+        "question": "Which attack tricks an authenticated user's browser into executing state-changing requests on a web application?",
+        "options": {
+          "A": "SQL Injection",
+          "B": "Cross-Site Scripting (XSS)",
+          "C": "Cross-Site Request Forgery (CSRF)",
+          "D": "DDoS"
+        },
+        "correct_answer": "C",
+        "topic": "CSRF",
+        "explanation": "Official Mock 2 question testing CSRF."
+      },
+      {
+        "id": "mock_2_q_43",
+        "q_number": 43,
+        "question": "What is SHA-256?",
+        "options": {
+          "A": "An asymmetric encryption algorithm",
+          "B": "A cryptographic one-way hashing algorithm",
+          "C": "A symmetric block cipher",
+          "D": "A network tunneling protocol"
+        },
+        "correct_answer": "B",
+        "topic": "SHA-256",
+        "explanation": "Official Mock 2 question testing SHA-256."
+      },
+      {
+        "id": "mock_2_q_44",
+        "q_number": 44,
+        "question": "In a JSON Web Token (JWT), which part contains the claims like user ID and expiration time?",
+        "options": {
+          "A": "Header",
+          "B": "Payload",
+          "C": "Signature",
+          "D": "Secret"
+        },
+        "correct_answer": "B",
+        "topic": "JWT Claims",
+        "explanation": "Official Mock 2 question testing JWT Claims."
+      },
+      {
+        "id": "mock_2_q_45",
+        "q_number": 45,
+        "question": "What does the 'D' in ACID properties of database transactions stand for?",
+        "options": {
+          "A": "Dependency",
+          "B": "Durability",
+          "C": "Distribution",
+          "D": "Decomposition"
+        },
+        "correct_answer": "B",
+        "topic": "ACID Durab",
+        "explanation": "Official Mock 2 question testing ACID Durab."
+      },
+      {
+        "id": "mock_2_q_46",
+        "q_number": 46,
+        "question": "Which SQL join returns only the rows that have matching values in both tables?",
+        "options": {
+          "A": "LEFT JOIN",
+          "B": "RIGHT JOIN",
+          "C": "INNER JOIN",
+          "D": "FULL OUTER JOIN"
+        },
+        "correct_answer": "C",
+        "topic": "SQL Join",
+        "explanation": "Official Mock 2 question testing SQL Join."
+      },
+      {
+        "id": "mock_2_q_47",
+        "q_number": 47,
+        "question": "In an operating system, what is the primary component stored inside a Process Control Block (PCB)?",
+        "options": {
+          "A": "Network bandwidth",
+          "B": "Program Counter, CPU registers, and Process State",
+          "C": "Disk sector numbers",
+          "D": "Motherboard clock speed"
+        },
+        "correct_answer": "B",
+        "topic": "PCB Struct",
+        "explanation": "Official Mock 2 question testing PCB Struct."
+      },
+      {
+        "id": "mock_2_q_48",
+        "q_number": 48,
+        "question": "What is the difference between Preemptive and Non-Preemptive scheduling?",
+        "options": {
+          "A": "Preemptive scheduling cannot cause starvation",
+          "B": "Preemptive scheduling allows the OS to interrupt a running process to run another; Non-preemptive allows a process to retain CPU until voluntary termination/yield",
+          "C": "Non-preemptive scheduling is faster",
+          "D": "Preemptive scheduling does not use clocks"
+        },
+        "correct_answer": "B",
+        "topic": "Sched Preempt",
+        "explanation": "Official Mock 2 question testing Sched Preempt."
+      },
+      {
+        "id": "mock_2_q_49",
+        "q_number": 49,
+        "question": "What is Method Overriding in Object-Oriented Programming?",
+        "options": {
+          "A": "Declaring multiple methods with the same name and different parameters in the same class",
+          "B": "Subclass providing a specific implementation of a method already declared in its superclass",
+          "C": "Hiding variables with the same name",
+          "D": "Writing methods inside interfaces"
+        },
+        "correct_answer": "B",
+        "topic": "Overriding",
+        "explanation": "Official Mock 2 question testing Overriding."
+      },
+      {
+        "id": "mock_2_q_50",
+        "q_number": 50,
+        "question": "What is the relationship modeled by Inheritance in OOP?",
+        "options": {
+          "A": "\"Has-A\" relationship",
+          "B": "\"Is-A\" relationship",
+          "C": "\"Uses-A\" relationship",
+          "D": "\"Creates-A\" relationship"
+        },
+        "correct_answer": "B",
+        "topic": "Inheritance",
+        "explanation": "Official Mock 2 question testing Inheritance."
+      }
+    ]
+  },
+  {
+    "mock_id": 3,
+    "title": "DeltaX Round 1 Full Mock 3",
+    "duration_minutes": 45,
+    "total_questions": 50,
+    "instructions": "45 Minutes strict timer (54 seconds per question). 50 Questions covering Programming, DSA, Networks, Microprocessors, Cybersecurity, DBMS, OS, OOP.",
+    "questions": [
+      {
+        "id": "mock_3_q_1",
+        "q_number": 1,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int x = 5;\n    printf(\"%d\", !x);\n    return 0;\n}\n```",
+        "options": {
+          "A": "1",
+          "B": "0",
+          "C": "-5",
+          "D": "Compilation error"
+        },
+        "correct_answer": "B",
+        "topic": "Logic Not",
+        "explanation": "Official Mock 3 question testing Logic Not."
+      },
+      {
+        "id": "mock_3_q_2",
+        "q_number": 2,
+        "question": "What is the output of the following C program?\n```c\n#include <stdio.h>\nint main() {\n    int a = 10, b = 20;\n    if (a < b)\n        if (b < 15) printf(\"P\");\n        else printf(\"Q\");\n    return 0;\n}\n```",
+        "options": {
+          "A": "P",
+          "B": "Q",
+          "C": "Prints nothing",
+          "D": "PQ"
+        },
+        "correct_answer": "B",
+        "topic": "Nested If",
+        "explanation": "Official Mock 3 question testing Nested If."
+      },
+      {
+        "id": "mock_3_q_3",
+        "q_number": 3,
+        "question": "What will be the output of this Python snippet?\n```python\na = [1, 2, 3]\nb = a\nb.append(4)\nprint(len(a))\n```",
+        "options": {
+          "A": "3",
+          "B": "4",
+          "C": "TypeError",
+          "D": "None"
+        },
+        "correct_answer": "B",
+        "topic": "Mutability",
+        "explanation": "Official Mock 3 question testing Mutability."
+      },
+      {
+        "id": "mock_3_q_4",
+        "q_number": 4,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int arr[5] = {1, 2, 3, 4, 5};\n    int *p = arr + 1;\n    printf(\"%d\", p[2]);\n    return 0;\n}\n```",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "4",
+          "D": "5"
+        },
+        "correct_answer": "C",
+        "topic": "Array Ptr",
+        "explanation": "Official Mock 3 question testing Array Ptr."
+      },
+      {
+        "id": "mock_3_q_5",
+        "q_number": 5,
+        "question": "What is the return value of `recur(3)`?\n```c\nint recur(int n) {\n    if (n == 1) return 1;\n    return n * recur(n - 1);\n}\n```",
+        "options": {
+          "A": "3",
+          "B": "6",
+          "C": "9",
+          "D": "1"
+        },
+        "correct_answer": "B",
+        "topic": "Factorial",
+        "explanation": "Official Mock 3 question testing Factorial."
+      },
+      {
+        "id": "mock_3_q_6",
+        "q_number": 6,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int a = 2, b = 3;\n    printf(\"%d\", a ^ b ^ a);\n    return 0;\n}\n```",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "0",
+          "D": "1"
+        },
+        "correct_answer": "B",
+        "topic": "Bitwise XOR",
+        "explanation": "Official Mock 3 question testing Bitwise XOR."
+      },
+      {
+        "id": "mock_3_q_7",
+        "q_number": 7,
+        "question": "What is printed by this Java code?\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int i = 0;\n        for (i = 0; i < 5; i++) {\n            if (i == 2) break;\n        }\n        System.out.println(i);\n    }\n}\n```",
+        "options": {
+          "A": "2",
+          "B": "3",
+          "C": "5",
+          "D": "1"
+        },
+        "correct_answer": "A",
+        "topic": "Loop Break",
+        "explanation": "Official Mock 3 question testing Loop Break."
+      },
+      {
+        "id": "mock_3_q_8",
+        "q_number": 8,
+        "question": "What will be the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    char s[] = \"Delta\";\n    printf(\"%zu\", sizeof(s));\n    return 0;\n}\n```",
+        "options": {
+          "A": "5",
+          "B": "6",
+          "C": "4",
+          "D": "8"
+        },
+        "correct_answer": "B",
+        "topic": "String Size",
+        "explanation": "Official Mock 3 question testing String Size."
+      },
+      {
+        "id": "mock_3_q_9",
+        "q_number": 9,
+        "question": "What is the output of this Python code?\n```python\nx = \"Hello\"\nprint(x[1:4])\n```",
+        "options": {
+          "A": "`ell`",
+          "B": "`ello`",
+          "C": "`Hel`",
+          "D": "`el`"
+        },
+        "correct_answer": "A",
+        "topic": "Slicing",
+        "explanation": "Official Mock 3 question testing Slicing."
+      },
+      {
+        "id": "mock_3_q_10",
+        "q_number": 10,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int a = 1;\n    int b = a++ + ++a;\n    printf(\"%d\", b);\n    return 0;\n}\n```",
+        "options": {
+          "A": "4 in Java; Undefined Behavior in C",
+          "B": "3",
+          "C": "2",
+          "D": "5"
+        },
+        "correct_answer": "A",
+        "topic": "Increment",
+        "explanation": "Official Mock 3 question testing Increment."
+      },
+      {
+        "id": "mock_3_q_11",
+        "q_number": 11,
+        "question": "What is the result of `10 % -3` in C/Java?",
+        "options": {
+          "A": "1",
+          "B": "-1",
+          "C": "2",
+          "D": "-2"
+        },
+        "correct_answer": "A",
+        "topic": "Modulo",
+        "explanation": "Official Mock 3 question testing Modulo."
+      },
+      {
+        "id": "mock_3_q_12",
+        "q_number": 12,
+        "question": "What does the `static` keyword mean when applied to a local function variable in C?",
+        "options": {
+          "A": "Variable is destroyed when function returns",
+          "B": "Variable retains its value between successive calls to the function",
+          "C": "Variable cannot be modified",
+          "D": "Variable is shared across network nodes"
+        },
+        "correct_answer": "B",
+        "topic": "Static Scope",
+        "explanation": "Official Mock 3 question testing Static Scope."
+      },
+      {
+        "id": "mock_3_q_13",
+        "q_number": 13,
+        "question": "What is the output of the following Python expression: `3 * 1 ** 3`?",
+        "options": {
+          "A": "27",
+          "B": "3",
+          "C": "1",
+          "D": "9"
+        },
+        "correct_answer": "B",
+        "topic": "Precedence",
+        "explanation": "Official Mock 3 question testing Precedence."
+      },
+      {
+        "id": "mock_3_q_14",
+        "q_number": 14,
+        "question": "What is the value of `x` after: `int x = ~0;` in a 32-bit signed integer?",
+        "options": {
+          "A": "0",
+          "B": "-1",
+          "C": "1",
+          "D": "$2^{31} - 1$"
+        },
+        "correct_answer": "B",
+        "topic": "Two's Comp",
+        "explanation": "Official Mock 3 question testing Two's Comp."
+      },
+      {
+        "id": "mock_3_q_15",
+        "q_number": 15,
+        "question": "What is the average time complexity of searching in a Hash Table?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(N)$",
+          "C": "$O(\\log N)$",
+          "D": "$O(N \\log N)$"
+        },
+        "correct_answer": "A",
+        "topic": "Hash Table",
+        "explanation": "Official Mock 3 question testing Hash Table."
+      },
+      {
+        "id": "mock_3_q_16",
+        "q_number": 16,
+        "question": "In a max-heap of size $N$, what is the time complexity of deleting the maximum element?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(N \\log N)$"
+        },
+        "correct_answer": "B",
+        "topic": "Max-Heap Del",
+        "explanation": "Official Mock 3 question testing Max-Heap Del."
+      },
+      {
+        "id": "mock_3_q_17",
+        "q_number": 17,
+        "question": "Which traversal of a Binary Search Tree (BST) visits keys in non-decreasing order?",
+        "options": {
+          "A": "Preorder",
+          "B": "Inorder",
+          "C": "Postorder",
+          "D": "Level-order"
+        },
+        "correct_answer": "B",
+        "topic": "BST Inorder",
+        "explanation": "Official Mock 3 question testing BST Inorder."
+      },
+      {
+        "id": "mock_3_q_18",
+        "q_number": 18,
+        "question": "What is the time complexity of Binary Search on a sorted array of $N$ elements?",
+        "options": {
+          "A": "$O(N)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(1)$",
+          "D": "$O(N^2)$"
+        },
+        "correct_answer": "B",
+        "topic": "Binary Srch",
+        "explanation": "Official Mock 3 question testing Binary Srch."
+      },
+      {
+        "id": "mock_3_q_19",
+        "q_number": 19,
+        "question": "How many stacks are required to implement a FIFO Queue?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "4"
+        },
+        "correct_answer": "B",
+        "topic": "Stacks-Queue",
+        "explanation": "Official Mock 3 question testing Stacks-Queue."
+      },
+      {
+        "id": "mock_3_q_20",
+        "q_number": 20,
+        "question": "What is the time complexity of finding an element in a singly linked list of length $N$?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(N^2)$"
+        },
+        "correct_answer": "C",
+        "topic": "Linked List",
+        "explanation": "Official Mock 3 question testing Linked List."
+      },
+      {
+        "id": "mock_3_q_21",
+        "q_number": 21,
+        "question": "What is the worst-case time complexity of Bubble Sort?",
+        "options": {
+          "A": "$O(N)$",
+          "B": "$O(N \\log N)$",
+          "C": "$O(N^2)$",
+          "D": "$O(1)$"
+        },
+        "correct_answer": "C",
+        "topic": "BubbleSort",
+        "explanation": "Official Mock 3 question testing BubbleSort."
+      },
+      {
+        "id": "mock_3_q_22",
+        "q_number": 22,
+        "question": "What problem does Dijkstra's algorithm solve?",
+        "options": {
+          "A": "Minimum Spanning Tree",
+          "B": "Single-Source Shortest Paths on graphs with non-negative edge weights",
+          "C": "Strongly Connected Components",
+          "D": "Topological Sort"
+        },
+        "correct_answer": "B",
+        "topic": "Dijkstra",
+        "explanation": "Official Mock 3 question testing Dijkstra."
+      },
+      {
+        "id": "mock_3_q_23",
+        "q_number": 23,
+        "question": "What is the maximum number of children a node can have in a Binary Tree?",
+        "options": {
+          "A": "1",
+          "B": "2",
+          "C": "3",
+          "D": "Unlimited"
+        },
+        "correct_answer": "B",
+        "topic": "Binary Tree",
+        "explanation": "Official Mock 3 question testing Binary Tree."
+      },
+      {
+        "id": "mock_3_q_24",
+        "q_number": 24,
+        "question": "What is the height of a complete binary tree with $N$ nodes?",
+        "options": {
+          "A": "$\\lfloor\\log_2 N\\rfloor$",
+          "B": "$N$",
+          "C": "$N / 2$",
+          "D": "$\\sqrt{N}$"
+        },
+        "correct_answer": "A",
+        "topic": "Comp Tree",
+        "explanation": "Official Mock 3 question testing Comp Tree."
+      },
+      {
+        "id": "mock_3_q_25",
+        "q_number": 25,
+        "question": "Which algorithmic design technique is utilized in the classic MergeSort algorithm?",
+        "options": {
+          "A": "Greedy Approach",
+          "B": "Dynamic Programming",
+          "C": "Divide and Conquer",
+          "D": "Backtracking"
+        },
+        "correct_answer": "C",
+        "topic": "Divide/Conq",
+        "explanation": "Official Mock 3 question testing Divide/Conq."
+      },
+      {
+        "id": "mock_3_q_26",
+        "q_number": 26,
+        "question": "Given an array `[4, -1, 2, 1]`, what is the maximum contiguous subarray sum?",
+        "options": {
+          "A": "4",
+          "B": "6",
+          "C": "5",
+          "D": "7"
+        },
+        "correct_answer": "B",
+        "topic": "Kadane",
+        "explanation": "Official Mock 3 question testing Kadane."
+      },
+      {
+        "id": "mock_3_q_27",
+        "q_number": 27,
+        "question": "Which layer of the OSI model handles end-to-end flow control and reliability?",
+        "options": {
+          "A": "Network Layer",
+          "B": "Transport Layer",
+          "C": "Session Layer",
+          "D": "Data Link Layer"
+        },
+        "correct_answer": "B",
+        "topic": "OSI Layer 4",
+        "explanation": "Official Mock 3 question testing OSI Layer 4."
+      },
+      {
+        "id": "mock_3_q_28",
+        "q_number": 28,
+        "question": "What is the port number for HTTPS?",
+        "options": {
+          "A": "80",
+          "B": "8080",
+          "C": "443",
+          "D": "21"
+        },
+        "correct_answer": "C",
+        "topic": "HTTPS 443",
+        "explanation": "Official Mock 3 question testing HTTPS 443."
+      },
+      {
+        "id": "mock_3_q_29",
+        "q_number": 29,
+        "question": "What flag is set in the very first packet of a TCP connection handshake?",
+        "options": {
+          "A": "ACK",
+          "B": "SYN",
+          "C": "FIN",
+          "D": "RST"
+        },
+        "correct_answer": "B",
+        "topic": "TCP SYN",
+        "explanation": "Official Mock 3 question testing TCP SYN."
+      },
+      {
+        "id": "mock_3_q_30",
+        "q_number": 30,
+        "question": "What HTTP status code means \"Not Found\"?",
+        "options": {
+          "A": "401",
+          "B": "403",
+          "C": "404",
+          "D": "500"
+        },
+        "correct_answer": "C",
+        "topic": "HTTP 404",
+        "explanation": "Official Mock 3 question testing HTTP 404."
+      },
+      {
+        "id": "mock_3_q_31",
+        "q_number": 31,
+        "question": "Which protocol translates domain names into IP addresses?",
+        "options": {
+          "A": "ARP",
+          "B": "DNS",
+          "C": "DHCP",
+          "D": "ICMP"
+        },
+        "correct_answer": "B",
+        "topic": "DNS",
+        "explanation": "Official Mock 3 question testing DNS."
+      },
+      {
+        "id": "mock_3_q_32",
+        "q_number": 32,
+        "question": "What is the size of an IPv4 header without options?",
+        "options": {
+          "A": "20 bytes",
+          "B": "40 bytes",
+          "C": "60 bytes",
+          "D": "8 bytes"
+        },
+        "correct_answer": "A",
+        "topic": "IPv4 Header",
+        "explanation": "Official Mock 3 question testing IPv4 Header."
+      },
+      {
+        "id": "mock_3_q_33",
+        "q_number": 33,
+        "question": "Which device operates at Layer 3 of the OSI model and forwards packets between distinct networks?",
+        "options": {
+          "A": "Hub",
+          "B": "Switch",
+          "C": "Router",
+          "D": "Repeater"
+        },
+        "correct_answer": "C",
+        "topic": "Router L3",
+        "explanation": "Official Mock 3 question testing Router L3."
+      },
+      {
+        "id": "mock_3_q_34",
+        "q_number": 34,
+        "question": "What is the broadcast IP address on a local IPv4 network with subnet `192.168.1.0/24`?",
+        "options": {
+          "A": "192.168.1.0",
+          "B": "192.168.1.1",
+          "C": "192.168.1.255",
+          "D": "255.255.255.0"
+        },
+        "correct_answer": "C",
+        "topic": "Broadcast",
+        "explanation": "Official Mock 3 question testing Broadcast."
+      },
+      {
+        "id": "mock_3_q_35",
+        "q_number": 35,
+        "question": "What is the size of the data bus on the Intel 8085 microprocessor?",
+        "options": {
+          "A": "8 bits",
+          "B": "16 bits",
+          "C": "20 bits",
+          "D": "32 bits"
+        },
+        "correct_answer": "A",
+        "topic": "8085 Data",
+        "explanation": "Official Mock 3 question testing 8085 Data."
+      },
+      {
+        "id": "mock_3_q_36",
+        "q_number": 36,
+        "question": "Which register in the 8085 holds the top of the stack memory address?",
+        "options": {
+          "A": "Program Counter (PC)",
+          "B": "Stack Pointer (SP)",
+          "C": "Accumulator",
+          "D": "Memory Address Register"
+        },
+        "correct_answer": "B",
+        "topic": "Stack Ptr",
+        "explanation": "Official Mock 3 question testing Stack Ptr."
+      },
+      {
+        "id": "mock_3_q_37",
+        "q_number": 37,
+        "question": "Identify the addressing mode of `MVI B, 05H`.",
+        "options": {
+          "A": "Direct Addressing",
+          "B": "Immediate Addressing",
+          "C": "Register Addressing",
+          "D": "Implicit Addressing"
+        },
+        "correct_answer": "B",
+        "topic": "Addressing",
+        "explanation": "Official Mock 3 question testing Addressing."
+      },
+      {
+        "id": "mock_3_q_38",
+        "q_number": 38,
+        "question": "Which 8085 interrupt has the lowest priority?",
+        "options": {
+          "A": "TRAP",
+          "B": "RST 7.5",
+          "C": "RST 6.5",
+          "D": "INTR"
+        },
+        "correct_answer": "D",
+        "topic": "Interrupts",
+        "explanation": "Official Mock 3 question testing Interrupts."
+      },
+      {
+        "id": "mock_3_q_39",
+        "q_number": 39,
+        "question": "In a pipelined CPU, what hazard occurs when hardware cannot support all simultaneous operations?",
+        "options": {
+          "A": "Structural Hazard",
+          "B": "Data Hazard",
+          "C": "Control Hazard",
+          "D": "Branch Hazard"
+        },
+        "correct_answer": "A",
+        "topic": "Structural",
+        "explanation": "Official Mock 3 question testing Structural."
+      },
+      {
+        "id": "mock_3_q_40",
+        "q_number": 40,
+        "question": "What is the restart vector address of `RST 6.5` in 8085?",
+        "options": {
+          "A": "`0034H`",
+          "B": "`003CH`",
+          "C": "`002CH`",
+          "D": "`0024H`"
+        },
+        "correct_answer": "A",
+        "topic": "Vector 6.5",
+        "explanation": "Official Mock 3 question testing Vector 6.5."
+      },
+      {
+        "id": "mock_3_q_41",
+        "q_number": 41,
+        "question": "What is the primary vulnerability where user input executes arbitrary JavaScript in a victim's browser?",
+        "options": {
+          "A": "SQL Injection",
+          "B": "Cross-Site Scripting (XSS)",
+          "C": "CSRF",
+          "D": "Buffer Overflow"
+        },
+        "correct_answer": "B",
+        "topic": "XSS",
+        "explanation": "Official Mock 3 question testing XSS."
+      },
+      {
+        "id": "mock_3_q_42",
+        "q_number": 42,
+        "question": "What is AES?",
+        "options": {
+          "A": "Symmetric Block Cipher",
+          "B": "Asymmetric Key System",
+          "C": "Hashing Function",
+          "D": "Network Tunnel"
+        },
+        "correct_answer": "A",
+        "topic": "AES Cipher",
+        "explanation": "Official Mock 3 question testing AES Cipher."
+      },
+      {
+        "id": "mock_3_q_43",
+        "q_number": 43,
+        "question": "What is the difference between Authentication and Authorization?",
+        "options": {
+          "A": "Authentication verifies *who you are*; Authorization verifies *what you are permitted to do*",
+          "B": "Authorization comes before Authentication",
+          "C": "They are identical terms",
+          "D": "Authentication only applies to databases"
+        },
+        "correct_answer": "A",
+        "topic": "AuthN/AuthZ",
+        "explanation": "Official Mock 3 question testing AuthN/AuthZ."
+      },
+      {
+        "id": "mock_3_q_44",
+        "q_number": 44,
+        "question": "What cookie attribute ensures cookies are only transmitted across encrypted TLS connections?",
+        "options": {
+          "A": "`HttpOnly`",
+          "B": "`Secure`",
+          "C": "`SameSite`",
+          "D": "`Path`"
+        },
+        "correct_answer": "B",
+        "topic": "Secure Cookie",
+        "explanation": "Official Mock 3 question testing Secure Cookie."
+      },
+      {
+        "id": "mock_3_q_45",
+        "q_number": 45,
+        "question": "What does the 'A' in ACID transaction properties stand for?",
+        "options": {
+          "A": "Availability",
+          "B": "Atomicity",
+          "C": "Authorization",
+          "D": "Asynchrony"
+        },
+        "correct_answer": "B",
+        "topic": "Atomicity",
+        "explanation": "Official Mock 3 question testing Atomicity."
+      },
+      {
+        "id": "mock_3_q_46",
+        "q_number": 46,
+        "question": "Which normal form requires that all non-key attributes depend on the primary key with no transitive dependency?",
+        "options": {
+          "A": "1NF",
+          "B": "2NF",
+          "C": "3NF",
+          "D": "BCNF"
+        },
+        "correct_answer": "C",
+        "topic": "3NF Norm",
+        "explanation": "Official Mock 3 question testing 3NF Norm."
+      },
+      {
+        "id": "mock_3_q_47",
+        "q_number": 47,
+        "question": "What is a Thread?",
+        "options": {
+          "A": "An isolated physical computer",
+          "B": "A lightweight unit of CPU execution within a process that shares the address space with other threads",
+          "C": "A database transaction",
+          "D": "A network packet"
+        },
+        "correct_answer": "B",
+        "topic": "Threads",
+        "explanation": "Official Mock 3 question testing Threads."
+      },
+      {
+        "id": "mock_3_q_48",
+        "q_number": 48,
+        "question": "What scheduling algorithm allocates the CPU in fixed time slices?",
+        "options": {
+          "A": "First-Come, First-Served",
+          "B": "Round Robin",
+          "C": "Shortest Job First",
+          "D": "Priority Scheduling"
+        },
+        "correct_answer": "B",
+        "topic": "Round Robin",
+        "explanation": "Official Mock 3 question testing Round Robin."
+      },
+      {
+        "id": "mock_3_q_49",
+        "q_number": 49,
+        "question": "What is Polymorphism in OOP?",
+        "options": {
+          "A": "Encapsulating fields in private scope",
+          "B": "The ability of an object or method to take many forms",
+          "C": "Creating multiple child classes",
+          "D": "Freeing heap memory"
+        },
+        "correct_answer": "B",
+        "topic": "Polymorph",
+        "explanation": "Official Mock 3 question testing Polymorph."
+      },
+      {
+        "id": "mock_3_q_50",
+        "q_number": 50,
+        "question": "What is an Abstract Class?",
+        "options": {
+          "A": "A class that can be directly instantiated with `new`",
+          "B": "A class that cannot be instantiated directly and serves as a base blueprint for derived subclasses",
+          "C": "An interface with only static methods",
+          "D": "A class without constructors"
+        },
+        "correct_answer": "B",
+        "topic": "Abstract Cls",
+        "explanation": "Official Mock 3 question testing Abstract Cls."
+      }
+    ]
+  },
+  {
+    "mock_id": 4,
+    "title": "DeltaX Round 1 Full Mock 4",
+    "duration_minutes": 45,
+    "total_questions": 50,
+    "instructions": "45 Minutes strict timer (54 seconds per question). 50 Questions covering Programming, DSA, Networks, Microprocessors, Cybersecurity, DBMS, OS, OOP.",
+    "questions": [
+      {
+        "id": "mock_4_q_1",
+        "q_number": 1,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int x = 2;\n    printf(\"%d\", x << 2);\n    return 0;\n}\n```",
+        "options": {
+          "A": "4",
+          "B": "8",
+          "C": "16",
+          "D": "2"
+        },
+        "correct_answer": "B",
+        "topic": "Bitshift",
+        "explanation": "Official Mock 4 question testing Bitshift."
+      },
+      {
+        "id": "mock_4_q_2",
+        "q_number": 2,
+        "question": "What will be the output of this Python code?\n```python\nd = {\"a\": 1, \"b\": 2}\nprint(d.get(\"c\", 3))\n```",
+        "options": {
+          "A": "None",
+          "B": "KeyError",
+          "C": "3",
+          "D": "0"
+        },
+        "correct_answer": "C",
+        "topic": "Py Dict Get",
+        "explanation": "Official Mock 4 question testing Py Dict Get."
+      },
+      {
+        "id": "mock_4_q_3",
+        "q_number": 3,
+        "question": "What will be printed by the following C program?\n```c\n#include <stdio.h>\nint main() {\n    int arr[] = {10, 20, 30};\n    int *p = arr;\n    printf(\"%d\", *p++);\n    return 0;\n}\n```",
+        "options": {
+          "A": "10",
+          "B": "20",
+          "C": "30",
+          "D": "Address of arr[0]"
+        },
+        "correct_answer": "A",
+        "topic": "Pointer Inc",
+        "explanation": "Official Mock 4 question testing Pointer Inc."
+      },
+      {
+        "id": "mock_4_q_4",
+        "q_number": 4,
+        "question": "What will be the output of this Java code?\n```java\npublic class Loop {\n    public static void main(String[] args) {\n        int x = 5;\n        while (x > 0) {\n            x--;\n            if (x == 2) continue;\n            System.out.print(x + \" \");\n        }\n    }\n}\n```",
+        "options": {
+          "A": "`4 3 2 1 0 `",
+          "B": "`4 3 1 0 `",
+          "C": "`5 4 3 1 0 `",
+          "D": "`4 3 1 `"
+        },
+        "correct_answer": "B",
+        "topic": "Loops Cont",
+        "explanation": "Official Mock 4 question testing Loops Cont."
+      },
+      {
+        "id": "mock_4_q_5",
+        "q_number": 5,
+        "question": "What is the return value of `power(2, 3)`?\n```c\nint power(int base, int exp) {\n    if (exp == 0) return 1;\n    return base * power(base, exp - 1);\n}\n```",
+        "options": {
+          "A": "6",
+          "B": "8",
+          "C": "9",
+          "D": "16"
+        },
+        "correct_answer": "B",
+        "topic": "Power Recur",
+        "explanation": "Official Mock 4 question testing Power Recur."
+      },
+      {
+        "id": "mock_4_q_6",
+        "q_number": 6,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int a = 1, b = 2;\n    int c = (a++, b++, a + b);\n    printf(\"%d\", c);\n    return 0;\n}\n```",
+        "options": {
+          "A": "3",
+          "B": "5",
+          "C": "4",
+          "D": "2"
+        },
+        "correct_answer": "B",
+        "topic": "Comma Op",
+        "explanation": "Official Mock 4 question testing Comma Op."
+      },
+      {
+        "id": "mock_4_q_7",
+        "q_number": 7,
+        "question": "What is printed by this C snippet?\n```c\n#include <stdio.h>\nint main() {\n    char str[] = \"APE\\0DeltaX\";\n    printf(\"%s\", str);\n    return 0;\n}\n```",
+        "options": {
+          "A": "`APE`",
+          "B": "`APEDeltaX`",
+          "C": "`DeltaX`",
+          "D": "Empty string"
+        },
+        "correct_answer": "A",
+        "topic": "String Null",
+        "explanation": "Official Mock 4 question testing String Null."
+      },
+      {
+        "id": "mock_4_q_8",
+        "q_number": 8,
+        "question": "What will be the output of this Python snippet?\n```python\ns = \"DeltaX\"\nprint(s[0:4])\n```",
+        "options": {
+          "A": "`Delt`",
+          "B": "`Delta`",
+          "C": "`elta`",
+          "D": "`el`"
+        },
+        "correct_answer": "A",
+        "topic": "Py Slice",
+        "explanation": "Official Mock 4 question testing Py Slice."
+      },
+      {
+        "id": "mock_4_q_9",
+        "q_number": 9,
+        "question": "What is the value of `res` after: `int res = 10 > 5 && 5 < 2;`?",
+        "options": {
+          "A": "1",
+          "B": "0",
+          "C": "true",
+          "D": "10"
+        },
+        "correct_answer": "B",
+        "topic": "Short-circ",
+        "explanation": "Official Mock 4 question testing Short-circ."
+      },
+      {
+        "id": "mock_4_q_10",
+        "q_number": 10,
+        "question": "What does `malloc()` return in C when memory allocation fails?",
+        "options": {
+          "A": "0",
+          "B": "NULL",
+          "C": "-1",
+          "D": "Void"
+        },
+        "correct_answer": "B",
+        "topic": "Malloc Null",
+        "explanation": "Official Mock 4 question testing Malloc Null."
+      },
+      {
+        "id": "mock_4_q_11",
+        "q_number": 11,
+        "question": "What is the output of the following Java snippet?\n```java\npublic class StringTest {\n    public static void main(String[] args) {\n        String s = \"Delta\";\n        s = s + \"X\";\n        System.out.println(s);\n    }\n}\n```",
+        "options": {
+          "A": "`Delta`",
+          "B": "`DeltaX`",
+          "C": "`X`",
+          "D": "Compilation error"
+        },
+        "correct_answer": "B",
+        "topic": "Java String",
+        "explanation": "Official Mock 4 question testing Java String."
+      },
+      {
+        "id": "mock_4_q_12",
+        "q_number": 12,
+        "question": "What is the output of the following C program?\n```c\n#include <stdio.h>\nint main() {\n    int x = 0;\n    if (x == 0) {\n        printf(\"A\");\n    } else if (x < 5) {\n        printf(\"B\");\n    }\n    return 0;\n}\n```",
+        "options": {
+          "A": "A",
+          "B": "B",
+          "C": "AB",
+          "D": "Prints nothing"
+        },
+        "correct_answer": "A",
+        "topic": "Branching",
+        "explanation": "Official Mock 4 question testing Branching."
+      },
+      {
+        "id": "mock_4_q_13",
+        "q_number": 13,
+        "question": "What is the output of this Python code?\n```python\ndef add(x, y=10):\n    return x + y\nprint(add(5))\n```",
+        "options": {
+          "A": "15",
+          "B": "5",
+          "C": "TypeError",
+          "D": "10"
+        },
+        "correct_answer": "A",
+        "topic": "Py Defaults",
+        "explanation": "Official Mock 4 question testing Py Defaults."
+      },
+      {
+        "id": "mock_4_q_14",
+        "q_number": 14,
+        "question": "What is the result of `5 & 3` in Java/C?",
+        "options": {
+          "A": "7",
+          "B": "1",
+          "C": "0",
+          "D": "8"
+        },
+        "correct_answer": "B",
+        "topic": "Bitwise AND",
+        "explanation": "Official Mock 4 question testing Bitwise AND."
+      },
+      {
+        "id": "mock_4_q_15",
+        "q_number": 15,
+        "question": "What is the worst-case time complexity of Selection Sort on an array of size $N$?",
+        "options": {
+          "A": "$O(N)$",
+          "B": "$O(N \\log N)$",
+          "C": "$O(N^2)$",
+          "D": "$O(1)$"
+        },
+        "correct_answer": "C",
+        "topic": "Select Sort",
+        "explanation": "Official Mock 4 question testing Select Sort."
+      },
+      {
+        "id": "mock_4_q_16",
+        "q_number": 16,
+        "question": "What is the height of a balanced Binary Search Tree containing $N$ nodes?",
+        "options": {
+          "A": "$O(N)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(1)$",
+          "D": "$O(N^2)$"
+        },
+        "correct_answer": "B",
+        "topic": "BST Height",
+        "explanation": "Official Mock 4 question testing BST Height."
+      },
+      {
+        "id": "mock_4_q_17",
+        "q_number": 17,
+        "question": "Which data structure is used to implement Depth-First Search (DFS) iteratively?",
+        "options": {
+          "A": "Queue",
+          "B": "Stack",
+          "C": "Hash Map",
+          "D": "Min-Heap"
+        },
+        "correct_answer": "B",
+        "topic": "DFS Stack",
+        "explanation": "Official Mock 4 question testing DFS Stack."
+      },
+      {
+        "id": "mock_4_q_18",
+        "q_number": 18,
+        "question": "What is the time complexity of pushing an element onto a Stack of size $N$?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(N)$",
+          "C": "$O(\\log N)$",
+          "D": "$O(N^2)$"
+        },
+        "correct_answer": "A",
+        "topic": "Stack Push",
+        "explanation": "Official Mock 4 question testing Stack Push."
+      },
+      {
+        "id": "mock_4_q_19",
+        "q_number": 19,
+        "question": "What is the time complexity of finding an element in an unsorted array of size $N$?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(N \\log N)$"
+        },
+        "correct_answer": "C",
+        "topic": "Unsorted Srch",
+        "explanation": "Official Mock 4 question testing Unsorted Srch."
+      },
+      {
+        "id": "mock_4_q_20",
+        "q_number": 20,
+        "question": "In a Min-Heap, where is the minimum element always found?",
+        "options": {
+          "A": "At the root",
+          "B": "At a leaf node",
+          "C": "In the middle",
+          "D": "At the last position"
+        },
+        "correct_answer": "A",
+        "topic": "Min-Heap",
+        "explanation": "Official Mock 4 question testing Min-Heap."
+      },
+      {
+        "id": "mock_4_q_21",
+        "q_number": 21,
+        "question": "What is the time complexity of inserting a node at the tail of a Singly Linked List with only a `head` pointer?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(N)$",
+          "C": "$O(\\log N)$",
+          "D": "$O(N^2)$"
+        },
+        "correct_answer": "B",
+        "topic": "Linked List",
+        "explanation": "Official Mock 4 question testing Linked List."
+      },
+      {
+        "id": "mock_4_q_22",
+        "q_number": 22,
+        "question": "What is the optimal time complexity to find the maximum sum contiguous subarray using Kadane's algorithm?",
+        "options": {
+          "A": "$O(N^2)$",
+          "B": "$O(N \\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(1)$"
+        },
+        "correct_answer": "C",
+        "topic": "Kadane",
+        "explanation": "Official Mock 4 question testing Kadane."
+      },
+      {
+        "id": "mock_4_q_23",
+        "q_number": 23,
+        "question": "What is the time complexity of the Two-Pointer technique for finding pairs with a target sum in an already sorted array?",
+        "options": {
+          "A": "$O(N)$",
+          "B": "$O(N^2)$",
+          "C": "$O(N \\log N)$",
+          "D": "$O(1)$"
+        },
+        "correct_answer": "A",
+        "topic": "Two Pointer",
+        "explanation": "Official Mock 4 question testing Two Pointer."
+      },
+      {
+        "id": "mock_4_q_24",
+        "q_number": 24,
+        "question": "How many edges does a tree with $N$ vertices contain?",
+        "options": {
+          "A": "$N$",
+          "B": "$N - 1$",
+          "C": "$N + 1$",
+          "D": "$2N$"
+        },
+        "correct_answer": "B",
+        "topic": "Tree Edges",
+        "explanation": "Official Mock 4 question testing Tree Edges."
+      },
+      {
+        "id": "mock_4_q_25",
+        "q_number": 25,
+        "question": "What is the time complexity of Prim's algorithm for Minimum Spanning Tree using an adjacency list and binary min-heap?",
+        "options": {
+          "A": "$O(V^2)$",
+          "B": "$O(E \\log V)$",
+          "C": "$O(V \\times E)$",
+          "D": "$O(V)$"
+        },
+        "correct_answer": "B",
+        "topic": "Prim MST",
+        "explanation": "Official Mock 4 question testing Prim MST."
+      },
+      {
+        "id": "mock_4_q_26",
+        "q_number": 26,
+        "question": "What is the maximum number of nodes in a binary tree of height $h$ (where root height = 1)?",
+        "options": {
+          "A": "$2^h$",
+          "B": "$2^h - 1$",
+          "C": "$2^{h-1}$",
+          "D": "$h^2$"
+        },
+        "correct_answer": "B",
+        "topic": "Tree Max",
+        "explanation": "Official Mock 4 question testing Tree Max."
+      },
+      {
+        "id": "mock_4_q_27",
+        "q_number": 27,
+        "question": "Which OSI layer is responsible for translating data between network formats and application formats (e.g., encryption, serialization)?",
+        "options": {
+          "A": "Application Layer",
+          "B": "Presentation Layer",
+          "C": "Session Layer",
+          "D": "Transport Layer"
+        },
+        "correct_answer": "B",
+        "topic": "OSI Layer 6",
+        "explanation": "Official Mock 4 question testing OSI Layer 6."
+      },
+      {
+        "id": "mock_4_q_28",
+        "q_number": 28,
+        "question": "What is the TCP 3-way handshake sequence?",
+        "options": {
+          "A": "SYN $\\rightarrow$ SYN-ACK $\\rightarrow$ ACK",
+          "B": "ACK $\\rightarrow$ SYN $\\rightarrow$ ACK",
+          "C": "SYN $\\rightarrow$ ACK $\\rightarrow$ SYN",
+          "D": "FIN $\\rightarrow$ ACK $\\rightarrow$ FIN-ACK"
+        },
+        "correct_answer": "A",
+        "topic": "3-Way Shake",
+        "explanation": "Official Mock 4 question testing 3-Way Shake."
+      },
+      {
+        "id": "mock_4_q_29",
+        "q_number": 29,
+        "question": "What HTTP response status code indicates \"Unauthorized\" (missing credentials)?",
+        "options": {
+          "A": "400",
+          "B": "401",
+          "C": "403",
+          "D": "404"
+        },
+        "correct_answer": "B",
+        "topic": "HTTP 401",
+        "explanation": "Official Mock 4 question testing HTTP 401."
+      },
+      {
+        "id": "mock_4_q_30",
+        "q_number": 30,
+        "question": "What is the well-known port for unencrypted HTTP web traffic?",
+        "options": {
+          "A": "21",
+          "B": "25",
+          "C": "80",
+          "D": "443"
+        },
+        "correct_answer": "C",
+        "topic": "HTTP 80",
+        "explanation": "Official Mock 4 question testing HTTP 80."
+      },
+      {
+        "id": "mock_4_q_31",
+        "q_number": 31,
+        "question": "Which protocol dynamically assigns IP addresses to devices joining a network?",
+        "options": {
+          "A": "DNS",
+          "B": "DHCP",
+          "C": "ARP",
+          "D": "ICMP"
+        },
+        "correct_answer": "B",
+        "topic": "DHCP",
+        "explanation": "Official Mock 4 question testing DHCP."
+      },
+      {
+        "id": "mock_4_q_32",
+        "q_number": 32,
+        "question": "What is the size of a standard TCP header without options?",
+        "options": {
+          "A": "16 bytes",
+          "B": "20 bytes",
+          "C": "32 bytes",
+          "D": "64 bytes"
+        },
+        "correct_answer": "B",
+        "topic": "TCP Base Hdr",
+        "explanation": "Official Mock 4 question testing TCP Base Hdr."
+      },
+      {
+        "id": "mock_4_q_33",
+        "q_number": 33,
+        "question": "What does the Ping command use to test network connectivity?",
+        "options": {
+          "A": "TCP SYN packets",
+          "B": "ICMP Echo Request and Echo Reply",
+          "C": "UDP datagrams",
+          "D": "ARP broadcasts"
+        },
+        "correct_answer": "B",
+        "topic": "ICMP Ping",
+        "explanation": "Official Mock 4 question testing ICMP Ping."
+      },
+      {
+        "id": "mock_4_q_34",
+        "q_number": 34,
+        "question": "What is the local loopback IPv4 address?",
+        "options": {
+          "A": "0.0.0.0",
+          "B": "127.0.0.1",
+          "C": "192.168.1.1",
+          "D": "255.255.255.255"
+        },
+        "correct_answer": "B",
+        "topic": "Loopback IP",
+        "explanation": "Official Mock 4 question testing Loopback IP."
+      },
+      {
+        "id": "mock_4_q_35",
+        "q_number": 35,
+        "question": "How many address lines are present on the Intel 8085 microprocessor?",
+        "options": {
+          "A": "8",
+          "B": "16",
+          "C": "20",
+          "D": "32"
+        },
+        "correct_answer": "B",
+        "topic": "8085 Lines",
+        "explanation": "Official Mock 4 question testing 8085 Lines."
+      },
+      {
+        "id": "mock_4_q_36",
+        "q_number": 36,
+        "question": "Which 8085 interrupt is non-maskable?",
+        "options": {
+          "A": "RST 7.5",
+          "B": "RST 6.5",
+          "C": "TRAP",
+          "D": "INTR"
+        },
+        "correct_answer": "C",
+        "topic": "Non-Maskable",
+        "explanation": "Official Mock 4 question testing Non-Maskable."
+      },
+      {
+        "id": "mock_4_q_37",
+        "q_number": 37,
+        "question": "What is the restart vector address of `RST 7.5` in 8085?",
+        "options": {
+          "A": "`003CH`",
+          "B": "`0034H`",
+          "C": "`002CH`",
+          "D": "`0024H`"
+        },
+        "correct_answer": "A",
+        "topic": "Vector 7.5",
+        "explanation": "Official Mock 4 question testing Vector 7.5."
+      },
+      {
+        "id": "mock_4_q_38",
+        "q_number": 38,
+        "question": "Identify the addressing mode of `CMA` (Complement Accumulator) in 8085.",
+        "options": {
+          "A": "Register Addressing",
+          "B": "Implicit / Implied Addressing",
+          "C": "Immediate Addressing",
+          "D": "Direct Addressing"
+        },
+        "correct_answer": "B",
+        "topic": "Addressing",
+        "explanation": "Official Mock 4 question testing Addressing."
+      },
+      {
+        "id": "mock_4_q_39",
+        "q_number": 39,
+        "question": "In cache memory design, what type of miss occurs upon the first access to a block?",
+        "options": {
+          "A": "Capacity Miss",
+          "B": "Conflict Miss",
+          "C": "Compulsory (Cold) Miss",
+          "D": "Coherence Miss"
+        },
+        "correct_answer": "C",
+        "topic": "Cold Miss",
+        "explanation": "Official Mock 4 question testing Cold Miss."
+      },
+      {
+        "id": "mock_4_q_40",
+        "q_number": 40,
+        "question": "What is the function of the Accumulator in the 8085?",
+        "options": {
+          "A": "Tracking instruction addresses",
+          "B": "Storing operands and receiving results of arithmetic and logical operations",
+          "C": "Counting clock cycles",
+          "D": "Managing the stack"
+        },
+        "correct_answer": "B",
+        "topic": "Accumulator",
+        "explanation": "Official Mock 4 question testing Accumulator."
+      },
+      {
+        "id": "mock_4_q_41",
+        "q_number": 41,
+        "question": "What is the primary purpose of a Digital Signature?",
+        "options": {
+          "A": "To compress data",
+          "B": "To provide authentication, non-repudiation, and integrity verification",
+          "C": "To hide IP addresses",
+          "D": "To speed up TLS connections"
+        },
+        "correct_answer": "B",
+        "topic": "Signatures",
+        "explanation": "Official Mock 4 question testing Signatures."
+      },
+      {
+        "id": "mock_4_q_42",
+        "q_number": 42,
+        "question": "Which attack injects malicious SQL statements into web entry forms?",
+        "options": {
+          "A": "Cross-Site Scripting",
+          "B": "SQL Injection",
+          "C": "Man-in-the-Middle",
+          "D": "Phishing"
+        },
+        "correct_answer": "B",
+        "topic": "SQLi",
+        "explanation": "Official Mock 4 question testing SQLi."
+      },
+      {
+        "id": "mock_4_q_43",
+        "q_number": 43,
+        "question": "What is the primary difference between Hashing and Encryption?",
+        "options": {
+          "A": "Hashing is one-way and irreversible; Encryption is two-way and reversible with a key",
+          "B": "Encryption is one-way",
+          "C": "Hashing requires a public key",
+          "D": "There is no difference"
+        },
+        "correct_answer": "A",
+        "topic": "Hash vs Enc",
+        "explanation": "Official Mock 4 question testing Hash vs Enc."
+      },
+      {
+        "id": "mock_4_q_44",
+        "q_number": 44,
+        "question": "What does the `SameSite=Strict` cookie attribute protect against?",
+        "options": {
+          "A": "SQL Injection",
+          "B": "Cross-Site Request Forgery (CSRF)",
+          "C": "Buffer Overflow",
+          "D": "Denial of Service"
+        },
+        "correct_answer": "B",
+        "topic": "SameSite",
+        "explanation": "Official Mock 4 question testing SameSite."
+      },
+      {
+        "id": "mock_4_q_45",
+        "q_number": 45,
+        "question": "What is a Primary Key in a relational database table?",
+        "options": {
+          "A": "A key that can contain duplicate values",
+          "B": "A column or set of columns that uniquely identifies each row and cannot be NULL",
+          "C": "A key that references another table",
+          "D": "A temporary table index"
+        },
+        "correct_answer": "B",
+        "topic": "Primary Key",
+        "explanation": "Official Mock 4 question testing Primary Key."
+      },
+      {
+        "id": "mock_4_q_46",
+        "q_number": 46,
+        "question": "What does the SQL `GROUP BY` clause do?",
+        "options": {
+          "A": "Sorts results in descending order",
+          "B": "Groups rows sharing common values into summary rows for aggregate functions",
+          "C": "Joins two tables on foreign keys",
+          "D": "Deletes duplicate rows"
+        },
+        "correct_answer": "B",
+        "topic": "GROUP BY",
+        "explanation": "Official Mock 4 question testing GROUP BY."
+      },
+      {
+        "id": "mock_4_q_47",
+        "q_number": 47,
+        "question": "What is Context Switching in an operating system?",
+        "options": {
+          "A": "Switching between browser windows",
+          "B": "Saving the CPU state of a running process and loading the saved state of another process to execute",
+          "C": "Moving a file to trash",
+          "D": "Recompiling a C program"
+        },
+        "correct_answer": "B",
+        "topic": "Context Sw",
+        "explanation": "Official Mock 4 question testing Context Sw."
+      },
+      {
+        "id": "mock_4_q_48",
+        "q_number": 48,
+        "question": "What is Virtual Memory?",
+        "options": {
+          "A": "RAM installed on a graphics card",
+          "B": "A memory management capability that provides an idealized abstraction of storage resources, allowing execution of processes larger than physical RAM",
+          "C": "Cloud storage",
+          "D": "Flash memory"
+        },
+        "correct_answer": "B",
+        "topic": "Virt Memory",
+        "explanation": "Official Mock 4 question testing Virt Memory."
+      },
+      {
+        "id": "mock_4_q_49",
+        "q_number": 49,
+        "question": "What is Encapsulation in Object-Oriented Programming?",
+        "options": {
+          "A": "Deriving child classes from a base class",
+          "B": "Bundling data and the methods that operate on that data into a single unit, restricting direct external access",
+          "C": "Overriding methods at runtime",
+          "D": "Calling constructors recursively"
+        },
+        "correct_answer": "B",
+        "topic": "Encapsulate",
+        "explanation": "Official Mock 4 question testing Encapsulate."
+      },
+      {
+        "id": "mock_4_q_50",
+        "q_number": 50,
+        "question": "What is an Interface in OOP?",
+        "options": {
+          "A": "A class that holds database connections",
+          "B": "A contract that defines method signatures without implementation that implementing classes must fulfill",
+          "C": "A graphical user interface (GUI)",
+          "D": "A private constructor"
+        },
+        "correct_answer": "B",
+        "topic": "Interfaces",
+        "explanation": "Official Mock 4 question testing Interfaces."
+      }
+    ]
+  },
+  {
+    "mock_id": 5,
+    "title": "DeltaX Round 1 Full Mock 5",
+    "duration_minutes": 45,
+    "total_questions": 50,
+    "instructions": "45 Minutes strict timer (54 seconds per question). 50 Questions covering Programming, DSA, Networks, Microprocessors, Cybersecurity, DBMS, OS, OOP.",
+    "questions": [
+      {
+        "id": "mock_5_q_1",
+        "q_number": 1,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int x = 10;\n    int *p = &x;\n    *p = 20;\n    printf(\"%d\", x);\n    return 0;\n}\n```",
+        "options": {
+          "A": "10",
+          "B": "20",
+          "C": "Address of x",
+          "D": "Garbage"
+        },
+        "correct_answer": "B",
+        "topic": "Pointer Ref",
+        "explanation": "Official Mock 5 question testing Pointer Ref."
+      },
+      {
+        "id": "mock_5_q_2",
+        "q_number": 2,
+        "question": "What will be the output of this Python expression: `print(bool([]), bool([False]))`?",
+        "options": {
+          "A": "`False False`",
+          "B": "`False True`",
+          "C": "`True True`",
+          "D": "`True False`"
+        },
+        "correct_answer": "B",
+        "topic": "Py Truthy",
+        "explanation": "Official Mock 5 question testing Py Truthy."
+      },
+      {
+        "id": "mock_5_q_3",
+        "q_number": 3,
+        "question": "What will be printed by the following C program?\n```c\n#include <stdio.h>\nint main() {\n    int i = 1;\n    do {\n        printf(\"%d \", i++);\n    } while (i <= 2);\n    return 0;\n}\n```",
+        "options": {
+          "A": "`1 2 `",
+          "B": "`1 2 3 `",
+          "C": "`1 `",
+          "D": "`2 3 `"
+        },
+        "correct_answer": "A",
+        "topic": "Do-While",
+        "explanation": "Official Mock 5 question testing Do-While."
+      },
+      {
+        "id": "mock_5_q_4",
+        "q_number": 4,
+        "question": "What will be the output of this Java code?\n```java\npublic class StringTest {\n    public static void main(String[] args) {\n        String a = \"Test\";\n        String b = new String(\"Test\");\n        System.out.println(a.equals(b) + \" \" + (a == b));\n    }\n}\n```",
+        "options": {
+          "A": "`true true`",
+          "B": "`true false`",
+          "C": "`false true`",
+          "D": "`false false`"
+        },
+        "correct_answer": "B",
+        "topic": "String Eq",
+        "explanation": "Official Mock 5 question testing String Eq."
+      },
+      {
+        "id": "mock_5_q_5",
+        "q_number": 5,
+        "question": "What is the return value of `mystery(4)`?\n```c\nint mystery(int n) {\n    if (n <= 0) return 0;\n    return n + mystery(n - 1);\n}\n```",
+        "options": {
+          "A": "4",
+          "B": "10",
+          "C": "6",
+          "D": "0"
+        },
+        "correct_answer": "B",
+        "topic": "Sum Recur",
+        "explanation": "Official Mock 5 question testing Sum Recur."
+      },
+      {
+        "id": "mock_5_q_6",
+        "q_number": 6,
+        "question": "What is the output of the following C code?\n```c\n#include <stdio.h>\nint main() {\n    int x = 5;\n    printf(\"%d\", x ^ x);\n    return 0;\n}\n```",
+        "options": {
+          "A": "5",
+          "B": "0",
+          "C": "10",
+          "D": "1"
+        },
+        "correct_answer": "B",
+        "topic": "XOR Zero",
+        "explanation": "Official Mock 5 question testing XOR Zero."
+      },
+      {
+        "id": "mock_5_q_7",
+        "q_number": 7,
+        "question": "What is printed by this C snippet?\n```c\n#include <stdio.h>\nint main() {\n    int arr[3] = {10, 20, 30};\n    printf(\"%d\", 1[arr]);\n    return 0;\n}\n```",
+        "options": {
+          "A": "10",
+          "B": "20",
+          "C": "30",
+          "D": "Compilation Error"
+        },
+        "correct_answer": "B",
+        "topic": "Array Subscr",
+        "explanation": "Official Mock 5 question testing Array Subscr."
+      },
+      {
+        "id": "mock_5_q_8",
+        "q_number": 8,
+        "question": "What will be the output of this Python slice: `print(\"Engineer\"[::-1])`?",
+        "options": {
+          "A": "`reenignE`",
+          "B": "`Engineer`",
+          "C": "`reen`",
+          "D": "`E`"
+        },
+        "correct_answer": "A",
+        "topic": "Reverse Str",
+        "explanation": "Official Mock 5 question testing Reverse Str."
+      },
+      {
+        "id": "mock_5_q_9",
+        "q_number": 9,
+        "question": "What is the value of `x` after: `int a = 5; int x = a > 2 ? 100 : 200;`?",
+        "options": {
+          "A": "100",
+          "B": "200",
+          "C": "5",
+          "D": "2"
+        },
+        "correct_answer": "A",
+        "topic": "Ternary",
+        "explanation": "Official Mock 5 question testing Ternary."
+      },
+      {
+        "id": "mock_5_q_10",
+        "q_number": 10,
+        "question": "What does `free(ptr)` do in C?",
+        "options": {
+          "A": "Sets pointer `ptr` to NULL",
+          "B": "Deallocates the memory block on the heap previously allocated by `malloc`/`calloc`",
+          "C": "Deletes the variable from the stack",
+          "D": "Erases the hard disk sector"
+        },
+        "correct_answer": "B",
+        "topic": "Free Heap",
+        "explanation": "Official Mock 5 question testing Free Heap."
+      },
+      {
+        "id": "mock_5_q_11",
+        "q_number": 11,
+        "question": "What is the output of the following Java snippet?\n```java\nint a = 10;\nint b = 20;\nSystem.out.println(\"Result: \" + a + b);\n```",
+        "options": {
+          "A": "`Result: 30`",
+          "B": "`Result: 1020`",
+          "C": "`Result: 200`",
+          "D": "Compilation error"
+        },
+        "correct_answer": "B",
+        "topic": "Java Concat",
+        "explanation": "Official Mock 5 question testing Java Concat."
+      },
+      {
+        "id": "mock_5_q_12",
+        "q_number": 12,
+        "question": "What is the output of the following C program?\n```c\n#include <stdio.h>\nint main() {\n    int x = 1;\n    if (x--) {\n        printf(\"TRUE\");\n    } else {\n        printf(\"FALSE\");\n    }\n    return 0;\n}\n```",
+        "options": {
+          "A": "TRUE",
+          "B": "FALSE",
+          "C": "Compilation Error",
+          "D": "Undefined"
+        },
+        "correct_answer": "A",
+        "topic": "Post-decrem",
+        "explanation": "Official Mock 5 question testing Post-decrem."
+      },
+      {
+        "id": "mock_5_q_13",
+        "q_number": 13,
+        "question": "What is the output of this Python code?\n```python\nx = {1, 2, 3}\nx.add(2)\nprint(len(x))\n```",
+        "options": {
+          "A": "4",
+          "B": "3",
+          "C": "2",
+          "D": "1"
+        },
+        "correct_answer": "B",
+        "topic": "Set Add",
+        "explanation": "Official Mock 5 question testing Set Add."
+      },
+      {
+        "id": "mock_5_q_14",
+        "q_number": 14,
+        "question": "What is the result of `1 << 3` in Java/C?",
+        "options": {
+          "A": "3",
+          "B": "6",
+          "C": "8",
+          "D": "16"
+        },
+        "correct_answer": "C",
+        "topic": "Left Shift",
+        "explanation": "Official Mock 5 question testing Left Shift."
+      },
+      {
+        "id": "mock_5_q_15",
+        "q_number": 15,
+        "question": "What is the worst-case time complexity of searching in a sorted array of size $N$ using Linear Search?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(N \\log N)$"
+        },
+        "correct_answer": "C",
+        "topic": "Linear Srch",
+        "explanation": "Official Mock 5 question testing Linear Srch."
+      },
+      {
+        "id": "mock_5_q_16",
+        "q_number": 16,
+        "question": "What is the time complexity of finding the minimum element in an unsorted array of size $N$?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(N^2)$"
+        },
+        "correct_answer": "C",
+        "topic": "Unsorted Min",
+        "explanation": "Official Mock 5 question testing Unsorted Min."
+      },
+      {
+        "id": "mock_5_q_17",
+        "q_number": 17,
+        "question": "Which traversal order of a Binary Search Tree produces values in strictly ascending order?",
+        "options": {
+          "A": "Preorder",
+          "B": "Inorder",
+          "C": "Postorder",
+          "D": "Level-Order"
+        },
+        "correct_answer": "B",
+        "topic": "BST Inorder",
+        "explanation": "Official Mock 5 question testing BST Inorder."
+      },
+      {
+        "id": "mock_5_q_18",
+        "q_number": 18,
+        "question": "What is the time complexity of inserting an element into a Min-Heap of size $N$?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(\\log N)$",
+          "C": "$O(N)$",
+          "D": "$O(N \\log N)$"
+        },
+        "correct_answer": "B",
+        "topic": "Heap Insert",
+        "explanation": "Official Mock 5 question testing Heap Insert."
+      },
+      {
+        "id": "mock_5_q_19",
+        "q_number": 19,
+        "question": "How many pointers does a node in a Doubly Linked List maintain?",
+        "options": {
+          "A": "1",
+          "B": "2 (`prev` and `next`)",
+          "C": "3",
+          "D": "0"
+        },
+        "correct_answer": "B",
+        "topic": "Doubly LL",
+        "explanation": "Official Mock 5 question testing Doubly LL."
+      },
+      {
+        "id": "mock_5_q_20",
+        "q_number": 20,
+        "question": "What is the time complexity of deleting an element from a Stack of size $N$?",
+        "options": {
+          "A": "$O(1)$",
+          "B": "$O(N)$",
+          "C": "$O(\\log N)$",
+          "D": "$O(N^2)$"
+        },
+        "correct_answer": "A",
+        "topic": "Stack Pop",
+        "explanation": "Official Mock 5 question testing Stack Pop."
+      },
+      {
+        "id": "mock_5_q_21",
+        "q_number": 21,
+        "question": "What is the average time complexity of QuickSort on an array of size $N$?",
+        "options": {
+          "A": "$O(N)$",
+          "B": "$O(N \\log N)$",
+          "C": "$O(N^2)$",
+          "D": "$O(\\log N)$"
+        },
+        "correct_answer": "B",
+        "topic": "QuickSort",
+        "explanation": "Official Mock 5 question testing QuickSort."
+      },
+      {
+        "id": "mock_5_q_22",
+        "q_number": 22,
+        "question": "In graph theory, what is a cycle?",
+        "options": {
+          "A": "A path with no edges",
+          "B": "A path that starts and ends at the same vertex with no other repeated vertices",
+          "C": "A tree",
+          "D": "A disconnected component"
+        },
+        "correct_answer": "B",
+        "topic": "Graph Cycle",
+        "explanation": "Official Mock 5 question testing Graph Cycle."
+      },
+      {
+        "id": "mock_5_q_23",
+        "q_number": 23,
+        "question": "What is the time complexity of Breadth-First Search (BFS) on a graph with $V$ vertices and $E$ edges using an Adjacency List?",
+        "options": {
+          "A": "$O(V^2)$",
+          "B": "$O(V + E)$",
+          "C": "$O(E \\log V)$",
+          "D": "$O(V \\times E)$"
+        },
+        "correct_answer": "B",
+        "topic": "Graph BFS",
+        "explanation": "Official Mock 5 question testing Graph BFS."
+      },
+      {
+        "id": "mock_5_q_24",
+        "q_number": 24,
+        "question": "What is the number of nodes in a full binary tree with height $h$ (where root height is 1)?",
+        "options": {
+          "A": "$2^h - 1$",
+          "B": "$2^h$",
+          "C": "$2^{h-1}$",
+          "D": "$h^2$"
+        },
+        "correct_answer": "A",
+        "topic": "Full Tree",
+        "explanation": "Official Mock 5 question testing Full Tree."
+      },
+      {
+        "id": "mock_5_q_25",
+        "q_number": 25,
+        "question": "Which algorithmic technique is used in Kadane's algorithm?",
+        "options": {
+          "A": "Divide and Conquer",
+          "B": "Dynamic Programming / Greedy Sliding State",
+          "C": "Backtracking",
+          "D": "Binary Search"
+        },
+        "correct_answer": "B",
+        "topic": "Kadane DP",
+        "explanation": "Official Mock 5 question testing Kadane DP."
+      },
+      {
+        "id": "mock_5_q_26",
+        "q_number": 26,
+        "question": "Given array `[1, 2, 3, 4]`, how many total contiguous subarrays exist?",
+        "options": {
+          "A": "4",
+          "B": "10",
+          "C": "16",
+          "D": "8"
+        },
+        "correct_answer": "B",
+        "topic": "Subarrays",
+        "explanation": "Official Mock 5 question testing Subarrays."
+      },
+      {
+        "id": "mock_5_q_27",
+        "q_number": 27,
+        "question": "Which OSI layer does a Network Router operate on?",
+        "options": {
+          "A": "Data Link Layer",
+          "B": "Network Layer (Layer 3)",
+          "C": "Transport Layer",
+          "D": "Physical Layer"
+        },
+        "correct_answer": "B",
+        "topic": "OSI Layer 3",
+        "explanation": "Official Mock 5 question testing OSI Layer 3."
+      },
+      {
+        "id": "mock_5_q_28",
+        "q_number": 28,
+        "question": "What is the final packet sent by the client to complete the TCP 3-way handshake?",
+        "options": {
+          "A": "SYN",
+          "B": "ACK",
+          "C": "FIN",
+          "D": "RST"
+        },
+        "correct_answer": "B",
+        "topic": "TCP ACK",
+        "explanation": "Official Mock 5 question testing TCP ACK."
+      },
+      {
+        "id": "mock_5_q_29",
+        "q_number": 29,
+        "question": "Which HTTP status code signifies \"Forbidden\" (client authenticated, but unauthorized for the requested resource)?",
+        "options": {
+          "A": "400",
+          "B": "401",
+          "C": "403",
+          "D": "404"
+        },
+        "correct_answer": "C",
+        "topic": "HTTP 403",
+        "explanation": "Official Mock 5 question testing HTTP 403."
+      },
+      {
+        "id": "mock_5_q_30",
+        "q_number": 30,
+        "question": "What is the default port for Domain Name System (DNS) queries?",
+        "options": {
+          "A": "21",
+          "B": "25",
+          "C": "53",
+          "D": "80"
+        },
+        "correct_answer": "C",
+        "topic": "DNS 53",
+        "explanation": "Official Mock 5 question testing DNS 53."
+      },
+      {
+        "id": "mock_5_q_31",
+        "q_number": 31,
+        "question": "Which protocol maps a local MAC address to an IP address (inverse of ARP)?",
+        "options": {
+          "A": "DNS",
+          "B": "RARP",
+          "C": "ICMP",
+          "D": "NAT"
+        },
+        "correct_answer": "B",
+        "topic": "RARP",
+        "explanation": "Official Mock 5 question testing RARP."
+      },
+      {
+        "id": "mock_5_q_32",
+        "q_number": 32,
+        "question": "What is the header size of standard UDP?",
+        "options": {
+          "A": "8 bytes",
+          "B": "20 bytes",
+          "C": "32 bytes",
+          "D": "64 bytes"
+        },
+        "correct_answer": "A",
+        "topic": "UDP Header",
+        "explanation": "Official Mock 5 question testing UDP Header."
+      },
+      {
+        "id": "mock_5_q_33",
+        "q_number": 33,
+        "question": "What is the primary function of NAT (Network Address Translation)?",
+        "options": {
+          "A": "Encrypting web traffic",
+          "B": "Translating private local IP addresses to public routable IP addresses",
+          "C": "Speeding up disk reads",
+          "D": "Resolving domain names"
+        },
+        "correct_answer": "B",
+        "topic": "NAT",
+        "explanation": "Official Mock 5 question testing NAT."
+      },
+      {
+        "id": "mock_5_q_34",
+        "q_number": 34,
+        "question": "Which transport protocol is connectionless and does NOT perform retransmission?",
+        "options": {
+          "A": "TCP",
+          "B": "UDP",
+          "C": "SCTP",
+          "D": "FTP"
+        },
+        "correct_answer": "B",
+        "topic": "UDP",
+        "explanation": "Official Mock 5 question testing UDP."
+      },
+      {
+        "id": "mock_5_q_35",
+        "q_number": 35,
+        "question": "How many address lines does the Intel 8086 microprocessor have?",
+        "options": {
+          "A": "16",
+          "B": "20 (allowing 1 MB address space)",
+          "C": "24",
+          "D": "32"
+        },
+        "correct_answer": "B",
+        "topic": "8086 Lines",
+        "explanation": "Official Mock 5 question testing 8086 Lines."
+      },
+      {
+        "id": "mock_5_q_36",
+        "q_number": 36,
+        "question": "Which 8085 interrupt has the highest priority?",
+        "options": {
+          "A": "RST 7.5",
+          "B": "RST 6.5",
+          "C": "TRAP",
+          "D": "INTR"
+        },
+        "correct_answer": "C",
+        "topic": "TRAP High",
+        "explanation": "Official Mock 5 question testing TRAP High."
+      },
+      {
+        "id": "mock_5_q_37",
+        "q_number": 37,
+        "question": "What is the restart vector address of `RST 5` in 8085?",
+        "options": {
+          "A": "`0028H`",
+          "B": "`0030H`",
+          "C": "`0038H`",
+          "D": "`0020H`"
+        },
+        "correct_answer": "A",
+        "topic": "Vector 5",
+        "explanation": "Official Mock 5 question testing Vector 5."
+      },
+      {
+        "id": "mock_5_q_38",
+        "q_number": 38,
+        "question": "Identify the addressing mode of `MOV A, M` in 8085.",
+        "options": {
+          "A": "Direct Addressing",
+          "B": "Register Indirect Addressing",
+          "C": "Immediate Addressing",
+          "D": "Implicit Addressing"
+        },
+        "correct_answer": "B",
+        "topic": "Addressing",
+        "explanation": "Official Mock 5 question testing Addressing."
+      },
+      {
+        "id": "mock_5_q_39",
+        "q_number": 39,
+        "question": "In a pipelined CPU, what hazard occurs when two instructions attempt to access the same physical hardware resource simultaneously?",
+        "options": {
+          "A": "Structural Hazard",
+          "B": "Data Hazard",
+          "C": "Control Hazard",
+          "D": "Branch Hazard"
+        },
+        "correct_answer": "A",
+        "topic": "Structural",
+        "explanation": "Official Mock 5 question testing Structural."
+      },
+      {
+        "id": "mock_5_q_40",
+        "q_number": 40,
+        "question": "What is the purpose of the Program Counter (PC) in 8085?",
+        "options": {
+          "A": "Counting loop iterations",
+          "B": "Storing the address of the next instruction to fetch from memory",
+          "C": "Holding ALU arithmetic results",
+          "D": "Managing the stack pointer"
+        },
+        "correct_answer": "B",
+        "topic": "Program Ctr",
+        "explanation": "Official Mock 5 question testing Program Ctr."
+      },
+      {
+        "id": "mock_5_q_41",
+        "q_number": 41,
+        "question": "What is the primary purpose of a Web Application Firewall (WAF)?",
+        "options": {
+          "A": "Routing network packets at Layer 3",
+          "B": "Filtering and monitoring HTTP/HTTPS traffic to protect web applications from attacks like SQLi and XSS",
+          "C": "Managing server cooling",
+          "D": "Encrypting database hard disks"
+        },
+        "correct_answer": "B",
+        "topic": "WAF",
+        "explanation": "Official Mock 5 question testing WAF."
+      },
+      {
+        "id": "mock_5_q_42",
+        "q_number": 42,
+        "question": "What type of encryption algorithm is AES-256?",
+        "options": {
+          "A": "Asymmetric Public-Key",
+          "B": "Symmetric Block Cipher",
+          "C": "Hashing Algorithm",
+          "D": "Key Exchange Protocol"
+        },
+        "correct_answer": "B",
+        "topic": "AES Type",
+        "explanation": "Official Mock 5 question testing AES Type."
+      },
+      {
+        "id": "mock_5_q_43",
+        "q_number": 43,
+        "question": "What does adding a Salt to hashed passwords prevent?",
+        "options": {
+          "A": "Database crashes",
+          "B": "Rainbow Table precomputed hash lookup attacks",
+          "C": "Man-in-the-Middle attacks",
+          "D": "XSS attacks"
+        },
+        "correct_answer": "B",
+        "topic": "Password Salt",
+        "explanation": "Official Mock 5 question testing Password Salt."
+      },
+      {
+        "id": "mock_5_q_44",
+        "q_number": 44,
+        "question": "In a JSON Web Token (JWT), which section validates that the token was not tampered with?",
+        "options": {
+          "A": "Header",
+          "B": "Payload",
+          "C": "Signature",
+          "D": "Claims"
+        },
+        "correct_answer": "C",
+        "topic": "JWT Sig",
+        "explanation": "Official Mock 5 question testing JWT Sig."
+      },
+      {
+        "id": "mock_5_q_45",
+        "q_number": 45,
+        "question": "What does the 'C' in ACID database transaction properties stand for?",
+        "options": {
+          "A": "Concurrency",
+          "B": "Consistency",
+          "C": "Commit",
+          "D": "Cardinality"
+        },
+        "correct_answer": "B",
+        "topic": "Consistency",
+        "explanation": "Official Mock 5 question testing Consistency."
+      },
+      {
+        "id": "mock_5_q_46",
+        "q_number": 46,
+        "question": "What is the difference between `DELETE` and `TRUNCATE` in SQL?",
+        "options": {
+          "A": "`DELETE` is DDL; `TRUNCATE` is DML",
+          "B": "`DELETE` is a logged DML operation that supports `WHERE`; `TRUNCATE` is a faster DDL operation that deallocates data pages without logging individual rows",
+          "C": "`TRUNCATE` cannot empty a table",
+          "D": "There is no difference"
+        },
+        "correct_answer": "B",
+        "topic": "DML vs DDL",
+        "explanation": "Official Mock 5 question testing DML vs DDL."
+      },
+      {
+        "id": "mock_5_q_47",
+        "q_number": 47,
+        "question": "What are the four Coffman conditions for a Deadlock in an operating system?",
+        "options": {
+          "A": "Mutual Exclusion, Hold & Wait, No Preemption, Circular Wait",
+          "B": "Starvation, Aging, Thrashing, Paging",
+          "C": "Threads, Processes, Semaphores, Mutex",
+          "D": "Scheduling, Dispatching, Preemption, Context Switch"
+        },
+        "correct_answer": "A",
+        "topic": "Coffman",
+        "explanation": "Official Mock 5 question testing Coffman."
+      },
+      {
+        "id": "mock_5_q_48",
+        "q_number": 48,
+        "question": "What is Thrashing in an operating system?",
+        "options": {
+          "A": "CPU overheating",
+          "B": "A condition where the OS spends more time swapping virtual pages to/from disk than executing instructions, collapsing CPU utilization",
+          "C": "A hard drive mechanical failure",
+          "D": "Deleting temporary files"
+        },
+        "correct_answer": "B",
+        "topic": "Thrashing",
+        "explanation": "Official Mock 5 question testing Thrashing."
+      },
+      {
+        "id": "mock_5_q_49",
+        "q_number": 49,
+        "question": "What is the primary benefit of Method Overloading in OOP?",
+        "options": {
+          "A": "Enabling multiple inheritance",
+          "B": "Providing multiple methods with the same name but different signatures, improving code readability and reusability",
+          "C": "Making variables private",
+          "D": "Allocating heap memory"
+        },
+        "correct_answer": "B",
+        "topic": "Overloading",
+        "explanation": "Official Mock 5 question testing Overloading."
+      },
+      {
+        "id": "mock_5_q_50",
+        "q_number": 50,
+        "question": "What does the `super` keyword do inside a subclass constructor in Java?",
+        "options": {
+          "A": "Calls the parent class constructor",
+          "B": "Creates a new thread",
+          "C": "Calls the Garbage Collector",
+          "D": "Makes the class abstract"
+        },
+        "correct_answer": "A",
+        "topic": "Super KW",
+        "explanation": "Official Mock 5 question testing Super KW."
+      }
+    ]
+  }
+]

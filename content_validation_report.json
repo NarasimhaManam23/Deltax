@@ -1,0 +1,27 @@
+{
+  "status": "PASSED",
+  "mcqs": {
+    "total": 500,
+    "duplicates": 0,
+    "missing_options": 0,
+    "missing_answers": 0,
+    "missing_explanations": 0
+  },
+  "coding_problems": {
+    "total": 100,
+    "duplicates": 0,
+    "missing_starter_code": 0,
+    "missing_statements": 0
+  },
+  "interview_questions": {
+    "total": 290,
+    "duplicates": 0,
+    "missing_answers": 0
+  },
+  "mock_tests": {
+    "total_tests": 5,
+    "total_questions": 250,
+    "missing_answers": 0
+  },
+  "errors": []
+}
