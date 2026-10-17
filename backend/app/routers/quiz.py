@@ -38,7 +38,7 @@ def start_quiz(
         return {
             "quiz_id": str(uuid.uuid4()),
             "quiz_type": "mock_test",
-            "title": f"DeltaX Round 1 Full Mock {mock_id}",
+            "title": f"FirstLabs FED-2026 Mock Test {mock_id}",
             "duration_minutes": 45,
             "total_questions": len(questions),
             "questions": [
@@ -54,6 +54,9 @@ def start_quiz(
                     "option_b": q.option_b,
                     "option_c": q.option_c,
                     "option_d": q.option_d,
+                    "evidence_category": getattr(q, "evidence_category", "Original practice question"),
+                    "confidence_label": getattr(q, "confidence_label", "Original Practice"),
+                    "question_type": getattr(q, "question_type", "mcq")
                     # Withhold correct answer during live quiz
                 }
                 for q in questions

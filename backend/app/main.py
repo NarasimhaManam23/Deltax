@@ -20,6 +20,7 @@ from app.routers import (
     analytics,
     search,
     export_import,
+    research,
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -43,7 +44,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
-    description="DeltaX Associate Product Engineer Campus Drive 2027 Preparation Engine Backend",
+    description="The First Labs FED-2026 Associate Frontend Developer Preparation Engine Backend",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -58,8 +59,6 @@ app.add_middleware(
 )
 
 # Mount Routers under /api
-api_router = FastAPI()
-
 app.include_router(health.router, prefix="/api")
 app.include_router(learner.router, prefix="/api")
 app.include_router(dashboard.router, prefix="/api")
@@ -74,11 +73,14 @@ app.include_router(bookmarks.router, prefix="/api")
 app.include_router(analytics.router, prefix="/api")
 app.include_router(search.router, prefix="/api")
 app.include_router(export_import.router, prefix="/api")
+app.include_router(research.router, prefix="/api")
 
 @app.get("/")
 def root():
     return {
-        "message": "Welcome to DeltaX Prep API — Associate Product Engineer 2027",
+        "status": "online",
+        "project": "FirstLabs Prep — FED-2026",
+        "version": "1.0.0",
         "docs": "/docs",
         "health": "/api/health"
     }

@@ -15,7 +15,7 @@ const API_BASE = import.meta.env.VITE_API_URL || '';
 
 // 1. Anonymous Learner UUID Management
 export function getOrCreateLearnerId() {
-  let id = localStorage.getItem('deltax_learner_id');
+  let id = localStorage.getItem('firstlabs_learner_id') || localStorage.getItem('deltax_learner_id');
   if (!id) {
     if (typeof crypto !== 'undefined' && crypto.randomUUID) {
       id = crypto.randomUUID();
@@ -25,8 +25,8 @@ export function getOrCreateLearnerId() {
         return v.toString(16);
       });
     }
-    localStorage.setItem('deltax_learner_id', id);
   }
+  localStorage.setItem('firstlabs_learner_id', id);
   return id;
 }
 
@@ -266,6 +266,57 @@ export const api = {
     }
   },
 
+  // SQL Execution Sandbox
+  async runSqlQuery(query, problemId = null) {
+    try {
+      return await request('/api/coding/sql/run', {
+        method: 'POST',
+        body: JSON.stringify({ query, problem_id: problemId })
+      });
+    } catch (err) {
+      return {
+        success: false,
+        columns: [],
+        rows: [],
+        row_count: 0,
+        execution_time_ms: 0,
+        error: err.message || "Failed to execute SQL query on server sandbox."
+      };
+    }
+  },
+
+  async getSqlSchema() {
+    try {
+      return await request('/api/coding/sql/schema');
+    } catch {
+      return {
+        tables: [
+          { name: "departments", columns: ["id (INT, PK)", "name (TEXT)", "budget (INT)", "location (TEXT)"] },
+          { name: "employees", columns: ["id (INT, PK)", "name (TEXT)", "department_id (INT, FK)", "salary (INT)", "hire_date (TEXT)", "manager_id (INT, FK)", "email (TEXT)"] },
+          { name: "customers", columns: ["id (INT, PK)", "name (TEXT)", "city (TEXT)", "rating (INT)"] },
+          { name: "orders", columns: ["id (INT, PK)", "customer_id (INT, FK)", "order_date (TEXT)", "amount (REAL)", "status (TEXT)", "employee_id (INT, FK)"] }
+        ]
+      };
+    }
+  },
+
+  // Mistake Notebook
+  async getMistakes(subject = null, topic = null) {
+    try {
+      const q = new URLSearchParams();
+      if (subject) q.append('subject', subject);
+      if (topic) q.append('topic', topic);
+      return await request(`/api/learner/mistakes?${q.toString()}`);
+    } catch {
+      // Local mistake storage fallback
+      const local = JSON.parse(localStorage.getItem('firstlabs_mistakes') || '[]');
+      let res = local;
+      if (subject && subject !== 'All') res = res.filter(m => m.subject === subject);
+      if (topic && topic !== 'All') res = res.filter(m => m.topic === topic);
+      return res;
+    }
+  },
+
   async getCodingMocks() {
     try {
       return await request('/api/coding/mocks');
@@ -492,6 +543,9 @@ export const {
   getCodingProblems,
   getCodingProblem,
   submitCoding,
+  runSqlQuery,
+  getSqlSchema,
+  getMistakes,
   getCodingMocks,
   getInterviewQuestions,
   updateInterviewProgress,

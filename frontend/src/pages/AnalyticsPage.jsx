@@ -36,14 +36,11 @@ export default function AnalyticsPage() {
 
   // Subject accuracy chart data
   const subjectAccuracy = d.subject_accuracy || [
-    { subject: 'Programming', accuracy: 82, total: 100 },
-    { subject: 'DSA', accuracy: 78, total: 100 },
-    { subject: 'Networks', accuracy: 88, total: 50 },
-    { subject: 'DBMS', accuracy: 64, total: 50 },
-    { subject: 'OS', accuracy: 72, total: 50 },
-    { subject: 'Microprocessors', accuracy: 68, total: 50 },
-    { subject: 'Cybersecurity', accuracy: 85, total: 50 },
-    { subject: 'OOP', accuracy: 80, total: 50 },
+    { subject: 'JavaScript', accuracy: 84, total: 35 },
+    { subject: 'DOM Concepts', accuracy: 78, total: 25 },
+    { subject: 'Web Standards', accuracy: 88, total: 20 },
+    { subject: 'Analytical', accuracy: 72, total: 20 },
+    { subject: 'SQL & DB', accuracy: 80, total: 20 },
   ];
 
   // Score over time line chart data

@@ -16,6 +16,7 @@ class Learner(Base):
     total_questions_attempted = Column(Integer, default=0)
     total_correct = Column(Integer, default=0)
     total_coding_solved = Column(Integer, default=0)
+    total_sql_solved = Column(Integer, default=0)
     total_mock_tests = Column(Integer, default=0)
     total_interview_practiced = Column(Integer, default=0)
     streak_days = Column(Integer, default=1)
@@ -37,7 +38,7 @@ class Question(Base):
     subject = Column(String(64), index=True)
     topic = Column(String(128), index=True)
     difficulty = Column(String(32), default="Medium")
-    source = Column(String(64), default="GENERAL CS TOPIC")
+    source = Column(String(128), default="GENERAL CS TOPIC")
     question_text = Column(Text, nullable=False)
     option_a = Column(Text, nullable=False)
     option_b = Column(Text, nullable=False)
@@ -45,6 +46,11 @@ class Question(Base):
     option_d = Column(Text, nullable=False)
     correct_answer = Column(String(4), nullable=False) # A, B, C, D
     explanation = Column(Text)
+    evidence_category = Column(String(64), default="Original practice question")
+    confidence_label = Column(String(32), default="Original Practice")
+    source_url = Column(String(512), nullable=True)
+    source_title = Column(String(256), nullable=True)
+    question_type = Column(String(32), default="mcq") # mcq, output_prediction, debugging, sql_mcq
 
 class Quiz(Base):
     __tablename__ = "quizzes"
@@ -85,7 +91,7 @@ class CodingProblem(Base):
     title = Column(String(128), nullable=False)
     tier = Column(String(32)) # Easy, Easy-Medium, Medium, Medium-Hard, Application
     difficulty = Column(String(32))
-    category = Column(String(64))
+    category = Column(String(64)) # JavaScript, SQL, Arrays & Strings, etc.
     statement = Column(Text, nullable=False)
     input_format = Column(Text)
     output_format = Column(Text)
@@ -94,6 +100,13 @@ class CodingProblem(Base):
     approach = Column(Text)
     starter_code_java = Column(Text)
     starter_code_python = Column(Text)
+    starter_code_javascript = Column(Text)
+    starter_code_sql = Column(Text)
+    test_cases = Column(JSON) # List of {input, expected, description, is_hidden}
+    sample_data = Column(JSON) # Schema or table rows for SQL
+    hints = Column(JSON) # Progressive hints
+    evidence_category = Column(String(64), default="Original practice question")
+    confidence_label = Column(String(32), default="Original Practice")
 
 class CodingAttempt(Base):
     __tablename__ = "coding_attempts"
@@ -101,12 +114,39 @@ class CodingAttempt(Base):
     id = Column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
     learner_id = Column(String(36), ForeignKey("learners.id"), nullable=False, index=True)
     problem_id = Column(String(128), nullable=False, index=True)
-    language = Column(String(16), default="python") # python, java
+    language = Column(String(16), default="javascript") # javascript, sql, python, java
     code = Column(Text)
     status = Column(String(32), default="solved") # attempted, solved
     submitted_at = Column(DateTime, default=datetime.utcnow)
 
     learner = relationship("Learner", back_populates="coding_attempts")
+
+class ResearchSource(Base):
+    __tablename__ = "research_sources"
+
+    id = Column(String(64), primary_key=True)
+    title = Column(String(256), nullable=False)
+    url = Column(String(512), nullable=False)
+    source_type = Column(String(64))
+    date_accessed = Column(String(32))
+    reliability = Column(String(32))
+    findings = Column(Text)
+    evidence_category = Column(String(64))
+    confidence_label = Column(String(32))
+
+class CandidateExperience(Base):
+    __tablename__ = "candidate_experiences"
+
+    id = Column(String(64), primary_key=True)
+    source_platform = Column(String(64))
+    source_url = Column(String(512), nullable=True)
+    date_reported = Column(String(32))
+    role = Column(String(128))
+    summary = Column(Text)
+    topics_mentioned = Column(JSON)
+    difficulty_rating = Column(String(32))
+    verdict_notes = Column(Text)
+    evidence_category = Column(String(64))
 
 class InterviewQuestion(Base):
     __tablename__ = "interview_questions"

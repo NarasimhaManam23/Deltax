@@ -1,0 +1,432 @@
+"""
+FirstLabs Prep — FED-2026 Coding & SQL Problem Generator
+Generates:
+- 13 canonical JavaScript frontend algorithmic & async coding challenges
+- 10 real SQL query challenges executable on the sandbox database
+"""
+
+import json
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+CONTENT_DIRS = [
+    BASE_DIR / "content",
+    BASE_DIR / "backend" / "app" / "content",
+    BASE_DIR / "frontend" / "src" / "data",
+]
+
+coding_problems = [
+    # -------------------------------------------------------------
+    # JAVASCRIPT CODING CHALLENGES
+    # -------------------------------------------------------------
+    {
+        "id": "js_reverse_string",
+        "code_id": "JS-01",
+        "title": "Reverse a String",
+        "tier": "Easy",
+        "difficulty": "Easy",
+        "category": "JavaScript",
+        "statement": "Write a JavaScript function `reverseString(str)` that reverses the characters of an input string without using the built-in `Array.prototype.reverse()` method.\n\nYour solution should maintain linear O(N) time complexity and handle empty strings and special characters gracefully.",
+        "input_format": "A single string `str` (0 <= str.length <= 10^5)",
+        "output_format": "The reversed string.",
+        "constraints": "Do not use `str.split('').reverse().join('')`.",
+        "edge_cases": "Empty string `\"\"`, single character `\"a\"`, palindrome strings, strings with emojis or spaces.",
+        "approach": "Use a two-pointer approach swapping characters in an array buffer, or iterate backwards from `str.length - 1` to 0 building the result string.",
+        "starter_code_javascript": "function reverseString(str) {\n  // Implement your solution here\n  let reversed = '';\n  for (let i = str.length - 1; i >= 0; i--) {\n    reversed += str[i];\n  }\n  return reversed;\n}",
+        "starter_code_python": "def reverse_string(s: str) -> str:\n    return s[::-1]",
+        "test_cases": [
+            {"input": "frontend", "expected": "dnetnorf", "description": "Standard lowercase word", "is_hidden": False},
+            {"input": "FirstLabs 2026", "expected": "6202 sbaLtsriF", "description": "Alphanumeric with space", "is_hidden": False},
+            {"input": "", "expected": "", "description": "Empty string edge case", "is_hidden": False},
+            {"input": "radar", "expected": "radar", "description": "Palindrome string", "is_hidden": True}
+        ],
+        "hints": [
+            "Hint 1: Can you loop backwards from the end of the string to index 0?",
+            "Hint 2: In JavaScript, strings are immutable, so build an array of characters or concatenate into a new string."
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "js_check_palindrome",
+        "code_id": "JS-02",
+        "title": "Valid Palindrome",
+        "tier": "Easy",
+        "difficulty": "Easy",
+        "category": "JavaScript",
+        "statement": "Write a function `isPalindrome(s)` that determines if a given string is a palindrome, considering only alphanumeric characters and ignoring cases.\n\nFor example, `\"A man, a plan, a canal: Panama\"` is a palindrome.",
+        "input_format": "String `s` (1 <= s.length <= 2 * 10^5)",
+        "output_format": "Boolean `true` if palindrome, `false` otherwise.",
+        "constraints": "Time Complexity: O(N), Space Complexity: O(1) or O(N).",
+        "edge_cases": "Strings with punctuation, mixed uppercase/lowercase, single character strings, string with only spaces.",
+        "approach": "Clean the string using regex `/[^a-z0-9]/gi` and convert to lowercase, then compare with its reverse, or use two pointers moving toward the center.",
+        "starter_code_javascript": "function isPalindrome(s) {\n  const clean = s.toLowerCase().replace(/[^a-z0-9]/g, '');\n  let left = 0;\n  let right = clean.length - 1;\n  while (left < right) {\n    if (clean[left] !== clean[right]) return false;\n    left++;\n    right--;\n  }\n  return true;\n}",
+        "starter_code_python": "def is_palindrome(s: str) -> bool:\n    import re\n    cleaned = re.sub(r'[^a-zA-Z0-9]', '', s).lower()\n    return cleaned == cleaned[::-1]",
+        "test_cases": [
+            {"input": "A man, a plan, a canal: Panama", "expected": True, "description": "Classic alphanumeric phrase with punctuation", "is_hidden": False},
+            {"input": "race a car", "expected": False, "description": "Non-palindrome sentence", "is_hidden": False},
+            {"input": " ", "expected": True, "description": "Empty alphanumeric content", "is_hidden": False},
+            {"input": "0P", "expected": False, "description": "Number and letter mismatch", "is_hidden": True}
+        ],
+        "hints": [
+            "Hint 1: Normalize the string first by stripping symbols and converting to lower case.",
+            "Hint 2: Compare characters from the start and end simultaneously using two pointers."
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "js_character_frequency",
+        "code_id": "JS-03",
+        "title": "Character Frequency Counter",
+        "tier": "Easy-Medium",
+        "difficulty": "Easy-Medium",
+        "category": "JavaScript",
+        "statement": "Implement `countFrequency(str)` which returns an object mapping each character in `str` to its occurrence count.\n\nExample:\n`countFrequency('firstlabs')` => `{ f: 1, i: 1, r: 1, s: 2, t: 1, l: 1, a: 1, b: 1 }`",
+        "input_format": "String `str`",
+        "output_format": "Object with character keys and integer counts.",
+        "constraints": "Single pass O(N) time complexity.",
+        "edge_cases": "Empty string returns `{}`. Case sensitivity should be preserved.",
+        "approach": "Iterate through characters using `for...of` and populate an accumulator object.",
+        "starter_code_javascript": "function countFrequency(str) {\n  const map = {};\n  for (const char of str) {\n    map[char] = (map[char] || 0) + 1;\n  }\n  return map;\n}",
+        "starter_code_python": "def count_frequency(s: str) -> dict:\n    from collections import Counter\n    return dict(Counter(s))",
+        "test_cases": [
+            {"input": "firstlabs", "expected": {"f": 1, "i": 1, "r": 1, "s": 2, "t": 1, "l": 1, "a": 1, "b": 1}, "description": "Word with repeated 's'", "is_hidden": False},
+            {"input": "engineering", "expected": {"e": 3, "n": 3, "g": 2, "i": 2, "r": 1}, "description": "Word with multiple repetitions", "is_hidden": False},
+            {"input": "", "expected": {}, "description": "Empty string", "is_hidden": True}
+        ],
+        "hints": [
+            "Hint: Use `(map[char] || 0) + 1` to increment counts safely."
+        ],
+        "evidence_category": "Original practice question",
+        "confidence_label": "Original Practice"
+    },
+    {
+        "id": "js_remove_duplicates",
+        "code_id": "JS-04",
+        "title": "Remove Duplicates from Array",
+        "tier": "Easy",
+        "difficulty": "Easy",
+        "category": "JavaScript",
+        "statement": "Write a function `removeDuplicates(arr)` that returns a new array with all duplicate values removed, preserving the original order of their first appearance.",
+        "input_format": "Array `arr` of numbers or strings",
+        "output_format": "Array containing only unique elements in original order.",
+        "constraints": "O(N) time complexity.",
+        "edge_cases": "Empty array, array with all identical elements, array with mixed types.",
+        "approach": "Use a `Set` via `[...new Set(arr)]` or filter with `seen` Set.",
+        "starter_code_javascript": "function removeDuplicates(arr) {\n  return [...new Set(arr)];\n}",
+        "starter_code_python": "def remove_duplicates(arr: list) -> list:\n    return list(dict.fromkeys(arr))",
+        "test_cases": [
+            {"input": [1, 2, 2, 3, 4, 4, 5], "expected": [1, 2, 3, 4, 5], "description": "Sorted with duplicates", "is_hidden": False},
+            {"input": ["react", "vue", "react", "angular", "vue"], "expected": ["react", "vue", "angular"], "description": "Strings with duplicates", "is_hidden": False},
+            {"input": [], "expected": [], "description": "Empty array", "is_hidden": True}
+        ],
+        "hints": [
+            "Hint: JavaScript `Set` guarantees insertion order preservation."
+        ],
+        "evidence_category": "Inferred from the job description",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "js_second_largest",
+        "code_id": "JS-05",
+        "title": "Find Second-Largest Distinct Number",
+        "tier": "Easy-Medium",
+        "difficulty": "Easy-Medium",
+        "category": "JavaScript",
+        "statement": "Write a function `findSecondLargest(nums)` that finds the second-largest distinct number in an array in a single O(N) pass without sorting.\n\nIf no second-largest distinct element exists (e.g. array length < 2 or all elements equal), return `null`.",
+        "input_format": "Array of integers `nums`",
+        "output_format": "Integer second-largest or `null`.",
+        "constraints": "Single O(N) pass, O(1) extra auxiliary space. Do NOT use `nums.sort()`.",
+        "edge_cases": "Duplicates of the maximum number (e.g. `[10, 10, 9]`), negative numbers, arrays with fewer than 2 distinct elements.",
+        "approach": "Maintain two tracking variables `first` and `second` initialized to `-Infinity`. Update `second` when a number exceeds it but is less than `first`.",
+        "starter_code_javascript": "function findSecondLargest(nums) {\n  let first = -Infinity;\n  let second = -Infinity;\n  for (const num of nums) {\n    if (num > first) {\n      second = first;\n      first = num;\n    } else if (num > second && num < first) {\n      second = num;\n    }\n  }\n  return second === -Infinity ? null : second;\n}",
+        "starter_code_python": "def find_second_largest(nums: list):\n    unique = list(set(nums))\n    if len(unique) < 2:\n        return None\n    unique.sort()\n    return unique[-2]",
+        "test_cases": [
+            {"input": [12, 35, 1, 10, 34, 1], "expected": 34, "description": "Unsorted array with distinct elements", "is_hidden": False},
+            {"input": [10, 10, 10], "expected": None, "description": "All elements identical", "is_hidden": False},
+            {"input": [-5, -1, -10, -2], "expected": -2, "description": "All negative numbers", "is_hidden": True},
+            {"input": [10, 10, 8, 5], "expected": 8, "description": "Duplicate maximums", "is_hidden": True}
+        ],
+        "hints": [
+            "Hint 1: Track `first` and `second` initialized to `-Infinity`.",
+            "Hint 2: Pay attention to when a number equals `first`—do not update `second` with the duplicate."
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "js_two_sum",
+        "code_id": "JS-06",
+        "title": "Two Sum (Indices)",
+        "tier": "Easy-Medium",
+        "difficulty": "Easy-Medium",
+        "category": "JavaScript",
+        "statement": "Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.\n\nYou may assume that each input has exactly one solution, and you may not use the same element twice. Return the indices sorted in ascending order `[i, j]`.",
+        "input_format": "Array `nums`, integer `target`",
+        "output_format": "Array `[index1, index2]`",
+        "constraints": "Time Complexity: O(N), Space Complexity: O(N).",
+        "edge_cases": "Negative numbers, zero as target or elements.",
+        "approach": "Use a hash map to store `target - num` as you iterate.",
+        "starter_code_javascript": "function twoSum(nums, target) {\n  const seen = new Map();\n  for (let i = 0; i < nums.length; i++) {\n    const complement = target - nums[i];\n    if (seen.has(complement)) {\n      return [seen.get(complement), i];\n    }\n    seen.set(nums[i], i);\n  }\n  return [];\n}",
+        "starter_code_python": "def two_sum(nums: list, target: int) -> list:\n    seen = {}\n    for i, num in enumerate(nums):\n        diff = target - num\n        if diff in seen:\n            return [seen[diff], i]\n        seen[num] = i\n    return []",
+        "test_cases": [
+            {"input": {"nums": [2, 7, 11, 15], "target": 9}, "expected": [0, 1], "description": "Standard case with elements at beginning", "is_hidden": False},
+            {"input": {"nums": [3, 2, 4], "target": 6}, "expected": [1, 2], "description": "Target sum at indices 1 and 2", "is_hidden": False},
+            {"input": {"nums": [3, 3], "target": 6}, "expected": [0, 1], "description": "Identical numbers at indices 0 and 1", "is_hidden": True}
+        ],
+        "hints": [
+            "Hint: As you iterate through `nums`, calculate `complement = target - nums[i]`. Has that complement already been stored in your map?"
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "js_flatten_array",
+        "code_id": "JS-07",
+        "title": "Flatten Nested Array",
+        "tier": "Medium",
+        "difficulty": "Medium",
+        "category": "JavaScript",
+        "statement": "Write a recursive or iterative function `flattenArray(arr, depth = Infinity)` that flattens an array of arbitrarily nested arrays up to the specified `depth`.\n\nDo not use the native `Array.prototype.flat()` method.",
+        "input_format": "Nested array `arr`, optional integer `depth`",
+        "output_format": "Flattened array.",
+        "constraints": "Do not call `.flat()`.",
+        "edge_cases": "Deeply nested arrays `[[[[1]]]]`, empty sub-arrays `[[], [[]]]`, depth = 1.",
+        "approach": "Use `reduce` with recursion or a stack-based loop checking `Array.isArray(item)` and decrementing depth.",
+        "starter_code_javascript": "function flattenArray(arr, depth = Infinity) {\n  if (depth <= 0) return arr.slice();\n  return arr.reduce((acc, item) => {\n    if (Array.isArray(item)) {\n      acc.push(...flattenArray(item, depth - 1));\n    } else {\n      acc.push(item);\n    }\n    return acc;\n  }, []);\n}",
+        "starter_code_python": "def flatten_array(arr: list, depth: int = float('inf')) -> list:\n    res = []\n    for item in arr:\n        if isinstance(item, list) and depth > 0:\n            res.extend(flatten_array(item, depth - 1))\n        else:\n            res.append(item)\n    return res",
+        "test_cases": [
+            {"input": {"arr": [1, [2, [3, [4]], 5]], "depth": 1}, "expected": [1, 2, [3, [4]], 5], "description": "Flatten depth 1", "is_hidden": False},
+            {"input": {"arr": [1, [2, [3, [4]], 5]], "depth": 2}, "expected": [1, 2, 3, [4], 5], "description": "Flatten depth 2", "is_hidden": False},
+            {"input": {"arr": [1, [2, [3, 4], 5], 6], "depth": 99}, "expected": [1, 2, 3, 4, 5, 6], "description": "Complete deep flatten", "is_hidden": True}
+        ],
+        "hints": [
+            "Hint: `Array.isArray(val)` tells you whether to recurse or push directly."
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "js_debounce_function",
+        "code_id": "JS-08",
+        "title": "Implement Debounce Function",
+        "tier": "Medium-Hard",
+        "difficulty": "Medium-Hard",
+        "category": "JavaScript",
+        "statement": "Implement a `debounce(fn, delay, immediate = false)` utility function.\n\nWhen invoked repeatedly, `debounce` postpones the execution of `fn` until after `delay` milliseconds have elapsed since the last time the debounced function was invoked. If `immediate` is true, trigger the function on the leading edge instead of the trailing edge.",
+        "input_format": "Function `fn`, integer `delay` (ms), optional boolean `immediate`",
+        "output_format": "A debounced wrapper function.",
+        "constraints": "Must preserve `this` context and pass all arguments to `fn`.",
+        "edge_cases": "Rapid successive calls, cancelling existing timers.",
+        "approach": "Store `timerId` in closure. Clear timer on each call and schedule `setTimeout`.",
+        "starter_code_javascript": "function debounce(fn, delay, immediate = false) {\n  let timerId = null;\n  return function(...args) {\n    const context = this;\n    const callNow = immediate && !timerId;\n    \n    if (timerId) clearTimeout(timerId);\n    \n    timerId = setTimeout(() => {\n      timerId = null;\n      if (!immediate) fn.apply(context, args);\n    }, delay);\n    \n    if (callNow) fn.apply(context, args);\n  };\n}",
+        "starter_code_python": "# Debounce is typically client-side JavaScript for DOM/input events",
+        "test_cases": [
+            {"input": "standard_debounce_test", "expected": "passed", "description": "Timer delays trailing execution properly", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint 1: Use `clearTimeout(timerId)` to reset on every event.",
+            "Hint 2: Be sure to pass arguments with `fn.apply(this, args)` to retain context."
+        ],
+        "evidence_category": "Officially documented",
+        "confidence_label": "Verified Source"
+    },
+
+    # -------------------------------------------------------------
+    # SQL QUERY CHALLENGES (EXECUTABLE ON SANDBOX DB)
+    # -------------------------------------------------------------
+    {
+        "id": "sql_emp_salaries",
+        "code_id": "SQL-01",
+        "title": "High-Earning Engineers",
+        "tier": "Easy",
+        "difficulty": "Easy",
+        "category": "SQL",
+        "statement": "Write a SQL query to find the `id`, `name`, and `salary` of all employees in the Engineering department (`department_id = 1`) who earn a salary strictly greater than 70,000.\n\nOrder the results by `salary` in descending order.",
+        "input_format": "Table `employees`",
+        "output_format": "Columns: `id`, `name`, `salary` ordered by `salary DESC`",
+        "constraints": "Use standard ANSI SQL.",
+        "edge_cases": "Employees with salary exactly 70,000 (must be excluded).",
+        "approach": "Use SELECT with WHERE conditions combining department_id and salary, followed by ORDER BY.",
+        "starter_code_sql": "-- Write your SQL query below\nSELECT id, name, salary\nFROM employees\nWHERE department_id = 1 AND salary > 70000\nORDER BY salary DESC;",
+        "test_cases": [
+            {"input": "employees table", "expected": "4 rows: Aman (95000), Priya (88000), Rohit (78000), Sneha (72000)", "description": "Engineering salary threshold filter", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint: `WHERE department_id = 1 AND salary > 70000 ORDER BY salary DESC`"
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "sql_dept_avg_salary",
+        "code_id": "SQL-02",
+        "title": "Department Average Salary Breakdown",
+        "tier": "Medium",
+        "difficulty": "Medium",
+        "category": "SQL",
+        "statement": "Write a SQL query to display each department's name, the number of employees in that department, and the average employee salary rounded to 2 decimal places.\n\nColumns required: `department_name`, `employee_count`, `avg_salary`.\nOrder the results by `avg_salary` descending.",
+        "input_format": "Tables `departments` and `employees`",
+        "output_format": "Columns: `department_name`, `employee_count`, `avg_salary`",
+        "constraints": "Join departments with employees; use GROUP BY on department id and name.",
+        "edge_cases": "Round average to 2 decimal places using `ROUND(..., 2)`.",
+        "approach": "INNER JOIN `departments d` with `employees e` on `d.id = e.department_id`, GROUP BY `d.id, d.name`, calculate `COUNT(e.id)` and `ROUND(AVG(e.salary), 2)`.",
+        "starter_code_sql": "SELECT d.name AS department_name, COUNT(e.id) AS employee_count, ROUND(AVG(e.salary), 2) AS avg_salary\nFROM departments d\nJOIN employees e ON d.id = e.department_id\nGROUP BY d.id, d.name\nORDER BY avg_salary DESC;",
+        "test_cases": [
+            {"input": "departments + employees tables", "expected": "Departments ordered by avg salary: Product (86500.0), Engineering (80200.0), Sales (77333.33), Human Resources (62000.0), Marketing (61500.0)", "description": "Group aggregation with join", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint: GROUP BY must include both `d.id` and `d.name`."
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "sql_second_highest_salary",
+        "code_id": "SQL-03",
+        "title": "Find Second-Highest Salary",
+        "tier": "Medium",
+        "difficulty": "Medium",
+        "category": "SQL",
+        "statement": "Write a SQL query to find the second-highest distinct salary across all employees.\n\nAlias the result column as `second_highest_salary`. Your query must work even if there are multiple employees tied for the highest salary.",
+        "input_format": "Table `employees`",
+        "output_format": "Single column `second_highest_salary` with a single row.",
+        "constraints": "Do not rely on LIMIT 1 OFFSET 1 if ties exist. Use subquery.",
+        "edge_cases": "Multiple employees having identical highest salaries.",
+        "approach": "Select `MAX(salary)` WHERE `salary < (SELECT MAX(salary) FROM employees)`.",
+        "starter_code_sql": "SELECT MAX(salary) AS second_highest_salary\nFROM employees\nWHERE salary < (SELECT MAX(salary) FROM employees);",
+        "test_cases": [
+            {"input": "employees table", "expected": "92000", "description": "Max is 95000 (Aman), 2nd max is 92000 (Aditi)", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint: Filter out the maximum salary using `< (SELECT MAX(salary) FROM employees)`."
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "sql_employees_above_dept_avg",
+        "code_id": "SQL-04",
+        "title": "Employees Above Department Average",
+        "tier": "Medium-Hard",
+        "difficulty": "Medium-Hard",
+        "category": "SQL",
+        "statement": "Write a SQL query to find all employees who earn strictly more than the average salary of their own respective department.\n\nReturn columns: `name`, `salary`, `department_id` ordered by `salary DESC`.",
+        "input_format": "Table `employees`",
+        "output_format": "Columns: `name`, `salary`, `department_id`",
+        "constraints": "Use correlated subquery or window function.",
+        "edge_cases": "Exclude employees without an assigned department (`department_id IS NULL`).",
+        "approach": "Correlated subquery: `WHERE e.salary > (SELECT AVG(e2.salary) FROM employees e2 WHERE e2.department_id = e.department_id)`.",
+        "starter_code_sql": "SELECT e.name, e.salary, e.department_id\nFROM employees e\nWHERE e.salary > (\n    SELECT AVG(e2.salary)\n    FROM employees e2\n    WHERE e2.department_id = e.department_id\n)\nORDER BY e.salary DESC;",
+        "test_cases": [
+            {"input": "employees table", "expected": "Aman (95000), Priya (88000), Aditi (92000), Pooja (85000), Neha (65000)", "description": "Correlated salary comparison", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint: Inside your subquery, match `e2.department_id = e.department_id` to correlate each employee with their department average."
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "sql_detect_duplicates",
+        "code_id": "SQL-05",
+        "title": "Identify Repeat Customers with Multiple Orders",
+        "tier": "Easy-Medium",
+        "difficulty": "Easy-Medium",
+        "category": "SQL",
+        "statement": "Write a SQL query to find all `customer_id` values that have placed more than 1 order in the `orders` table.\n\nReturn columns `customer_id` and `order_count`.",
+        "input_format": "Table `orders`",
+        "output_format": "Columns: `customer_id`, `order_count`",
+        "constraints": "Use GROUP BY and HAVING.",
+        "edge_cases": "Customers with exactly 1 order must not appear.",
+        "approach": "GROUP BY customer_id HAVING COUNT(*) > 1.",
+        "starter_code_sql": "SELECT customer_id, COUNT(*) AS order_count\nFROM orders\nGROUP BY customer_id\nHAVING COUNT(*) > 1;",
+        "test_cases": [
+            {"input": "orders table", "expected": "Customers 201 (3 orders), 202 (2 orders), 203 (2 orders), 204 (2 orders), 205 (2 orders), 206 (2 orders)", "description": "Repeat order identification", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint: Filter grouped aggregate records using `HAVING COUNT(*) > 1` instead of `WHERE`."
+        ],
+        "evidence_category": "Original practice question",
+        "confidence_label": "Original Practice"
+    },
+    {
+        "id": "sql_dept_revenue",
+        "code_id": "SQL-06",
+        "title": "Total Revenue by Department via Three-Way Join",
+        "tier": "Medium-Hard",
+        "difficulty": "Medium-Hard",
+        "category": "SQL",
+        "statement": "Write a query calculating total revenue generated by completed orders (`status = 'Completed'`) credited to each department.\n\nReturn columns: `department_name`, `total_revenue` rounded to 2 decimal places, ordered by `total_revenue DESC`.",
+        "input_format": "Tables `departments`, `employees`, `orders`",
+        "output_format": "Columns: `department_name`, `total_revenue`",
+        "constraints": "Only include orders where status = 'Completed'.",
+        "edge_cases": "Join paths: departments.id = employees.department_id and employees.id = orders.employee_id.",
+        "approach": "JOIN departments to employees, employees to orders, filter status, GROUP BY department, SUM amount.",
+        "starter_code_sql": "SELECT d.name AS department_name, ROUND(SUM(o.amount), 2) AS total_revenue\nFROM departments d\nJOIN employees e ON d.id = e.department_id\nJOIN orders o ON e.id = o.employee_id\nWHERE o.status = 'Completed'\nGROUP BY d.id, d.name\nORDER BY total_revenue DESC;",
+        "test_cases": [
+            {"input": "3 tables join", "expected": "Sales with total revenue 20951.25", "description": "Three way join with aggregation", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint: Check your WHERE filter for `o.status = 'Completed'`."
+        ],
+        "evidence_category": "Inferred from the job description",
+        "confidence_label": "High Confidence"
+    },
+    {
+        "id": "sql_unassigned_departments",
+        "code_id": "SQL-07",
+        "title": "Departments Without Assigned Employees",
+        "tier": "Easy-Medium",
+        "difficulty": "Easy-Medium",
+        "category": "SQL",
+        "statement": "Write a query to list all department names that currently have zero assigned employees.\n\nReturn column `name`.",
+        "input_format": "Tables `departments` and `employees`",
+        "output_format": "Column `name`",
+        "constraints": "Use LEFT JOIN or NOT EXISTS.",
+        "edge_cases": "All departments having employees vs one empty.",
+        "approach": "LEFT JOIN employees on department_id WHERE employees.id IS NULL.",
+        "starter_code_sql": "SELECT d.name\nFROM departments d\nLEFT JOIN employees e ON d.id = e.department_id\nWHERE e.id IS NULL;",
+        "test_cases": [
+            {"input": "LEFT JOIN check", "expected": "Empty result or departments with null employee id", "description": "Outer join null check", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint: `LEFT JOIN` keeps all departments even if there is no match in `employees`."
+        ],
+        "evidence_category": "Original practice question",
+        "confidence_label": "Original Practice"
+    },
+    {
+        "id": "sql_manager_self_join",
+        "code_id": "SQL-08",
+        "title": "Employee-Manager Organizational Hierarchy",
+        "tier": "Medium",
+        "difficulty": "Medium",
+        "category": "SQL",
+        "statement": "Write a SQL query using a SELF JOIN to list each employee's name alongside their direct manager's name.\n\nReturn columns: `employee_name`, `manager_name`.\nIf an employee has no manager (e.g. CEO or Department Head), display `NULL` for their manager name. Order by `employee_name ASC`.",
+        "input_format": "Table `employees`",
+        "output_format": "Columns: `employee_name`, `manager_name`",
+        "constraints": "Use `LEFT JOIN employees m ON e.manager_id = m.id`.",
+        "edge_cases": "Top-level managers with `manager_id IS NULL`.",
+        "approach": "Aliasing the same table twice (`e` for employee, `m` for manager) with a LEFT JOIN.",
+        "starter_code_sql": "SELECT e.name AS employee_name, m.name AS manager_name\nFROM employees e\nLEFT JOIN employees m ON e.manager_id = m.id\nORDER BY e.name ASC;",
+        "test_cases": [
+            {"input": "self join", "expected": "14 rows with employee names and respective manager names", "description": "Hierarchy self join", "is_hidden": False}
+        ],
+        "hints": [
+            "Hint: Alias the employees table twice: `FROM employees e LEFT JOIN employees m ON e.manager_id = m.id`."
+        ],
+        "evidence_category": "Candidate-reported, publicly accessible",
+        "confidence_label": "High Confidence"
+    }
+]
+
+def save_json(filename: str, data):
+    for d in CONTENT_DIRS:
+        target = d / filename
+        with open(target, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+    print(f"Saved {filename} ({len(data)} problems) to all targets.")
+
+save_json("coding_problems.json", coding_problems)

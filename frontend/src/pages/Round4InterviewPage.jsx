@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { 
   Users, CheckCircle2, Shield, HelpCircle, ChevronDown, ChevronUp,
-  Award, Sparkles, Terminal, FileCode, Search, Filter, BookOpen, Layers
+  Award, Sparkles, Terminal, FileCode, Search, Filter, BookOpen, Layers,
+  AlertTriangle, Clock, MessageSquare, ArrowRight, Check
 } from 'lucide-react';
 import interviewQuestionsData from '../data/interview_questions.json';
 import { updateInterviewProgress } from '../api';
@@ -10,17 +11,14 @@ import MarkdownViewer from '../components/MarkdownViewer';
 
 export default function Round4InterviewPage() {
   const { refreshDashboard } = useLearner();
-  const [activeTab, setActiveTab] = useState('technical'); // 'technical', 'defense', 'projects_defense'
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [revealed, setRevealed] = useState({});
   const [questionProgress, setQuestionProgress] = useState({});
 
-  // Filter Round 4 questions
-  const r4Questions = interviewQuestionsData.filter(q => q.round === 4 || !q.round);
-  const categories = ['All', ...new Set(r4Questions.map(q => q.category).filter(Boolean))];
+  const categories = ['All', ...new Set(interviewQuestionsData.map(q => q.category).filter(Boolean))];
 
-  const filteredQuestions = r4Questions.filter(q => {
+  const filteredQuestions = interviewQuestionsData.filter(q => {
     const matchesCat = selectedCategory === 'All' || q.category === selectedCategory;
     const matchesSearch = !searchQuery || 
       q.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -50,282 +48,202 @@ export default function Round4InterviewPage() {
   };
 
   return (
-    <div className="space-y-8 animate-fadeIn">
+    <div className="space-y-8 animate-fadeIn pb-12">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2 mb-2">
             <span className="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20">
-              Round 4 Final Technical Round
+              Module C: Technical Interview
             </span>
             <span className="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20">
-              One-to-One Interview (45 Mins, 5:00 PM)
+              Careers JD Specification • 45–60 Mins
             </span>
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight">
-            Round 4 — One-to-One Technical Interview
+            Technical & JavaScript Interview Deep Dive
           </h1>
-          <p className="text-slate-400 mt-1 max-w-3xl">
-            Prepare for deep conversational defense of your code, systems knowledge (OS, DBMS, Networks, OOP), database concurrency, and project architectural trade-offs.
+          <p className="text-slate-400 mt-1 max-w-3xl text-sm leading-relaxed">
+            Master conversational defense of JavaScript engine internals, React 18 Fiber reconciliation, Core Web Vitals optimization, live search architecture, and engineering trade-offs.
           </p>
         </div>
       </div>
 
-      {/* Main Tabs */}
-      <div className="flex flex-wrap items-center gap-2 p-1.5 bg-slate-900/80 border border-slate-800 rounded-xl">
-        <button
-          onClick={() => setActiveTab('technical')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
-            activeTab === 'technical'
-              ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30'
-              : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
-          }`}
-        >
-          <HelpCircle className="w-4 h-4" />
-          Technical Questions ({filteredQuestions.length})
-        </button>
+      {/* Filter and Search Bar */}
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+        <div className="relative w-full sm:w-80">
+          <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500" />
+          <input
+            type="text"
+            placeholder="Search interview questions by topic or keyword..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 bg-slate-950 border border-slate-800 rounded-xl text-xs text-white placeholder-slate-500 focus:outline-none focus:border-brand-500"
+          />
+        </div>
 
-        <button
-          onClick={() => setActiveTab('defense')}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
-            activeTab === 'defense'
-              ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/30'
-              : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
-          }`}
-        >
-          <Shield className="w-4 h-4" />
-          Coding Defense Mode (PADRE Framework)
-        </button>
+        <div className="flex items-center gap-2 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
+          {categories.map(c => (
+            <button
+              key={c}
+              onClick={() => setSelectedCategory(c)}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+                selectedCategory === c
+                  ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                  : 'bg-slate-800/60 text-slate-400 hover:text-white border border-slate-700/50'
+              }`}
+            >
+              {c}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* TAB 1: TECHNICAL INTERVIEW QUESTIONS */}
-      {activeTab === 'technical' && (
-        <div className="space-y-6">
-          {/* Filters Bar */}
-          <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex flex-col md:flex-row md:items-center gap-4 justify-between">
-            <div className="relative flex-1">
-              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
-              <input
-                type="text"
-                placeholder="Search interview topics, SQL, indexing, threads, deadlocks, TCP..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-lg bg-slate-950 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500"
-              />
-            </div>
+      {/* Question Cards List */}
+      <div className="space-y-6">
+        {filteredQuestions.map((q, idx) => {
+          const isRevealedAnswer = revealed[q.id]?.answer;
+          const isRevealedFollowup = revealed[q.id]?.followup;
+          const status = questionProgress[q.id] || 'NOT_STARTED';
 
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all ${
-                    selectedCategory === cat
-                      ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
-                      : 'bg-slate-950 border border-slate-800 text-slate-400 hover:text-white'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Questions Accordion List */}
-          <div className="space-y-4">
-            {filteredQuestions.map((q, idx) => {
-              const qState = questionProgress[q.id] || 'NOT_STARTED';
-              const rev = revealed[q.id] || {};
-
-              return (
-                <div
-                  key={q.id}
-                  className="bg-slate-900/60 border border-slate-800 hover:border-slate-700 rounded-2xl p-6 transition-all space-y-4"
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-                    <div className="space-y-2 flex-1">
-                      <div className="flex items-center gap-2">
-                        <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-800 text-slate-300">
-                          #{idx + 1}
-                        </span>
-                        <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                          {q.category || 'Technical'}
-                        </span>
-                      </div>
-                      <h3 className="text-base sm:text-lg font-bold text-white">
-                        {q.question}
-                      </h3>
-                      {q.intent && (
-                        <p className="text-xs text-slate-400 italic">
-                          Interviewer evaluation target: {q.intent}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Confident toggle */}
-                    <div className="shrink-0">
-                      <button
-                        onClick={() => handleStatusUpdate(q.id, qState === 'CONFIDENT' ? 'PRACTICING' : 'CONFIDENT')}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-all ${
-                          qState === 'CONFIDENT'
-                            ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm'
-                            : 'bg-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-700'
-                        }`}
-                      >
-                        <CheckCircle2 className="w-3.5 h-3.5" />
-                        {qState === 'CONFIDENT' ? 'Marked Confident' : 'Mark Confident'}
-                      </button>
-                    </div>
+          return (
+            <div
+              key={q.id || idx}
+              className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl space-y-5"
+            >
+              {/* Question Header */}
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-slate-800 pb-4">
+                <div className="space-y-1.5 flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase font-mono bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                      {q.category}
+                    </span>
+                    <span className="text-[11px] text-slate-500 font-mono">
+                      Target: FED-2026 Technical Round
+                    </span>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-800/80">
+                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug">
+                    {q.question}
+                  </h3>
+
+                  {q.intent && (
+                    <p className="text-xs text-slate-400 italic">
+                      Interviewer Intent: {q.intent}
+                    </p>
+                  )}
+                </div>
+
+                {/* Status Toggle */}
+                <div className="flex items-center gap-1.5 shrink-0 self-start sm:self-auto">
+                  {['NOT_STARTED', 'PRACTICING', 'CONFIDENT'].map((s) => (
                     <button
-                      onClick={() => toggleSection(q.id, 'answer')}
-                      className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                        rev.answer ? 'bg-blue-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                      key={s}
+                      onClick={() => handleStatusUpdate(q.id, s)}
+                      className={`px-2.5 py-1 rounded-lg text-[10px] font-bold uppercase transition-all ${
+                        status === s
+                          ? s === 'CONFIDENT'
+                            ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'
+                            : s === 'PRACTICING'
+                            ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                            : 'bg-slate-800 text-slate-300 border border-slate-700'
+                          : 'text-slate-500 hover:text-slate-300 bg-slate-950'
                       }`}
                     >
-                      {rev.answer ? 'Hide Answer' : 'Reveal Answer'}
+                      {s === 'CONFIDENT' ? '✓ Mastered' : s === 'PRACTICING' ? '⚡ In Progress' : 'To Learn'}
                     </button>
+                  ))}
+                </div>
+              </div>
 
-                    {q.framework && (
-                      <button
-                        onClick={() => toggleSection(q.id, 'framework')}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                          rev.framework ? 'bg-purple-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-                        }`}
-                      >
-                        {rev.framework ? 'Hide Key Points' : 'Show Key Points'}
-                      </button>
+              {/* Framework Blueprint */}
+              {q.framework && (
+                <div className="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-purple-400 font-mono">
+                    Response Blueprint / Structure
+                  </span>
+                  <p className="text-xs text-slate-300 font-mono">
+                    {q.framework}
+                  </p>
+                </div>
+              )}
+
+              {/* Model Answer Toggle */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <button
+                    onClick={() => toggleSection(q.id, 'answer')}
+                    className="flex items-center gap-2 text-xs font-bold text-brand-400 hover:text-brand-300"
+                  >
+                    <span>{isRevealedAnswer ? 'Hide Model Answer' : 'Reveal High-Scoring Model Answer'}</span>
+                    {isRevealedAnswer ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                  </button>
+
+                  {q.trap && (
+                    <span className="text-[11px] text-amber-400 flex items-center gap-1 font-mono">
+                      <AlertTriangle className="w-3.5 h-3.5" />
+                      <span>Watch out for candidate traps</span>
+                    </span>
+                  )}
+                </div>
+
+                {isRevealedAnswer && (
+                  <div className="p-5 rounded-xl bg-slate-950 border border-slate-800 space-y-4 animate-in fade-in duration-150">
+                    <div className="space-y-2">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-400 font-mono">
+                        Model Answer (Architectural Rigor)
+                      </span>
+                      <div className="text-xs text-slate-300 leading-relaxed whitespace-pre-wrap">
+                        {q.sample_answer}
+                      </div>
+                    </div>
+
+                    {q.body_markdown && (
+                      <div className="pt-2 border-t border-slate-800/80">
+                        <MarkdownViewer content={q.body_markdown} />
+                      </div>
                     )}
 
-                    {q.follow_up && (
-                      <button
-                        onClick={() => toggleSection(q.id, 'followup')}
-                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
-                          rev.followup ? 'bg-emerald-600 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-                        }`}
-                      >
-                        {rev.followup ? 'Hide Follow-up' : 'Show Follow-up'}
-                      </button>
+                    {q.bad_answer && (
+                      <div className="p-3 rounded-lg bg-red-950/20 border border-red-500/30 text-xs text-red-300 space-y-1">
+                        <span className="font-bold uppercase text-[10px] tracking-wider block">Weak / Rejection Response</span>
+                        <p>{q.bad_answer}</p>
+                      </div>
+                    )}
+
+                    {q.trap && (
+                      <div className="p-3 rounded-lg bg-amber-950/20 border border-amber-500/30 text-xs text-amber-300 space-y-1">
+                        <span className="font-bold uppercase text-[10px] tracking-wider block">Candidate Pitfall / Trap</span>
+                        <p>{q.trap}</p>
+                      </div>
                     )}
                   </div>
-
-                  {/* Revealed Content */}
-                  {rev.framework && q.framework && (
-                    <div className="p-4 rounded-xl bg-purple-950/20 border border-purple-500/20 text-xs text-purple-200 space-y-1">
-                      <div className="font-bold text-purple-300">Key Conceptual Framework:</div>
-                      <div>{q.framework}</div>
-                    </div>
-                  )}
-
-                  {rev.answer && q.sample_answer && (
-                    <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-500/20 text-xs text-slate-300 space-y-2">
-                      <div className="font-bold text-blue-300">Technical Answer:</div>
-                      <div className="leading-relaxed whitespace-pre-line">{q.sample_answer}</div>
-                    </div>
-                  )}
-
-                  {rev.followup && q.follow_up && (
-                    <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/20 text-xs text-emerald-200 space-y-1">
-                      <div className="font-bold text-emerald-300">Interviewer Follow-up Question:</div>
-                      <div>{q.follow_up}</div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
-
-      {/* TAB 2: CODING DEFENSE MODE (PADRE FRAMEWORK) */}
-      {activeTab === 'defense' && (
-        <div className="p-6 md:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-8">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <span className="px-2.5 py-1 text-xs font-bold uppercase rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                PADRE Defense Framework
-              </span>
-            </div>
-            <h2 className="text-2xl font-extrabold text-white">
-              Defend Your Live-Coding Solution
-            </h2>
-            <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
-              DeltaX technical interviewers do not just check if your code compiles; they probe your architectural reasoning, complexity justification, and dry-run execution.
-            </p>
-          </div>
-
-          {/* The 5 Steps of PADRE */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-            {[
-              { letter: 'P', title: 'Problem & Invariant', desc: 'State the mathematical invariant or array property you are exploiting.' },
-              { letter: 'A', title: 'Approach Justification', desc: 'Defend why this approach was chosen over brute-force (e.g. O(N) vs O(N^2)).' },
-              { letter: 'D', title: 'Dry Run', desc: 'Trace a 3-element sample step-by-step showing pointer and variable states.' },
-              { letter: 'R', title: 'Rigorous Complexity', desc: 'State exact Time and Space bounds with mathematical justification.' },
-              { letter: 'E', title: 'Edge Cases', desc: 'Volunteer boundary conditions: empty array, negative numbers, integer overflow.' }
-            ].map((p, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 space-y-2">
-                <div className="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-300 font-extrabold text-sm flex items-center justify-center">
-                  {p.letter}
-                </div>
-                <div className="text-sm font-bold text-white">{p.title}</div>
-                <div className="text-xs text-slate-400 leading-relaxed">{p.desc}</div>
+                )}
               </div>
-            ))}
-          </div>
 
-          {/* The 8 Defense Probes Checklist */}
-          <div className="space-y-4 pt-4 border-t border-slate-800">
-            <h3 className="text-base font-bold text-white">
-              Master the 8 Standard Technical Defense Questions:
-            </h3>
+              {/* Follow-up Questions Toggle */}
+              {q.follow_up && (
+                <div className="pt-2 border-t border-slate-800">
+                  <button
+                    onClick={() => toggleSection(q.id, 'followup')}
+                    className="flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-white"
+                  >
+                    <span>{isRevealedFollowup ? 'Hide Follow-Up Question' : 'View Expected Follow-Up Question'}</span>
+                    {isRevealedFollowup ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                  </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                {
-                  q: "1. \"Can you optimize the space complexity?\"",
-                  tip: "If you used an O(N) hash map or auxiliary array, consider if two pointers or bit manipulation could do in-place transformations in O(1) space."
-                },
-                {
-                  q: "2. \"What happens if input size N = 10^9?\"",
-                  tip: "An O(N) scan will TLE (takes ~10 seconds). You must find an O(log N) binary search on answer or O(1) mathematical closed-form formula."
-                },
-                {
-                  q: "3. \"What happens if the array contains negative numbers?\"",
-                  tip: "Prefix sum and sliding window monotonicity breaks when negatives are introduced! A sliding window can no longer contract monotonically; use Hash Map of prefix sums."
-                },
-                {
-                  q: "4. \"How do you prevent integer overflow in mid calculation?\"",
-                  tip: "Never write `mid = (low + high) / 2` because `low + high` can overflow 32-bit signed integer. Always write `mid = low + (high - low) / 2`."
-                },
-                {
-                  q: "5. \"Why is String concatenation inside a loop bad?\"",
-                  tip: "Strings are immutable in Java and Python. `s += char` reallocates and copies the entire string each iteration, resulting in O(N^2) memory churn. Use StringBuilder or list comprehension."
-                },
-                {
-                  q: "6. \"Why is B+ Tree index preferred over Hash index in DBMS?\"",
-                  tip: "Hash index only supports exact O(1) equality matches (`WHERE id = 5`). B+ Tree stores keys sorted at leaf level, supporting O(log N) lookups plus O(K) range queries (`WHERE id BETWEEN 5 AND 20`) and `ORDER BY`."
-                },
-                {
-                  q: "7. \"What is the difference between Process and Thread context switching?\"",
-                  tip: "Process switch requires invalidating virtual memory mappings (flushing TLB cache), which is expensive (~1000s of cycles). Thread switch shares address space, only swapping registers and stack pointers (~100s of cycles)."
-                },
-                {
-                  q: "8. \"What is the 3-way TCP handshake?\"",
-                  tip: "Client sends SYN(seq=x) -> Server replies SYN-ACK(seq=y, ack=x+1) -> Client sends ACK(seq=x+1, ack=y+1). Establishes reliable bidirectional sequence synchronization."
-                }
-              ].map((item, idx) => (
-                <div key={idx} className="p-4 rounded-xl bg-slate-950/40 border border-slate-800 space-y-2">
-                  <div className="text-sm font-bold text-purple-300">{item.q}</div>
-                  <div className="text-xs text-slate-300 leading-relaxed">{item.tip}</div>
+                  {isRevealedFollowup && (
+                    <div className="mt-2.5 p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-purple-300 font-mono">
+                      <strong className="text-white">Interviewer Follow-Up: </strong>
+                      {q.follow_up}
+                    </div>
+                  )}
                 </div>
-              ))}
+              )}
             </div>
-          </div>
-        </div>
-      )}
+          );
+        })}
+      </div>
     </div>
   );
 }

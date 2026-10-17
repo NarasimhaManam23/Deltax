@@ -71,7 +71,7 @@ def validate_all():
 
             if not p.get("statement"):
                 report["coding_problems"]["missing_statements"] += 1
-            if not p.get("starter_code_python") or not p.get("starter_code_java"):
+            if not (p.get("starter_code_javascript") or p.get("starter_code_sql") or p.get("starter_code_python")):
                 report["coding_problems"]["missing_starter_code"] += 1
 
     # 3. Validate Interview Questions

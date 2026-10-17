@@ -36,6 +36,11 @@ class QuestionResponse(BaseModel):
     option_d: str
     correct_answer: Optional[str] = None
     explanation: Optional[str] = None
+    evidence_category: Optional[str] = "Original practice question"
+    confidence_label: Optional[str] = "Original Practice"
+    source_url: Optional[str] = None
+    source_title: Optional[str] = None
+    question_type: Optional[str] = "mcq"
 
 # Quiz Schemas
 class QuizStartRequest(BaseModel):
@@ -104,11 +109,18 @@ class CodingProblemResponse(BaseModel):
     approach: Optional[str] = None
     starter_code_java: Optional[str] = None
     starter_code_python: Optional[str] = None
+    starter_code_javascript: Optional[str] = None
+    starter_code_sql: Optional[str] = None
+    test_cases: Optional[List[Dict[str, Any]]] = None
+    sample_data: Optional[Dict[str, Any]] = None
+    hints: Optional[List[str]] = None
+    evidence_category: Optional[str] = "Original practice question"
+    confidence_label: Optional[str] = "Original Practice"
     is_solved: Optional[bool] = False
 
 class CodingSubmitRequest(BaseModel):
     problem_id: str
-    language: str = "python"
+    language: str = "javascript"
     code: str
     status: str = "solved"
 
@@ -120,6 +132,66 @@ class CodingAttemptResponse(BaseModel):
     language: str
     status: str
     submitted_at: datetime
+
+# SQL Execution Sandbox Schemas
+class SqlRunRequest(BaseModel):
+    problem_id: Optional[str] = None
+    query: str
+
+class SqlRunResponse(BaseModel):
+    success: bool
+    columns: List[str] = []
+    rows: List[List[Any]] = []
+    row_count: int = 0
+    execution_time_ms: float = 0.0
+    error: Optional[str] = None
+    passed_validation: Optional[bool] = None
+    diff_message: Optional[str] = None
+
+# Mistake Notebook Schemas
+class MistakeItemResponse(BaseModel):
+    question_id: str
+    question_text: str
+    subject: str
+    topic: str
+    difficulty: str
+    option_a: str
+    option_b: str
+    option_c: str
+    option_d: str
+    selected_option: Optional[str]
+    correct_option: str
+    explanation: str
+    mistake_count: int
+    last_attempted_at: datetime
+
+# Research Schemas
+class ResearchSourceResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    title: str
+    url: str
+    source_type: str
+    date_accessed: str
+    reliability: str
+    findings: str
+    evidence_category: str
+    confidence_label: str
+
+class CandidateExperienceResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: str
+    source_platform: str
+    source_url: Optional[str] = None
+    date_reported: str
+    role: str
+    summary: str
+    topics_mentioned: List[str]
+    difficulty_rating: str
+    verdict_notes: Optional[str] = None
+    evidence_category: str
 
 # Interview Schemas
 class InterviewQuestionResponse(BaseModel):

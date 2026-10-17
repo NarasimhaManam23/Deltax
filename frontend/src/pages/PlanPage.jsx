@@ -60,14 +60,14 @@ export default function PlanPage() {
               Execution Roadmap
             </span>
             <span className="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider rounded-md bg-blue-500/10 text-blue-400 border border-blue-500/20">
-              25 – 29 September 2026
+              FirstLabs FED-2026 Drive
             </span>
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight">
-            4-Day Master Preparation Schedule
+            Preparation Plan & Roadmap
           </h1>
-          <p className="text-slate-400 mt-1 max-w-3xl">
-            Hour-by-hour operational battle plan leading up to the 29 September drive at RVR & JC College of Engineering. Check off each deliverable as you complete it.
+          <p className="text-slate-400 mt-1 max-w-3xl text-sm leading-relaxed">
+            Personalised, structured study schedule prioritizing JavaScript fundamentals, output prediction, DOM mechanics, authentic SQL queries, and timed mock tests.
           </p>
         </div>
 

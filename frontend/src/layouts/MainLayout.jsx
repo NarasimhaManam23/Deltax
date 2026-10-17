@@ -3,7 +3,6 @@ import { NavLink, Outlet, useLocation, Link } from 'react-router-dom';
 import {
   LayoutDashboard,
   HelpCircle,
-  MessageSquare,
   Code2,
   Users2,
   FileCheck2,
@@ -22,7 +21,9 @@ import {
   Moon,
   Sun,
   ShieldAlert,
-  ChevronRight
+  ChevronRight,
+  RotateCcw,
+  Database
 } from 'lucide-react';
 import { useLearner } from '../context/LearnerContext';
 import CountdownTimer from '../components/CountdownTimer';
@@ -39,16 +40,15 @@ export default function MainLayout() {
       group: 'Overview',
       items: [
         { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
-        { name: '4-Day Crash Plan', path: '/plan', icon: CalendarDays, badge: 'Crucial' },
+        { name: 'Preparation Plan', path: '/plan', icon: CalendarDays },
       ]
     },
     {
-      group: 'Selection Rounds',
+      group: 'Assessment Modules',
       items: [
-        { name: 'Round 1: MCQ Test', path: '/round-1', icon: HelpCircle, badge: '50 Qs' },
-        { name: 'Round 2: AI Interview', path: '/round-2', icon: MessageSquare, badge: 'Voice' },
-        { name: 'Round 3: Coding', path: '/round-3', icon: Code2, badge: '30m/120m' },
-        { name: 'Round 4: Technical', path: '/round-4', icon: Users2, badge: '45m' },
+        { name: 'Round 1 — Screening', path: '/round-1', icon: HelpCircle, badge: 'MCQs' },
+        { name: 'Round 2 — Coding + SQL', path: '/round-2', icon: Code2, badge: 'JS & SQL' },
+        { name: 'Technical Interview', path: '/round-4', icon: Users2, badge: '45m' },
       ]
     },
     {
@@ -56,16 +56,17 @@ export default function MainLayout() {
       items: [
         { name: 'Mock Tests Hub', path: '/mocks', icon: FileCheck2 },
         { name: 'Study Library', path: '/study', icon: BookOpen },
-        { name: '20 Cheat Sheets', path: '/cheat-sheets', icon: FileText },
-        { name: 'Research & Evidence', path: '/research', icon: Compass },
+        { name: 'Cheat Sheets', path: '/cheat-sheets', icon: FileText },
+        { name: 'Research Library', path: '/research', icon: Compass },
       ]
     },
     {
-      group: 'Personal',
+      group: 'Personal & Review',
       items: [
+        { name: 'Mistake Notebook', path: '/mistakes', icon: RotateCcw, badge: 'Review' },
         { name: 'Progress Analytics', path: '/analytics', icon: BarChart3 },
         { name: 'Saved Bookmarks', path: '/bookmarks', icon: Bookmark },
-        { name: 'Settings & Export', path: '/settings', icon: Settings },
+        { name: 'Settings & Data', path: '/settings', icon: Settings },
       ]
     }
   ];
@@ -80,15 +81,17 @@ export default function MainLayout() {
         {/* Brand Header */}
         <div className="p-4 border-b border-slate-800/80">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-brand-500/20 text-white font-black text-lg">
-              Δ
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 via-cyan-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-brand-500/20 text-white font-black text-sm">
+              FL
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-white text-base tracking-tight">DeltaX</span>
-                <span className="text-[10px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-400 border border-brand-500/30">APE '27</span>
+                <span className="font-extrabold text-white text-base tracking-tight">FirstLabs</span>
+                <span className="text-[10px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-400 border border-brand-500/30">
+                  FED-2026
+                </span>
               </div>
-              <p className="text-[11px] text-slate-400 font-medium">Prep Engine • 29 Sept</p>
+              <p className="text-[11px] text-slate-400 font-medium truncate">FirstHire • ₹8 LPA Base</p>
             </div>
           </Link>
         </div>
@@ -122,7 +125,7 @@ export default function MainLayout() {
                       </div>
                       {item.badge && (
                         <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
-                          item.badge === 'Crucial' 
+                          item.badge === 'Review' 
                             ? 'bg-red-500/20 text-red-400 border border-red-500/30' 
                             : 'bg-slate-800 text-slate-400'
                         }`}>
@@ -172,7 +175,7 @@ export default function MainLayout() {
               <Menu className="w-5 h-5" />
             </button>
 
-            {/* Countdown Badge */}
+            {/* Assessment Status Badge */}
             <div className="hidden sm:block">
               <CountdownTimer compact={true} />
             </div>
@@ -197,13 +200,13 @@ export default function MainLayout() {
               <span>{dashboard?.streak_days || 1}d Streak</span>
             </div>
 
-            {/* 4-Day Plan Link */}
+            {/* Quick Plan Link */}
             <Link
               to="/plan"
               className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-brand-500/15 border border-brand-500/30 text-brand-400 text-xs font-semibold hover:bg-brand-500/25 transition-colors"
             >
               <Zap className="w-3.5 h-3.5" />
-              <span>4-Day Plan</span>
+              <span>Prep Plan</span>
             </Link>
           </div>
         </header>
@@ -223,8 +226,11 @@ export default function MainLayout() {
           <div className="relative w-72 max-w-full bg-[#0b101d] border-r border-slate-800 flex flex-col h-full z-10 animate-in slide-in-from-left duration-200">
             <div className="p-4 border-b border-slate-800 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center font-bold text-white">Δ</div>
-                <span className="font-extrabold text-white text-base">DeltaX Prep</span>
+                <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center font-bold text-white text-xs">FL</div>
+                <div>
+                  <span className="font-extrabold text-white text-sm block">FirstLabs Prep</span>
+                  <span className="text-[10px] text-slate-400 block">FED-2026</span>
+                </div>
               </div>
               <button onClick={() => setMobileMenuOpen(false)} className="p-1 rounded-lg text-slate-400 hover:text-white">
                 <X className="w-5 h-5" />

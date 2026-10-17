@@ -5,12 +5,12 @@ from typing import List
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(case_sensitive=True)
 
-    PROJECT_NAME: str = "DeltaX Prep — Associate Product Engineer 2027"
+    PROJECT_NAME: str = "FirstLabs Prep — FED-2026"
     API_V1_STR: str = "/api"
     ENVIRONMENT: str = os.getenv("ENVIRONMENT", "development")
     
     # Database URL: defaults to local SQLite, uses PostgreSQL when DATABASE_URL is set (e.g. on Render)
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./deltax_prep.db")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./firstlabs_prep.db")
     
     # CORS Origins
     CORS_ORIGINS: str = os.getenv("CORS_ORIGINS", "*")

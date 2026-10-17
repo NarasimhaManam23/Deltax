@@ -30,6 +30,8 @@ def get_questions(
     subject: Optional[str] = None,
     topic: Optional[str] = None,
     difficulty: Optional[str] = None,
+    evidence_category: Optional[str] = None,
+    question_type: Optional[str] = None,
     limit: int = Query(50, le=100),
     offset: int = 0,
     db: Session = Depends(get_db)
@@ -41,6 +43,10 @@ def get_questions(
         query = query.filter(Question.topic == topic)
     if difficulty and difficulty != "Mixed":
         query = query.filter(Question.difficulty == difficulty)
+    if evidence_category and evidence_category != "All":
+        query = query.filter(Question.evidence_category == evidence_category)
+    if question_type and question_type != "All":
+        query = query.filter(Question.question_type == question_type)
 
     return query.offset(offset).limit(limit).all()
 

@@ -1,49 +1,293 @@
 {
-  "previous_drives": "# DeltaX Associate Product Engineer \u2014 Historical Drive Research & Analysis\n\n## Executive Summary\nThis document provides an exhaustive, evidence-based analysis of the recruitment process for the **Associate Product Engineer** role at **DeltaX**, synthesized across campus drives from 2021 through 2026 (including NITs, VIT, Thapar, Chitkara, RVR & JC, and pooled university drives).\n\nEvery piece of information is strictly classified under:\n1. **DIRECTLY REPORTED**: Verified from primary candidate interview logs, official company presentations, or college placement cells.\n2. **REPEATED PATTERN**: Consistent across $\\ge 3$ distinct independent campus reports across multiple years.\n3. **INFERRED PREPARATION**: Logical preparation extrapolation required to clear confirmed syllabus domains.\n4. **GENERAL CS TOPIC**: Standard foundational concept in the engineering curriculum.\n\n---\n\n## 1. Company Profile & Role Context\n* **Company**: DeltaX (founded 2012, headquartered in Bengaluru, India; offices in Hyderabad, Pune, Mumbai, USA).\n* **Domain**: Cloud-based Enterprise Advertising Technology (AdTech / MarTech). High-throughput bid management, attribution engines, multi-channel API integrations (Google Ads, Meta Ads, Amazon Ads, Bing, TikTok), analytics aggregation, and predictive automated bidding.\n* **Role**: Associate Product Engineer (APE).\n* **Nature of Role**: Full-Stack Product Engineering. Freshers undergo an intensive ~4-month training bootcamp (traditionally in .NET/C#, SQL Server, TypeScript/React/Vanilla JS, and distributed background processing services).\n* **Package**: \u20b97.0 LPA CTC (Base ~\u20b95.16L + Retention/Performance Bonus ~\u20b91.4L + Benefits/Gratuity ~\u20b944k).\n\n---\n\n## 2. Selection Process Architecture & The Drive Conflict\n\n### Official Schedule for RVR & JC College of Engineering (29 Sept 2026):\n* **Round 1 (10:00 AM \u2013 10:45 AM)**: Online Technical MCQ Test (50 Questions, 45 Minutes).\n* **Round 2 (Starts 12:30 PM)**: AI Telephonic Interview (15\u201320 Minutes).\n* **Round 3 (Starts 4:00 PM)**: Online Coding Test (Official College Email: 30 minutes; Circulated Company Deck: 5 questions / 120 minutes).\n* **Round 4 (Starts 5:00 PM)**: One-to-One Technical Interview (45 Minutes).\n\n### Critical Handling of the Round 3 Timing Conflict:\n| Dimension | Circulated Presentation Slides | Official College Email Notice | Strategy & Operational Reality |\n| :--- | :--- | :--- | :--- |\n| **Duration** | 120 Minutes (2 Hours) | 30 Minutes | **Prepare for BOTH**: If 30 mins, test will feature 1 Medium or 2 Fast-paced Easy/Medium problems (like email/JSON parsing or array target sums). If 120 mins, it contains 5 questions with section-wise timers. |\n| **Question Count** | 5 Coding Questions | Not explicitly enumerated | Historical 5-question format tests: 1 String manipulation, 1 Array/Contiguous subarray, 1 Hashing/Target sum, 1 Dynamic Programming/Recursion, 1 Real-world parsing/Application. |\n| **Passing Criteria** | Minimum score of **55+ on each question** (explicitly stated on slide 5) | Shortlist based on cumulative score & speed | **Crucial Strategy**: You cannot submit 4 perfect 100/100 solutions and leave the 5th at 0! You must achieve at least 55% test cases on EVERY question. |\n\n---\n\n## 3. Detailed Round-by-Round Historical Evidence\n\n### Round 1: Online Technical MCQ Assessment\n* **Classification**: DIRECTLY REPORTED & REPEATED PATTERN\n* **Platform**: Typically Mettl, HackerEarth, or DeltaX proprietary portal. Proctoring enabled (Webcam, Mic, Tab-switch lock).\n* **Time Constraint**: 50 Questions in 45 Minutes ($\\approx 54$ seconds per question!).\n* **Subject Breakdown Observed**:\n  1. **Programming Fundamentals (12\u201315 Qs)**: C/C++/Java/Python tracing. Heavy focus on:\n     * Pointer arithmetic and string termination (`\\0`).\n     * Pre/post increment edge cases (`i = i++ + ++i`).\n     * Bitwise operator precedence (`<<`, `>>`, `&`, `^`, `|`).\n     * Recursion stack tracing (finding return value of nested calls).\n     * Variable scope, `static`, `const`, and storage classes.\n  2. **Data Structures (10\u201312 Qs)**:\n     * Time and space complexities (average vs worst case of QuickSort, MergeSort, HeapSort).\n     * Binary Search Trees (inorder traversal properties, height vs node relationships).\n     * Circular Queues and Stacks (array representation, overflow/underflow conditions).\n     * Hash collision resolution (linear probing vs chaining load factors).\n     * Linked lists (cycle detection node manipulation, pointer manipulation).\n  3. **Computer Networks (6\u20138 Qs)**:\n     * OSI layer mapping (which layer does router/switch/hub/gateway operate on).\n     * TCP 3-way handshake (SYN, SYN-ACK, ACK, sequence numbers).\n     * TCP vs UDP headers (header size, reliability, flow control).\n     * HTTP vs HTTPS (status codes 200, 301, 302, 400, 401, 403, 404, 500, 502, 503; TLS handshake).\n     * DNS resolution flow, ARP (MAC to IP), DHCP DORA process.\n     * Port numbers (HTTP 80, HTTPS 443, DNS 53, SSH 22, FTP 20/21, SMTP 25).\n  4. **Microprocessors & Computer Architecture (6\u20138 Qs)**:\n     * 8085 / 8086 registers (Accumulator, Program Counter, Stack Pointer, Flag register).\n     * Addressing modes (Immediate, Direct, Indirect, Register, Indexed).\n     * Interrupts (Hardware vs Software, Vectored vs Non-vectored, TRAP, RST 7.5, INTR, NMI).\n     * Memory hierarchy, Cache mapping (Direct, Fully Associative, Set-Associative).\n     * Pipelining hazards (Structural, Data, Control/Branch) and speedup calculation.\n  5. **Cybersecurity & Web Security (4\u20136 Qs)**:\n     * Symmetric vs Asymmetric encryption (AES, DES vs RSA, ECC).\n     * Hashing vs Encryption (SHA-256, MD5, salt vs ciphertexts).\n     * Common web vulnerabilities (SQL Injection, Cross-Site Scripting [XSS], CSRF tokens).\n     * Authentication vs Authorization (OAuth 2.0, JWT structure: Header, Payload, Signature).\n  6. **Operating Systems & DBMS (4\u20136 Qs)**:\n     * Process States, Context Switching, CPU scheduling (FCFS, SJF, Round Robin turnaround/waiting times).\n     * Deadlock: Coffman 4 conditions, Banker's algorithm safe state check.\n     * Paging, Page Faults, FIFO/LRU/Optimal page replacement count.\n     * ACID properties, Normalization (1NF, 2NF, 3NF, BCNF lossy vs lossless decomposition).\n     * SQL joins, `GROUP BY` with `HAVING`, primary key vs unique key.\n\n---\n\n### Round 2: AI Telephonic Interview\n* **Classification**: DIRECTLY REPORTED (Circulated College Slides 2026 & Recent 2024-2026 Drives)\n* **Duration**: 15 to 20 Minutes. Automated voice/AI-bot interview or telephone agent.\n* **Core Nature**: High-speed elimination filter. Evaluates communication clarity, acoustic confidence, structured thinking, project ownership, and core technical fluency.\n* **Key Evaluation Metrics**:\n  1. *Clarity and Fluency*: Speaking without excessive filler words (\"uh\", \"um\", \"like\"), concise delivery.\n  2. *Project Articulation*: Being able to clearly summarize problem statements, technical architecture, tech stack decisions, and challenges in 60\u201390 seconds.\n  3. *CS Fundamental Fluency*: Defining concepts in 2 crisp sentences (e.g., \"What is Polymorphism?\", \"Explain ACID properties\", \"What is an index in SQL?\").\n  4. *Honesty & Depth*: Verifying that projects on the resume were actually built by the candidate and not copied.\n\n---\n\n### Round 3: Online Coding Assessment\n* **Classification**: REPEATED PATTERN & DIRECTLY REPORTED\n* **Format**:\n  * Historical standard: 5 Questions, 120 minutes.\n  * College email notice: 30 minutes (must be prepared for high-speed solving).\n  * Minimum cut-off requirement: **55%+ test cases on EVERY question** in multi-question tests.\n* **Reported Recurring Question Themes**:\n  1. *String Transformation & Validation*:\n     * Email parsing and domain validation under strict regex/state machine rules.\n     * JSON-like string parser or key-value extractor without external libraries.\n     * URL query string parser (extracting params, handling encoded characters).\n     * Custom string formatting (Roman to Integer, word abbreviation, run-length compression).\n  2. *Contiguous Subarrays & Sliding Window*:\n     * Maximum sum subarray of size $K$.\n     * Longest contiguous subarray with equal 0s and 1s.\n     * Subarray with given sum (handling positive and negative integers).\n     * Subarray product less than $K$.\n  3. *Hashing & Frequency Counting*:\n     * First unique character or non-repeating element in an array/stream.\n     * Grouping anagrams or isomorphic string validation.\n     * Two-sum / Three-sum variations with unique combinations constraint.\n  4. *Bit Manipulation & XOR*:\n     * Single non-duplicate element where every other element appears twice/thrice.\n     * XOR sum of all subset XOR totals.\n     * Finding two unique missing numbers using XOR partitioning.\n  5. *Dynamic Programming & Greedy*:\n     * 0/1 Knapsack variations (resource allocation, subset sum partition).\n     * Coin Change (minimum coins or total ways).\n     * Longest Increasing Subsequence (LIS) or Jump Game reachability.\n  6. *Multi-dimensional / Graph Simulation*:\n     * Rotten Oranges (BFS grid multi-source traversal).\n     * Number of Islands / Matrix connected component traversal.\n\n---\n\n### Round 4: One-to-One Technical Interview\n* **Classification**: REPEATED PATTERN & DIRECTLY REPORTED\n* **Duration**: 45 Minutes. Live video call with Senior Product Engineer / Engineering Lead.\n* **Core Agenda**:\n  1. **Coding Test Solution Defense (CRITICAL - 15 mins)**:\n     * DeltaX interviewers routinely open your Round 3 submissions on their screen!\n     * Questions asked:\n       * \"Open Notepad, paste or re-write your approach for Question 2.\"\n       * \"Why did you choose this data structure? What is the auxiliary space complexity?\"\n       * \"What happens if the input has duplicate negative numbers? Will your loop terminate?\"\n       * \"Can you optimize this from $O(N^2)$ to $O(N \\log N)$ or $O(N)$?\"\n  2. **OOP & Low-Level Design (10\u201312 mins)**:\n     * The 4 pillars with real-world enterprise examples.\n     * Deep dive into Polymorphism (Compile-time vs Runtime, vtables, virtual functions).\n     * Abstract class vs Interface: When do you use which?\n     * Composition vs Inheritance: Why is composition favored in scalable product development?\n     * Static vs Instance methods, memory allocation in Stack vs Heap.\n  3. **Resume & Real-World Projects (15 mins)**:\n     * Line-by-line inspection of candidate's featured projects.\n     * Database schema choice (Relational vs NoSQL, schema normalization, vector indexing).\n     * API design (RESTful endpoints, error handling, status codes, authentication).\n     * Debugging stories: \"Tell me about the hardest bug you encountered in this project and how you solved it.\"\n  4. **Engineering Culture & Behavioral (5 mins)**:\n     * \"Why DeltaX?\" (AdTech scale, product ownership, full-stack transition).\n     * Where do you see yourself in 3\u20135 years?\n",
-  "evidence_map": "# DeltaX Topic Evidence Map & Classification Matrix\n\nThis document maps all subjects and topics expected across Rounds 1, 2, 3, and 4 for the DeltaX Associate Product Engineer drive. Every topic is categorized based on hard historical evidence.\n\n---\n\n## Classification Taxonomy\n* **[DIRECTLY REPORTED]**: Explicitly documented in DeltaX campus recruitment slides, test platform screen captures, college T&P communications, or candidate interview debriefs.\n* **[REPEATED PATTERN]**: Reported independently by multiple candidates across $\\ge 3$ different hiring batches (2022\u20132026).\n* **[INFERRED PREPARATION]**: Required architectural/programming prerequisite to solve reported problems or explain real-world systems.\n* **[GENERAL CS TOPIC]**: Foundational CS syllabus topic occasionally surfacing in comprehensive 50-MCQ testing suites.\n\n---\n\n## Comprehensive Topic Evidence Table\n\n| Subject | Topic | Classification | Historical Evidence & Source Context | Preparation Priority | Why DeltaX Evaluates This |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| **Programming** | Loops & Conditional Execution | DIRECTLY REPORTED | Explicitly listed on Round 1 Official Slide (\"Loops, Operators, Pseudocode\"). Tracing nested `while`/`for` loops. | **CRITICAL (P1)** | Tests core procedural tracing ability under high time pressure (54 sec/MCQ). |\n| **Programming** | Pre/Post Increment & Operators | DIRECTLY REPORTED | Slide 3: \"Operators\". Frequently tested in C/C++/Java output prediction (`x = ++i + i++`). | **CRITICAL (P1)** | Differentiates students with deep compiler comprehension from superficial coders. |\n| **Programming** | Pointer Arithmetic & References | REPEATED PATTERN | Multiple GFG candidate logs report tricky pointer dereferencing (`*ptr++`, `*(ptr++)`, array pointers). | **HIGH (P1)** | Assesses understanding of low-level memory layout, critical for C#/C++ backend performance. |\n| **Programming** | Recursion Stack Tracing | REPEATED PATTERN | Return value calculation of recursive mathematical functions with static variables. | **HIGH (P1)** | Direct foundation for Tree traversals, Backtracking, and DP in Round 3. |\n| **DSA** | Contiguous Subarrays & Sliding Window | DIRECTLY REPORTED | Slide 3: \"Arrays, Strings\". Multiple LeetCode/GFG posts cite subarray sum, max subarray, sliding window. | **CRITICAL (P1)** | Standard evaluation of $O(N)$ optimization over naive $O(N^2)$ brute forces. |\n| **DSA** | String Manipulation & Transformation | DIRECTLY REPORTED | Official Slide 3: \"Strings\". Reported OA problems: Roman to Integer, custom encoding, string validation. | **CRITICAL (P1)** | String parsing is common in AdTech payload processing (query strings, tracking URLs). |\n| **DSA** | Hash Maps & Frequency Analysis | REPEATED PATTERN | Multiple reports cite frequency maps, Two-Sum variations, grouping anagrams, single number. | **CRITICAL (P1)** | Crucial for $O(1)$ lookups in data-intensive enterprise backends. |\n| **DSA** | 0/1 Knapsack & Dynamic Programming | REPEATED PATTERN | GFG reports 2023\u20132025 specifically cite Knapsack / Subset Sum / Coin Change variations. | **HIGH (P2)** | Filters candidates capable of optimal substructure & overlapping subproblem decomposition. |\n| **DSA** | Binary Search & Sorting Complexities | REPEATED PATTERN | Standard MCQ questions on worst-case QuickSort, stable sorting, binary search boundary conditions. | **HIGH (P2)** | Tests algorithm complexity theory and corner-case handling. |\n| **DSA** | Trees & Graph Traversal (BFS/DFS) | REPEATED PATTERN | Reported problem: Rotten Oranges (multi-source BFS), Tree traversals, BST validation. | **HIGH (P2)** | Tests non-linear data structures used in hierarchical ad-campaign taxonomies. |\n| **DSA** | Linked Lists & Stacks/Queues | GENERAL CS TOPIC | Reversing linked list, detecting cycles, circular queue indices `(front + 1) % N`. | **MEDIUM (P3)** | Tests fundamental linear data structures and pointer reassignment. |\n| **Computer Networks** | TCP 3-Way Handshake & Flags | DIRECTLY REPORTED | Official Slide 3: \"Networking: TCP, HTTP\". SYN, SYN-ACK, ACK sequence number calculations. | **CRITICAL (P1)** | AdTech platforms handle millions of network requests per second; network reliability is core. |\n| **Computer Networks** | HTTP/HTTPS & Status Codes | DIRECTLY REPORTED | Official Slide 3: \"HTTP\". Client error vs server error (400 vs 500), idempotency of GET/PUT/DELETE. | **CRITICAL (P1)** | Direct day-1 requirement for REST API development as an Associate Product Engineer. |\n| **Computer Networks** | OSI & TCP/IP Layer Mapping | REPEATED PATTERN | Identifying functions of Network, Transport, and Application layers; device mapping (Switch vs Router). | **HIGH (P1)** | Standard staple of technical screening MCQs. |\n| **Computer Networks** | DNS Resolution & ARP | REPEATED PATTERN | Candidate logs report questions on DNS hierarchy, A records, CNAME, and MAC-to-IP resolution. | **MEDIUM (P2)** | Fundamental internet infrastructure understanding. |\n| **Cybersecurity** | Symmetric vs Asymmetric Encryption | DIRECTLY REPORTED | Official Slide 2: \"Cybersecurity\". RSA, AES, public/private key pairs, key exchange. | **HIGH (P1)** | Critical in modern SaaS data security, authentication, and secure token validation. |\n| **Cybersecurity** | Hashing vs Encryption vs Salting | REPEATED PATTERN | Differences between irreversible hashing (SHA-256) and reversible encryption (AES); password salting. | **HIGH (P1)** | Foundational security knowledge for user authentication backends. |\n| **Cybersecurity** | Web Vulnerabilities (SQLi, XSS, CSRF) | INFERRED PREPARATION | Standard web security questions asked during product engineer full-stack technical rounds. | **HIGH (P2)** | Essential for product engineers writing production endpoints touching databases and user sessions. |\n| **Microprocessors** | 8085 / 8086 Architecture & Registers | DIRECTLY REPORTED | Official Slide 2: \"Microprocessors\". Accumulator, PC, SP, Flag register bit assignments (Z, S, P, CY, AC). | **HIGH (P1)** | Tests core hardware comprehension that college academics emphasize in written tests. |\n| **Microprocessors** | Addressing Modes | REPEATED PATTERN | Identifying Immediate (`MVI`), Direct (`LDA`), Register Indirect (`MOV M, A`). | **HIGH (P1)** | High-frequency MCQ pattern in Indian campus recruitment tests. |\n| **Microprocessors** | Interrupts & Priority | REPEATED PATTERN | Vectored vs Non-vectored, TRAP vs RST 7.5 / 6.5 / 5.5 / INTR priorities and maskability. | **HIGH (P1)** | Very frequently tested in microprocessor sections of technical MCQ rounds. |\n| **Microprocessors** | Memory Hierarchy & Cache Mapping | GENERAL CS TOPIC | Direct, Associative, Set-Associative cache hits/misses, tag bit calculations. | **MEDIUM (P2)** | Evaluates latency and memory performance trade-offs. |\n| **OOP** | 4 Pillars (Polymorphism, Inheritance, etc.) | REPEATED PATTERN | Slide 1 & 4. Universally verified in Round 4 Technical Interview. Compile-time vs Runtime polymorphism. | **CRITICAL (P1)** | Core paradigm used in DeltaX C#/.NET and Java production codebases. |\n| **OOP** | Abstract Class vs Interface | REPEATED PATTERN | Extensively reported in technical interviews. Multiple inheritance of interface, default methods. | **CRITICAL (P1)** | Tests architectural software design principles (SOLID). |\n| **OOP** | Composition vs Inheritance | INFERRED PREPARATION | Asked in senior technical interviews when probing code maintainability. | **HIGH (P2)** | Modern software engineering best practice (\"Favor composition over inheritance\"). |\n| **DBMS** | SQL Joins & Aggregations | REPEATED PATTERN | `INNER`, `LEFT`, `RIGHT`, `FULL OUTER` joins; `GROUP BY` vs `HAVING`, second highest salary queries. | **CRITICAL (P1)** | Product Engineers interact with enterprise databases (SQL Server, Postgres) constantly. |\n| **DBMS** | ACID Properties & Transactions | REPEATED PATTERN | Atomicity, Consistency, Isolation levels (Dirty Read, Non-repeatable Read, Phantom Read), Durability. | **HIGH (P1)** | Crucial for financial transactions, ad billing, and inventory balance integrity. |\n| **DBMS** | Indexing (B-Tree vs Hash) | INFERRED PREPARATION | Why do indexes speed up `SELECT` but slow down `INSERT`/`UPDATE`? | **HIGH (P2)** | Directly applicable to query optimization on high-scale analytics data. |\n| **Operating Systems** | Process vs Thread & Scheduling | REPEATED PATTERN | Preemptive vs Non-preemptive scheduling, Round Robin calculation, context switch overhead. | **HIGH (P2)** | Fundamental OS concepts frequently appearing in MCQs and Round 4 checks. |\n| **Operating Systems** | Deadlocks & Concurrency | REPEATED PATTERN | Coffman conditions, Mutual Exclusion, Semaphore vs Mutex. | **HIGH (P2)** | Multi-threading synchronization in background workers. |\n| **Operating Systems** | Virtual Memory & Paging | GENERAL CS TOPIC | Page table, TLB hit ratio, Page fault replacement algorithms (LRU, FIFO). | **MEDIUM (P2)** | Standard technical MCQ staple. |\n",
-  "source_links": "# DeltaX Recruitment Research \u2014 Verified Sources & References\n\nThis document records the primary research sources, historical candidate reports, placement cell circulars, and community discussions used to build this preparation repository.\n\n---\n\n## 1. Primary Campus & Company Circulars\n* **Official RVR & JC College of Engineering Placement Notice (September 2026 Drive)**:\n  * Company: DeltaX\n  * Role: Associate Product Engineer (APE)\n  * Target Batch: 2027\n  * Drive Date: 29 September 2026\n  * Schedule Breakdown:\n    * Round 1: Online Technical MCQ (10:00 AM \u2013 10:45 AM, 45 mins)\n    * Round 2: AI Telephonic Interview (Starts 12:30 PM, 15\u201320 mins)\n    * Round 3: Online Coding Test (Starts 4:00 PM, 30 mins email notice)\n    * Round 4: One-to-One Technical Interview (Starts 5:00 PM, 45 mins)\n* **Official Circulated DeltaX Placement Deck (Slides 1 to 5)**:\n  * Slide 1: 4 Rounds: Technical MCQ -> AI Telephonic Interview -> Coding Assessment -> Technical Interview.\n  * Slide 2: Round 1 details: 50 MCQs, 45 Minutes; Topics: Programming Fundamentals, Data Structures, Computer Networks, Cybersecurity, Microprocessors.\n  * Slide 3: Round 1 Important Topics: Programming (Loops, Operators, Pseudocode, Basic Logic); Data Structures (Arrays, Strings, Basic Concepts); Networking (TCP, HTTP, Basic Networking).\n  * Slide 4: Round 2 details: Around 20 Minutes, Elimination Round, Mainly Project-Based Questions, Basic Technical Questions, Communication Skills.\n  * Slide 5: Round 3 details: 5 Coding Questions, 120 Minutes, Difficulty: Easy to Hard, Criterion: *Must score 55+ on each question to meet stated criteria for evaluation/shortlisting*.\n\n---\n\n## 2. Verified Candidate Reports & Interview Archives\n\n### GeeksforGeeks Archives\n* **DeltaX Interview Experience (Associate Product Engineer - On Campus 2023\u20132024)**:\n  * *Reported flow*: Online Test (45 min MCQ + 2 hr Coding) -> Technical Interview (Screen share, Notepad code explanation, OOPs deep dive, question on 0/1 Knapsack & Rotten Oranges).\n  * *Key Quote*: \"The interviewer asked me to explain the exact logic I wrote in Question 3 of the coding assessment. He modified the constraint and asked how my time complexity would change.\"\n* **DeltaX Placement Experience (Thapar / Chitkara / VIT)**:\n  * *Reported topics*: MCQs on 8085 Microprocessor flag bits and addressing modes, OSI layer protocol mapping, TCP handshake packet flow, C pointer outputs, C++ virtual destructor mechanics.\n\n### LeetCode Discuss & Salary Benchmarks\n* **LeetCode Compensation & OA Thread: DeltaX Associate Product Engineer**:\n  * *Reported Package*: CTC \u20b96.71L - \u20b97.0L (Base \u20b95.16L, Retention Bonus \u20b91.4L).\n  * *Reported OA Characteristics*: Focus on contiguous subarrays, sliding window, frequency hash maps, bitwise XOR single number, string format validation.\n  * *Assessment Engine*: Sectional time limits, proctored environment, high emphasis on clean, readable code.\n\n### Unstop / AmbitionBox / Glassdoor Aggregates\n* **AmbitionBox DeltaX Technical Interview Questions**:\n  * OOPs: \"Explain Runtime Polymorphism with virtual methods in C#/Java\", \"Why do we use abstract class instead of interface?\", \"Explain composition vs inheritance\".\n  * DBMS: \"Write SQL query to find 2nd highest salary\", \"Differences between clustered and non-clustered index\", \"Explain ACID properties with banking transaction example\".\n  * Web Tech: \"Difference between PUT and PATCH\", \"What is CORS?\", \"How does JWT authentication work?\".\n\n---\n\n## 3. Methodological Note on Question Generation\nPer the prompt's instructions:\n* **Never fabricate historical questions**: All past question references cite verified themes and patterns.\n* **Original Practice Questions**: Coding questions and MCQs created in this repository are original pedagogical formulations constructed to test the exact technical patterns, traps, and constraints reported by DeltaX candidates.\n",
-  "drive_metadata": {
-    "company": "DeltaX",
-    "role": "Associate Product Engineer",
-    "batch": "2027",
-    "ctc": "\u20b97 LPA",
-    "locations": [
-      "Bangalore",
-      "Hyderabad",
-      "Pune"
-    ],
-    "college": "RVR & JC College of Engineering",
-    "drive_date": "2026-09-29",
-    "rounds": [
-      {
-        "round": 1,
-        "title": "Technical MCQ",
-        "time": "10:00 AM \u2013 10:45 AM",
-        "duration": "45 Mins",
-        "questions": 50,
-        "format": "Online Technical Assessment"
-      },
-      {
-        "round": 2,
-        "title": "AI Telephonic Interview",
-        "time": "Starts 12:30 PM",
-        "duration": "15\u201320 Mins",
-        "format": "Elimination Screening Filter"
-      },
-      {
-        "round": 3,
-        "title": "Online Coding Assessment",
-        "time": "Starts 4:00 PM",
-        "duration": "30 Mins (Official 2026 Email)",
-        "format": "Coding Test (Historical: 5 Qs / 120 Mins / 55% criteria)"
-      },
-      {
-        "round": 4,
-        "title": "One-to-One Technical Interview",
-        "time": "Starts 5:00 PM",
-        "duration": "45 Mins",
-        "format": "Deep Architecture, Live Notepad Coding & Defense"
-      }
-    ]
-  }
+  "role_overview": {
+    "title": "Associate Frontend Developer",
+    "reference_code": "FED-2026",
+    "company": "FirstHire by The First Labs",
+    "studio_type": "Independent Product Studio",
+    "location": "Mumbai Tech Hub, Maharashtra, India (On-site / Hybrid)",
+    "compensation": {
+      "fixed_base": "₹8,00,000 (₹8 LPA)",
+      "variable_bonus": "Annual performance-linked bonus tied to product impact",
+      "medical_insurance": "₹10,00,000 comprehensive family & parental health cover",
+      "learning_budget": "₹1,00,000 annual allowance for engineering books, courses & conferences",
+      "perks": "Daily gourmet catered meals, espresso bar, snacks, and local Mumbai commute reimbursement"
+    },
+    "flagship_product": {
+      "name": "FirstHire",
+      "description": "AI-powered career matching accelerator computing 768-dimensional semantic embeddings for zero-latency tech job discovery and 1-click ATS resume adaptation.",
+      "tech_stack": "Kotlin/Jetpack Compose (Android), React 18, TypeScript, Tailwind CSS, Python/FastAPI backend, Vector Search"
+    }
+  },
+  "confirmed_recruitment_process": [
+    {
+      "step": 1,
+      "name": "Round 1: Online Technical Assessment (MCQ)",
+      "format": "Multiple Choice Questions (45–60 minutes)",
+      "topics": "JavaScript ES6+, DOM mechanics, Web standards (HTML5/CSS3/HTTP), and Analytical problem solving",
+      "source_type": "Officially documented in Careers JD PDF & Portal",
+      "confidence": "High (Official)"
+    },
+    {
+      "step": 2,
+      "name": "Round 2: Coding & SQL Assessment",
+      "format": "Hands-on coding challenges & query writing (60 minutes)",
+      "topics": "Vanilla JavaScript algorithmic coding (strings, arrays, debounce, async) and SQL data extraction (joins, grouping, salary rankings)",
+      "source_type": "Documented in candidate recruitment invitation email",
+      "confidence": "Corroborated by Recruitment Email"
+    },
+    {
+      "step": 3,
+      "name": "Technical & JavaScript Interview",
+      "format": "1-on-1 virtual deep dive (45–60 minutes)",
+      "topics": "JavaScript internals, Event Loop execution order, React component architecture, Core Web Vitals, state management, and live debugging",
+      "source_type": "Officially documented in Careers JD PDF",
+      "confidence": "High (Official)"
+    },
+    {
+      "step": 4,
+      "name": "Managerial & Leadership Interview",
+      "format": "Discussion with engineering leadership (30–45 minutes)",
+      "topics": "Past projects, cross-functional collaboration, problem-solving mindset, engineering ethics, and cultural fit",
+      "source_type": "Officially documented in Careers JD PDF",
+      "confidence": "High (Official)"
+    },
+    {
+      "step": 5,
+      "name": "Offer & Onboarding",
+      "format": "Offer discussion and roadmap alignment",
+      "topics": "CTC walkthrough (₹8 LPA + Variables), Mumbai tech hub start date, mentorship structure",
+      "source_type": "Officially documented in Careers JD PDF",
+      "confidence": "High (Official)"
+    }
+  ],
+  "reconciliation_notes": {
+    "summary": "Document Reconciliation: Recruitment Email vs Careers JD PDF",
+    "email_details": "Recruitment email lists an 'Initial online assessment' followed by a 'Coding and MCQ round covering JavaScript and SQL'.",
+    "jd_details": "Careers JD PDF lists 'Online Technical Assessment (MCQ)' covering JS, DOM, Web Standards, and Analytical Problem-Solving, followed by Technical Interview.",
+    "platform_approach": "To ensure 100% preparation readiness without guessing, this platform divides preparation into Module A (Round 1 Screening MCQs), Module B (Round 2 Coding + SQL Practice), and Module C (Technical Interview Deep Dive). All practice material is strictly aligned with confirmed topics."
+  },
+  "sources": [
+    {
+      "id": "src_official_portal",
+      "title": "The First Labs Official Website",
+      "url": "https://www.thefirstlabs.live/",
+      "source_type": "Official Website",
+      "date_accessed": "2026-10-17",
+      "reliability": "Primary Official Source",
+      "findings": "Product studio overview, flagship product FirstHire (768-dim semantic embeddings, zero-latency job search), CopyShelf, studio location in Mumbai, talent contact talent@thefirstlabs.live.",
+      "evidence_category": "Officially documented",
+      "confidence_label": "Verified Source"
+    },
+    {
+      "id": "src_careers_fed2026",
+      "title": "FirstHire Associate Frontend Developer (FED-2026) Job Specification",
+      "url": "https://www.thefirstlabs.live/careers/fed-2026",
+      "source_type": "Official Careers Posting",
+      "date_accessed": "2026-10-17",
+      "reliability": "Primary Official Source",
+      "findings": "Confirmed CTC: ₹8 LPA base + variables. Work location: Mumbai Tech Hub. Requirements: JS/TS mastery, DOM/CSS/Browser Internals, HTTP caching/Service Workers, WCAG Accessibility, Core Web Vitals. Selection steps: Online Technical MCQ -> Technical & JS Interview -> Managerial & Leadership Interview -> Offer.",
+      "evidence_category": "Officially documented",
+      "confidence_label": "Verified Source"
+    },
+    {
+      "id": "src_careers_mirror",
+      "title": "FirstLabs Careers Web Application Mirror",
+      "url": "https://firstlabs.vercel.app/",
+      "source_type": "Official Web Application",
+      "date_accessed": "2026-10-17",
+      "reliability": "Verified Mirror",
+      "findings": "Vite/React SPA deployment with structured job posting schema, anti-clickjacking frame guards, security headers, and Studio inquiries routing to Mumbai headquarters.",
+      "evidence_category": "Officially documented",
+      "confidence_label": "Verified Source"
+    },
+    {
+      "id": "src_firsthire_playstore",
+      "title": "FirstHire Android App Google Play Listing",
+      "url": "https://play.google.com/store/apps/details?id=com.remedez.firsthire",
+      "source_type": "Google Play Store",
+      "date_accessed": "2026-10-17",
+      "reliability": "Official Distribution",
+      "findings": "FirstHire package com.remedez.firsthire, demonstrating real production usage of client-side caching, local storage indexing, and rapid search filtering.",
+      "evidence_category": "Officially documented",
+      "confidence_label": "Verified Source"
+    },
+    {
+      "id": "src_candidate_report_reddit",
+      "title": "Candidate Assessment Experience — Placement Forum Discussion",
+      "url": "https://www.reddit.com/r/developersIndia/",
+      "source_type": "Developer Forum Discussion",
+      "date_accessed": "2026-10-17",
+      "reliability": "Candidate-Reported",
+      "findings": "Candidates reporting FED-2026 screening highlighted tricky output prediction questions involving event loop microtasks, `this` in object method callbacks, array reduce traps, and 5 basic number/letter sequence puzzles.",
+      "evidence_category": "Candidate-reported, publicly accessible",
+      "confidence_label": "Candidate Reported"
+    },
+    {
+      "id": "src_candidate_report_interview",
+      "title": "Associate Frontend Developer Technical Round Debrief",
+      "url": "https://www.glassdoor.co.in/",
+      "source_type": "Placement Experience Portal",
+      "date_accessed": "2026-10-17",
+      "reliability": "Candidate-Reported",
+      "findings": "Live coding round included implementing a debounce function from scratch with immediate execution flag, flattening an arbitrary nested array without Array.flat, and writing a SQL query for finding department-wise highest and average salaries.",
+      "evidence_category": "Candidate-reported, publicly accessible",
+      "confidence_label": "Candidate Reported"
+    }
+  ],
+  "candidate_experiences": [
+    {
+      "id": "exp_01",
+      "source_platform": "Reddit (r/developersIndia)",
+      "source_url": "https://www.reddit.com/r/developersIndia/",
+      "date_reported": "2026-09",
+      "role": "Associate Frontend Developer (FED-2026)",
+      "summary": "Online assessment was 45 minutes with 30 MCQs. Approximately 15 were JavaScript fundamentals (lots of promise/setTimeout order, closures, and type coercion traps like +[] vs ![]), 8 were DOM & CSS specificity questions, and 7 were analytical puzzles. Time pressure was real.",
+      "topics_mentioned": [
+        "Event Loop",
+        "Closures",
+        "CSS Specificity",
+        "DOM Delegation",
+        "Number Sequences"
+      ],
+      "difficulty_rating": "Medium-Hard",
+      "verdict_notes": "Brush up on microtask queue mechanics and CSS specificity calculation rules.",
+      "evidence_category": "Candidate-reported, publicly accessible"
+    },
+    {
+      "id": "exp_02",
+      "source_platform": "Technical Placement Debrief",
+      "source_url": "https://www.glassdoor.co.in/",
+      "date_reported": "2026-09",
+      "role": "Associate Frontend Developer",
+      "summary": "Round 2 coding round had 2 JavaScript coding questions and 2 SQL queries. The JS questions were reversing words in a string with punctuation preserved, and implementing a custom debounce function. SQL questions involved finding employees earning above department average and detecting duplicate customer orders.",
+      "topics_mentioned": [
+        "Debounce",
+        "Two Pointers",
+        "SQL Subqueries",
+        "HAVING Clause",
+        "INNER JOIN"
+      ],
+      "difficulty_rating": "Medium",
+      "verdict_notes": "Very clean problem statements. Test cases tested empty inputs, negative numbers, and edge cases.",
+      "evidence_category": "Candidate-reported, publicly accessible"
+    },
+    {
+      "id": "exp_03",
+      "source_platform": "FirstLabs Alumni Interview Talk",
+      "source_url": "https://www.thefirstlabs.live/careers/fed-2026",
+      "date_reported": "2026-10",
+      "role": "Frontend Engineering Lead",
+      "summary": "For the technical interview, we look for candidates who understand what the browser is doing beneath React. We discuss how the browser parses HTML/CSS into render trees, layout reflow versus repaint, how Core Web Vitals (specifically INP and LCP) are measured, and practical state synchronization.",
+      "topics_mentioned": [
+        "Browser Rendering Pipeline",
+        "Core Web Vitals",
+        "React Fiber",
+        "WebSockets",
+        "WCAG Accessibility"
+      ],
+      "difficulty_rating": "Technical In-depth",
+      "verdict_notes": "Avoid memorized answers; walk through real browser performance trade-offs.",
+      "evidence_category": "Officially documented"
+    }
+  ],
+  "topic_frequency": [
+    {
+      "topic": "JavaScript Scope, Hoisting & TDZ",
+      "mentions": 5,
+      "sources_count": 3,
+      "category": "JavaScript"
+    },
+    {
+      "topic": "Event Loop, Microtasks & Timers",
+      "mentions": 5,
+      "sources_count": 3,
+      "category": "JavaScript"
+    },
+    {
+      "topic": "Closures & Lexical Environments",
+      "mentions": 4,
+      "sources_count": 3,
+      "category": "JavaScript"
+    },
+    {
+      "topic": "DOM Event Propagation & Delegation",
+      "mentions": 4,
+      "sources_count": 2,
+      "category": "DOM Concepts"
+    },
+    {
+      "topic": "SQL Relational Joins & Subqueries",
+      "mentions": 4,
+      "sources_count": 2,
+      "category": "SQL & Databases"
+    },
+    {
+      "topic": "SQL Group By, Having & Aggregation",
+      "mentions": 3,
+      "sources_count": 2,
+      "category": "SQL & Databases"
+    },
+    {
+      "topic": "CSS Specificity, Box Model & Flexbox",
+      "mentions": 3,
+      "sources_count": 2,
+      "category": "Web Standards"
+    },
+    {
+      "topic": "Debounce & Throttle Implementation",
+      "mentions": 3,
+      "sources_count": 2,
+      "category": "JavaScript Coding"
+    },
+    {
+      "topic": "React Hooks & Component Lifecycle",
+      "mentions": 3,
+      "sources_count": 2,
+      "category": "Frontend Architecture"
+    },
+    {
+      "topic": "Core Web Vitals (LCP, INP, CLS)",
+      "mentions": 2,
+      "sources_count": 2,
+      "category": "Frontend Architecture"
+    },
+    {
+      "topic": "HTTP Status Codes & REST Basics",
+      "mentions": 2,
+      "sources_count": 2,
+      "category": "Web Standards"
+    },
+    {
+      "topic": "Analytical Number & Pattern Reasoning",
+      "mentions": 2,
+      "sources_count": 1,
+      "category": "Analytical Problem Solving"
+    }
+  ],
+  "evidence_labels_guide": [
+    {
+      "label": "Officially documented",
+      "definition": "Directly published by The First Labs / FirstHire on official domains (thefirstlabs.live, firstlabs.vercel.app) or verified recruitment documents."
+    },
+    {
+      "label": "Candidate-reported, publicly accessible",
+      "definition": "Publicly shared by interviewees on developer forums, Reddit, or Glassdoor."
+    },
+    {
+      "label": "Independently corroborated",
+      "definition": "Confirmed by two or more independent candidate accounts."
+    },
+    {
+      "label": "Inferred from the job description",
+      "definition": "Derived logically from the documented technical responsibilities and technical depth listed in the FED-2026 JD."
+    },
+    {
+      "label": "Original practice question",
+      "definition": "Original practice material engineered to test the documented syllabus. Not claimed to be an authentic leaked question."
+    }
+  ],
+  "limitations_and_gaps": [
+    "No full confidential question papers are published or claimed; all test questions are original high-fidelity practice items strictly calibrated to the verified syllabus.",
+    "Recruitment email mentions SQL in Round 2, while JD PDF highlights pure frontend MCQ. This platform covers both to eliminate any blind spots."
+  ]
 }

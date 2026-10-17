@@ -1,314 +1,93 @@
 [
   {
-    "id": "task_1",
-    "day": "DAY 0: Friday, 25 September 2026 (Evening Kickoff: 7:00 PM \u2013 11:30 PM)",
-    "time_window": "7:00 PM \u2013 8:15 PM",
-    "focus_area": "C/C++ & Java Language Traps",
-    "action": "Read [study_notes_programming_dsa.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/study_notes_programming_dsa.md). Focus on `*p++` vs `(*p)++`, operator precedence (`<<` vs `+`), integer overflow, static method hiding, and string immutability.",
-    "deliverable": "Solve first 50 questions in [programming_100_mcqs.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/programming_100_mcqs.md)."
+    "id": "plan_day_1",
+    "day": "Day 1",
+    "title": "JavaScript Fundamentals & Scope Mechanics",
+    "duration_hours": 3.0,
+    "priority": "Crucial",
+    "tasks": [
+      "Study: Scope, Hoisting, and Temporal Dead Zone",
+      "Practice: 25 JS Fundamentals MCQs (Closures, this, type coercion)",
+      "Solve: Reverse a String & Valid Palindrome in the Code Editor"
+    ],
+    "category": "Round 1 Screening"
   },
   {
-    "id": "task_2",
-    "day": "DAY 0: Friday, 25 September 2026 (Evening Kickoff: 7:00 PM \u2013 11:30 PM)",
-    "time_window": "8:15 PM \u2013 9:00 PM",
-    "focus_area": "Microprocessors & Architecture",
-    "action": "Read [study_notes_microprocessors_arch.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/study_notes_microprocessors_arch.md). Memorize 8085 Flag Register bitmask (`S Z X AC X P X CY`), `INR/DCR` trap (affects all flags *except* Carry!), and interrupt vector addresses (TRAP=4.5, RST 7.5, 6.5, 5.5, INTR).",
-    "deliverable": "Solve 30 questions in [microprocessors_50_mcqs.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/microprocessors_50_mcqs.md)."
+    "id": "plan_day_2",
+    "day": "Day 2",
+    "title": "Event Loop, Async Patterns & Output Prediction",
+    "duration_hours": 3.0,
+    "priority": "Crucial",
+    "tasks": [
+      "Study: Event Loop execution order (Microtasks vs Macrotasks)",
+      "Practice: 20 Asynchronous output prediction questions",
+      "Solve: Implement a Debounce Function with leading/trailing edge options"
+    ],
+    "category": "Round 1 Screening"
   },
   {
-    "id": "task_3",
-    "day": "DAY 0: Friday, 25 September 2026 (Evening Kickoff: 7:00 PM \u2013 11:30 PM)",
-    "time_window": "9:00 PM \u2013 9:45 PM",
-    "focus_area": "Dinner Break & Mental Reset",
-    "action": "Step away from screens. Hydrate and clear your mind.",
-    "deliverable": "Break"
+    "id": "plan_day_3",
+    "day": "Day 3",
+    "title": "DOM Mechanics & Event Delegation",
+    "duration_hours": 2.5,
+    "priority": "High",
+    "tasks": [
+      "Study: DOM tree nodes, event bubbling vs capturing, preventDefault vs stopPropagation",
+      "Practice: 20 DOM Concepts & Forms MCQs",
+      "Solve: Two Sum & Character Frequency Counter challenges"
+    ],
+    "category": "Round 1 Screening"
   },
   {
-    "id": "task_4",
-    "day": "DAY 0: Friday, 25 September 2026 (Evening Kickoff: 7:00 PM \u2013 11:30 PM)",
-    "time_window": "9:45 PM \u2013 10:45 PM",
-    "focus_area": "Round 3 Coding Speed Drill",
-    "action": "Open [current_30_min_mocks/mocks_1_to_10.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/current_30_min_mocks/mocks_1_to_10.md). Set a strict 30-minute timer and solve **Mock 1** (Parity reorder + Subarray sum divisible by K).",
-    "deliverable": "Compare your code against [current_30_min_mocks/solutions.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/current_30_min_mocks/solutions.md)."
+    "id": "plan_day_4",
+    "day": "Day 4",
+    "title": "SQL Relational Joins & Aggregate Queries",
+    "duration_hours": 3.5,
+    "priority": "Crucial (Email Requirement)",
+    "tasks": [
+      "Study: SQL query execution order, INNER/LEFT joins, and GROUP BY / HAVING",
+      "Execute: 5 interactive query challenges in the SQL Sandbox (Employees, Depts, Orders)",
+      "Master: Second-highest salary and department average correlated subqueries"
+    ],
+    "category": "Round 2 Coding + SQL"
   },
   {
-    "id": "task_5",
-    "day": "DAY 0: Friday, 25 September 2026 (Evening Kickoff: 7:00 PM \u2013 11:30 PM)",
-    "time_window": "10:45 PM \u2013 11:30 PM",
-    "focus_area": "Diagnostic Mock 1",
-    "action": "Open [mock_tests/mock_1.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/mock_tests/mock_1.md). Take Full 50-Q Round 1 Mock under 45-minute timed exam conditions.",
-    "deliverable": "Score using [answer_keys_and_scoring.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/mock_tests/answer_keys_and_scoring.md). Note weak sections."
+    "id": "plan_day_5",
+    "day": "Day 5",
+    "title": "Web Standards, Security & Timed Mocks",
+    "duration_hours": 3.0,
+    "priority": "High",
+    "tasks": [
+      "Study: CSS Specificity rules, Box Model, CORS preflight, and WCAG Accessibility",
+      "Take: Mock Test 1 (Round 1 Full Screening Diagnostic — 45 mins)",
+      "Review: Mistake Notebook to remediate all incorrect answers"
+    ],
+    "category": "Mock Testing"
   },
   {
-    "id": "task_6",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "8:30 AM \u2013 10:30 AM",
-    "focus_area": "Computer Networks & Cybersecurity",
-    "action": "Study [study_notes_networks_cybersecurity.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/study_notes_networks_cybersecurity.md). Master TCP 3-way handshake packet sequence numbers, HTTP vs HTTPS TLS handshake, 401 vs 403, and SQLi / XSS / CSRF mechanisms.",
-    "deliverable": "Solve all 50 questions in [networks_50_mcqs.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/networks_50_mcqs.md) and 50 in [cybersecurity_50_mcqs.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/cybersecurity_50_mcqs.md)."
+    "id": "plan_day_6",
+    "day": "Day 6",
+    "title": "Technical Interview & React Architecture",
+    "duration_hours": 3.0,
+    "priority": "High",
+    "tasks": [
+      "Study: React 18 Fiber reconciliation, Concurrent features, and custom hooks",
+      "Prepare: Model answers for Core Web Vitals (LCP, INP, CLS) and state architecture",
+      "Walkthrough: FirstHire semantic search system design trade-offs"
+    ],
+    "category": "Technical Interview"
   },
   {
-    "id": "task_7",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "10:30 AM \u2013 10:45 AM",
-    "focus_area": "Short Break",
-    "action": "Coffee / Walk",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_8",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "10:45 AM \u2013 1:00 PM",
-    "focus_area": "Coding Patterns 1 & 2: Arrays, Strings, Hash Maps, Prefix Sum & Sliding Window",
-    "action": "Study [01_arrays_strings_pointers_sliding.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/patterns/01_arrays_strings_pointers_sliding.md) and [02_hashing_prefix_xor_bits.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/patterns/02_hashing_prefix_xor_bits.md). Focus on: Subarray Sum = K, Longest Substring Without Repeating Characters, and XOR bit manipulation.",
-    "deliverable": "Solve 6 exercises across these patterns."
-  },
-  {
-    "id": "task_9",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "1:00 PM \u2013 2:00 PM",
-    "focus_area": "Lunch Break",
-    "action": "Relax and recharge",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_10",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "2:00 PM \u2013 4:00 PM",
-    "focus_area": "DBMS & Operating Systems",
-    "action": "Read [study_notes_oop_dbms_os.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/study_notes_oop_dbms_os.md). Review 1NF to BCNF normal forms, SQL Joins with NULLs, B+ tree vs Hash index, Coffman conditions, paging, and page fault sequence.",
-    "deliverable": "Solve 50 questions in [dbms_50_mcqs.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/dbms_50_mcqs.md) and 50 in [os_50_mcqs.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/os_50_mcqs.md)."
-  },
-  {
-    "id": "task_11",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "4:00 PM \u2013 4:30 PM",
-    "focus_area": "Round 1 Timed Test 2",
-    "action": "Take [mock_tests/mock_2.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/mock_tests/mock_2.md) (45 minutes, 50 questions).",
-    "deliverable": "Track time per subject using 54-second rule."
-  },
-  {
-    "id": "task_12",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "4:30 PM \u2013 5:30 PM",
-    "focus_area": "Mock Review & Break",
-    "action": "Review incorrect answers using [answer_keys_and_scoring.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/mock_tests/answer_keys_and_scoring.md).",
-    "deliverable": "Rectify weak concepts."
-  },
-  {
-    "id": "task_13",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "5:30 PM \u2013 7:30 PM",
-    "focus_area": "Coding Patterns 3 & 4: Binary Search, Greedy, Recursion & Backtracking",
-    "action": "Study [03_binary_search_sorting_greedy.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/patterns/03_binary_search_sorting_greedy.md) and [04_recursion_backtracking_dp.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/patterns/04_recursion_backtracking_dp.md). Practice Combination Sum II (deduplication) and 0/1 Knapsack space optimization.",
-    "deliverable": "Code both solutions in Java and Python."
-  },
-  {
-    "id": "task_14",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "7:30 PM \u2013 8:30 PM",
-    "focus_area": "Dinner Break",
-    "action": "Healthy meal",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_15",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "8:30 PM \u2013 9:45 PM",
-    "focus_area": "Speed Coding Mocks 2 & 3",
-    "action": "Solve Mock 2 (AdTech URL query sanitizer) and Mock 3 (Valid Palindrome II + Equal 0s/1s) from [current_30_min_mocks/mocks_1_to_10.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/current_30_min_mocks/mocks_1_to_10.md).",
-    "deliverable": "Achieve clean execution within 30 minutes each."
-  },
-  {
-    "id": "task_16",
-    "day": "DAY 1: Saturday, 26 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "9:45 PM \u2013 11:00 PM",
-    "focus_area": "Round 2 AI Telephonic Intro & Project Pitches",
-    "action": "Read [intro_and_company_questions.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/02_ROUND_2_AI/intro_and_company_questions.md) and [projects_deep_dive.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/04_ROUND_4_INTERVIEW/projects_deep_dive.md). Practice delivering your 30s and 60s pitches aloud into a voice recorder.",
-    "deliverable": "Eliminate filler words (\"um\", \"basically\")."
-  },
-  {
-    "id": "task_17",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "8:30 AM \u2013 10:30 AM",
-    "focus_area": "Application Parsing & Validation Mastery",
-    "action": "Study [06_parsing_validation_json_urls.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/patterns/06_parsing_validation_json_urls.md). Master Email regex/manual parser, IPv4/IPv6 validator, and JSON key path extractor.",
-    "deliverable": "Solve 3 problems from [question_bank_application.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/practice/question_bank_application.md)."
-  },
-  {
-    "id": "task_18",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "10:30 AM \u2013 10:45 AM",
-    "focus_area": "Short Break",
-    "action": "Hydration",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_19",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "10:45 AM \u2013 1:00 PM",
-    "focus_area": "Breadth-First Search & Monotonic Stack",
-    "action": "Study [05_stack_queue_linked_lists.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/patterns/05_stack_queue_linked_lists.md). Focus on Rotten Oranges (multi-source BFS) and Next Greater Element / Largest Rectangle in Histogram.",
-    "deliverable": "Write solutions from memory in plain text editor."
-  },
-  {
-    "id": "task_20",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "1:00 PM \u2013 2:00 PM",
-    "focus_area": "Lunch Break",
-    "action": "Rest",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_21",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "2:00 PM \u2013 4:00 PM",
-    "focus_area": "Historical 120-Min Mock Simulation (5 Problems)",
-    "action": "Open [historical_mocks/mocks_1_to_10.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/historical_mocks/mocks_1_to_10.md). Attempt **Mock Test 1** or **Mock Test 2** under 120-minute timed conditions. Verify you clear $\\ge 55\\%$ test cases on *every* question.",
-    "deliverable": "Verify solutions using [historical_mocks/solutions.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/03_ROUND_3_CODING/historical_mocks/solutions.md)."
-  },
-  {
-    "id": "task_22",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "4:00 PM \u2013 4:30 PM",
-    "focus_area": "Afternoon Walk / Rest",
-    "action": "Physical movement to combat fatigue",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_23",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "4:30 PM \u2013 6:30 PM",
-    "focus_area": "ADAM-1 & Simha AI Technical Defense",
-    "action": "Study [project_questions_adam1.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/02_ROUND_2_AI/project_questions_adam1.md) and [projects_deep_dive.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/04_ROUND_4_INTERVIEW/projects_deep_dive.md). Master: TreeSHAP mathematics, pgvector HNSW indexing, FastAPI non-blocking event loops, and Supervisor agent state machines.",
-    "deliverable": "Be able to draw architecture and data flow on a blank sheet from memory."
-  },
-  {
-    "id": "task_24",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "6:30 PM \u2013 7:15 PM",
-    "focus_area": "Round 1 Timed Test 3",
-    "action": "Take [mock_tests/mock_3.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/mock_tests/mock_3.md) (45 minutes, 50 questions).",
-    "deliverable": "Analyze error patterns."
-  },
-  {
-    "id": "task_25",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "7:15 PM \u2013 8:15 PM",
-    "focus_area": "Dinner Break",
-    "action": "Recharge",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_26",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "8:15 PM \u2013 9:45 PM",
-    "focus_area": "Smart Loan & Akki Assistant Defense",
-    "action": "Review [project_questions_simha_loan_akki.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/02_ROUND_2_AI/project_questions_simha_loan_akki.md). Master: SMOTE, ROC-AUC trade-offs, Telegram Webhooks, OAuth2 token refresh, and n8n Docker pipelines.",
-    "deliverable": "Practice vocal answers aloud."
-  },
-  {
-    "id": "task_27",
-    "day": "DAY 2: Sunday, 27 September 2026 (Full Day: 8:30 AM \u2013 11:00 PM)",
-    "time_window": "9:45 PM \u2013 11:00 PM",
-    "focus_area": "Interactive Mock Interview 1",
-    "action": "Type `START ROUND 2 MOCK` or `START ROUND 4 MOCK` in chat to run an interactive live simulation with the engine.",
-    "deliverable": "Receive structured evaluation."
-  },
-  {
-    "id": "task_28",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "8:30 AM \u2013 10:30 AM",
-    "focus_area": "100 Technical Interview Questions Drill",
-    "action": "Rapidly review all 100 questions in [100_technical_questions.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/04_ROUND_4_INTERVIEW/100_technical_questions.md). Test yourself on vtable mechanics, deadlock Coffman conditions, ACID enforcement, and TCP TIME_WAIT.",
-    "deliverable": "Flag any question where you cannot give a 2-sentence crisp answer."
-  },
-  {
-    "id": "task_29",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "10:30 AM \u2013 10:45 AM",
-    "focus_area": "Short Break",
-    "action": "Tea / Light stretch",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_30",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "10:45 AM \u2013 12:30 PM",
-    "focus_area": "Resume & Tech Stack Deep Dive",
-    "action": "Review [resume_tech_stack_deep_dive.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/04_ROUND_4_INTERVIEW/resume_tech_stack_deep_dive.md). Focus on your core languages: Python, Java, JavaScript, FastAPI, PostgreSQL, and Docker.",
-    "deliverable": "Master the \"Debugging\" question scenarios."
-  },
-  {
-    "id": "task_31",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "12:30 PM \u2013 1:30 PM",
-    "focus_area": "Round 1 Timed Test 4",
-    "action": "Take [mock_tests/mock_4.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/mock_tests/mock_4.md).",
-    "deliverable": "Final timing calibration (54s per Q)."
-  },
-  {
-    "id": "task_32",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "1:30 PM \u2013 2:30 PM",
-    "focus_area": "Lunch Break",
-    "action": "Nutritious meal",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_33",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "2:30 PM \u2013 4:30 PM",
-    "focus_area": "Notepad Live Coding Practice",
-    "action": "Read [coding_defense_strategy.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/04_ROUND_4_INTERVIEW/coding_defense_strategy.md). Open blank Notepad. Write from scratch without compiling: 1. Subarray sum equals K, 2. Longest Palindromic Substring, 3. In-place string compression, 4. Rotten Oranges BFS.",
-    "deliverable": "Zero syntax errors, flawless indenting."
-  },
-  {
-    "id": "task_34",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "4:30 PM \u2013 5:30 PM",
-    "focus_area": "Round 2 AI Telephonic Behavioral & STAR Drill",
-    "action": "Read [behavioral_and_comm_questions.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/02_ROUND_2_AI/behavioral_and_comm_questions.md). Rehearse your 5 core behavioral stories (Conflict, Failure/Bug, Leadership, Tight Deadline, Disagreement) in STAR format.",
-    "deliverable": "Smooth, punchy 90-second delivery."
-  },
-  {
-    "id": "task_35",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "5:30 PM \u2013 6:30 PM",
-    "focus_area": "Round 1 Timed Test 5 (Final Confidence Mock)",
-    "action": "Take [mock_tests/mock_5.md](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/01_ROUND_1_MCQ/mock_tests/mock_5.md).",
-    "deliverable": "Confirm score $> 75\\%$."
-  },
-  {
-    "id": "task_36",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "6:30 PM \u2013 7:30 PM",
-    "focus_area": "Light Exercise & Dinner",
-    "action": "Unwind, eat early",
-    "deliverable": "Break"
-  },
-  {
-    "id": "task_37",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "7:30 PM \u2013 9:30 PM",
-    "focus_area": "Review All 20 Cheat Sheets",
-    "action": "Review all documents in [05_CHEAT_SHEETS/](file:///c:/Users/naras/OneDrive/Desktop/DeltaX/DELTAX_PREPARATION/05_CHEAT_SHEETS/). Lock in Big-O complexities, formulas, and syntax.",
-    "deliverable": "Total visual retention."
-  },
-  {
-    "id": "task_38",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "9:30 PM \u2013 10:30 PM",
-    "focus_area": "Logistics & Environment Check",
-    "action": "Test laptop webcam, microphone, internet connection, backup mobile hotspot, clean desk, install latest Chrome, and set 3 alarms.",
-    "deliverable": "Hardware verified."
-  },
-  {
-    "id": "task_39",
-    "day": "DAY 3: Monday, 28 September 2026 (The Polish & Confidence Sprint)",
-    "time_window": "10:30 PM",
-    "focus_area": "SLEEP (Mandatory 8 Hours)",
-    "action": "Do NOT pull an all-nighter. Cognitive freshness and reaction speed in Round 1 and Round 3 are paramount.",
-    "deliverable": "Sleep"
+    "id": "plan_day_7",
+    "day": "Day 7",
+    "title": "Final Mixed Mock Simulation & Review",
+    "duration_hours": 2.5,
+    "priority": "Crucial",
+    "tasks": [
+      "Take: Mock Test 5 (FED-2026 Comprehensive Pre-Drive Simulation — 60 mins)",
+      "Review: High-frequency cheatsheets and saved bookmarks",
+      "Final verification: Ensure streak is maintained and readiness analytics >= 85%"
+    ],
+    "category": "Final Simulation"
   }
 ]

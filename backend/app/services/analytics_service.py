@@ -5,32 +5,32 @@ from app.models.models import Learner, Quiz, QuizAttempt, CodingAttempt, Intervi
 from app.schemas.schemas import DashboardStatsResponse, AnalyticsResponse
 
 def get_dashboard_stats(db: Session, learner: Learner) -> DashboardStatsResponse:
-    # Round 1: MCQ progress (aim for 200 questions attempted & at least 1 mock)
-    r1_pct = min(100.0, round((learner.total_questions_attempted / 200.0 * 80.0) + (min(learner.total_mock_tests, 2) * 10.0), 1))
+    # Round 1: Screening MCQ progress (aim for 150 questions attempted & at least 1 mock)
+    r1_pct = min(100.0, round((learner.total_questions_attempted / 150.0 * 80.0) + (min(learner.total_mock_tests, 2) * 10.0), 1))
     
-    # Round 2: AI interview questions practiced (aim for 30 questions practiced)
-    interview_count = db.query(InterviewProgress).filter(
-        InterviewProgress.learner_id == learner.id,
-        InterviewProgress.status.in_(["practicing", "confident"])
-    ).count()
-    r2_pct = min(100.0, round((interview_count / 30.0 * 100.0), 1))
-
-    # Round 3: Coding problems solved (aim for 20 problems solved)
+    # Round 2: Coding & SQL problems solved (aim for 15 problems solved)
     coding_count = db.query(CodingAttempt).filter(
         CodingAttempt.learner_id == learner.id,
         CodingAttempt.status == "solved"
     ).count()
-    r3_pct = min(100.0, round((coding_count / 20.0 * 100.0), 1))
+    r2_pct = min(100.0, round((coding_count / 15.0 * 100.0), 1))
 
-    # Round 4: Technical interview questions confident (aim for 25 confident)
-    r4_confident = db.query(InterviewProgress).filter(
+    # Round 3: Technical interview questions confident (aim for 20 confident)
+    r3_confident = db.query(InterviewProgress).filter(
         InterviewProgress.learner_id == learner.id,
         InterviewProgress.status == "confident"
     ).count()
-    r4_pct = min(100.0, round((r4_confident / 25.0 * 100.0), 1))
+    r3_pct = min(100.0, round((r3_confident / 20.0 * 100.0), 1))
+
+    # Round 4: Managerial & Architecture preparation (aim for 10 practiced)
+    r4_practiced = db.query(InterviewProgress).filter(
+        InterviewProgress.learner_id == learner.id,
+        InterviewProgress.status.in_(["practicing", "confident"])
+    ).count()
+    r4_pct = min(100.0, round((r4_practiced / 25.0 * 100.0), 1))
 
     # Overall Preparation %
-    overall_pct = round((r1_pct * 0.35 + r2_pct * 0.15 + r3_pct * 0.30 + r4_pct * 0.20), 1)
+    overall_pct = round((r1_pct * 0.40 + r2_pct * 0.35 + r3_pct * 0.15 + r4_pct * 0.10), 1)
 
     mcq_accuracy = 0.0
     if learner.total_questions_attempted > 0:
@@ -39,9 +39,9 @@ def get_dashboard_stats(db: Session, learner: Learner) -> DashboardStatsResponse
     # Continue Learning recommendation
     last_quiz = db.query(Quiz).filter(Quiz.learner_id == learner.id).order_by(Quiz.completed_at.desc()).first()
     continue_learning = {
-        "title": f"Practice: {last_quiz.subject or 'Programming'}" if last_quiz else "Start: Programming Fundamentals",
-        "link": f"/round-1?subject={last_quiz.subject}" if last_quiz and last_quiz.subject else "/round-1?subject=Programming",
-        "subtitle": f"Last score: {last_quiz.accuracy}%" if last_quiz else "100 High-Yield Questions"
+        "title": f"Practice: {last_quiz.subject or 'JavaScript'}" if last_quiz else "Start: JavaScript Fundamentals",
+        "link": f"/round-1?subject={last_quiz.subject}" if last_quiz and last_quiz.subject else "/round-1?subject=JavaScript",
+        "subtitle": f"Last score: {last_quiz.accuracy}%" if last_quiz else "High-Yield ES6+, Scope & Closures"
     }
 
     # Weak Topic Engine: find lowest accuracy topic with at least 3 attempts
@@ -60,10 +60,10 @@ def get_dashboard_stats(db: Session, learner: Learner) -> DashboardStatsResponse
         }
     else:
         weak_topic_focus = {
-            "subject": "Microprocessors",
-            "topic": "8085 Flags & Interrupts",
+            "subject": "JavaScript",
+            "topic": "Event Loop & Microtasks",
             "accuracy": 0.0,
-            "recommendation": "Review high-frequency 8085 Flag Register mechanics (INR/DCR trap) and interrupt vectors."
+            "recommendation": "Review high-frequency microtask queuing mechanics (Promise.then vs setTimeout vs queueMicrotask)."
         }
 
     # Recent activities
@@ -86,7 +86,7 @@ def get_dashboard_stats(db: Session, learner: Learner) -> DashboardStatsResponse
         mcq_accuracy=mcq_accuracy,
         coding_solved=coding_count,
         mock_tests_completed=learner.total_mock_tests,
-        interview_practiced=interview_count,
+        interview_practiced=r4_practiced,
         streak_days=learner.streak_days,
         continue_learning=continue_learning,
         weak_topic_focus=weak_topic_focus,
@@ -108,8 +108,13 @@ def get_analytics_data(db: Session, learner: Learner) -> AnalyticsResponse:
         if vals["total"] > 0:
             subject_accuracy[subj] = round((vals["correct"] / vals["total"] * 100.0), 1)
 
-    # If user hasn't attempted all subjects yet, provide baseline zero
-    for s in ["Programming", "DSA", "Networks", "Microprocessors", "Cybersecurity", "DBMS", "OS", "OOP"]:
+    # Core FED-2026 curriculum subjects baseline
+    core_subjects = [
+        "JavaScript", "DOM Concepts", "Web Standards", 
+        "SQL & Databases", "Analytical Problem Solving", 
+        "React & Frontend Architecture", "Core Web Vitals"
+    ]
+    for s in core_subjects:
         if s not in subject_accuracy:
             subject_accuracy[s] = 0.0
 
@@ -129,10 +134,10 @@ def get_analytics_data(db: Session, learner: Learner) -> AnalyticsResponse:
         mcq_acc = round((learner.total_correct / learner.total_questions_attempted * 100.0), 1)
 
     coding_solved = db.query(CodingAttempt).filter(CodingAttempt.learner_id == learner.id, CodingAttempt.status == "solved").count()
-    coding_pct = min(100.0, round((coding_solved / 50.0 * 100.0), 1))
+    coding_pct = min(100.0, round((coding_solved / 30.0 * 100.0), 1))
 
     interview_practiced = db.query(InterviewProgress).filter(InterviewProgress.learner_id == learner.id).count()
-    interview_pct = min(100.0, round((interview_practiced / 50.0 * 100.0), 1))
+    interview_pct = min(100.0, round((interview_practiced / 30.0 * 100.0), 1))
 
     return AnalyticsResponse(
         overall_progress=round((mcq_acc * 0.4 + coding_pct * 0.4 + interview_pct * 0.2), 1),

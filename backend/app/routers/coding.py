@@ -7,7 +7,13 @@ from typing import List, Optional
 from datetime import datetime
 from app.database import get_db
 from app.models.models import Learner, CodingProblem, CodingAttempt, Activity
-from app.schemas.schemas import CodingProblemResponse, CodingSubmitRequest, CodingAttemptResponse
+from app.schemas.schemas import (
+    CodingProblemResponse, 
+    CodingSubmitRequest, 
+    CodingAttemptResponse,
+    SqlRunRequest,
+    SqlRunResponse
+)
 from app.routers.deps import get_current_learner
 
 router = APIRouter(prefix="/coding", tags=["Coding"])
@@ -59,6 +65,13 @@ def get_coding_problems(
             "approach": p.approach,
             "starter_code_java": p.starter_code_java,
             "starter_code_python": p.starter_code_python,
+            "starter_code_javascript": getattr(p, "starter_code_javascript", None),
+            "starter_code_sql": getattr(p, "starter_code_sql", None),
+            "test_cases": getattr(p, "test_cases", None),
+            "sample_data": getattr(p, "sample_data", None),
+            "hints": getattr(p, "hints", None),
+            "evidence_category": getattr(p, "evidence_category", "Original practice question"),
+            "confidence_label": getattr(p, "confidence_label", "Original Practice"),
             "is_solved": p.id in solved_set
         }
         results.append(CodingProblemResponse(**p_dict))
@@ -96,6 +109,13 @@ def get_coding_problem_by_id(
         approach=p.approach,
         starter_code_java=p.starter_code_java,
         starter_code_python=p.starter_code_python,
+        starter_code_javascript=getattr(p, "starter_code_javascript", None),
+        starter_code_sql=getattr(p, "starter_code_sql", None),
+        test_cases=getattr(p, "test_cases", None),
+        sample_data=getattr(p, "sample_data", None),
+        hints=getattr(p, "hints", None),
+        evidence_category=getattr(p, "evidence_category", "Original practice question"),
+        confidence_label=getattr(p, "confidence_label", "Original Practice"),
         is_solved=is_solved
     )
 
@@ -128,19 +148,35 @@ def submit_code_attempt(
     db.add(attempt)
 
     if not prev_solved and data.status == "solved":
+        if prob.category == "SQL" or data.language == "sql":
+            learner.total_sql_solved = (learner.total_sql_solved or 0) + 1
         learner.total_coding_solved += 1
         act = Activity(
             id=str(uuid.uuid4()),
             learner_id=learner.id,
             activity_type="coding_solved",
-            title=f"Solved Coding Problem: {prob.title}",
-            details=f"Language: {data.language.capitalize()} | Difficulty: {prob.difficulty or prob.tier}"
+            title=f"Solved: {prob.title}",
+            details=f"Category: {prob.category} | Lang: {data.language.capitalize()} | Tier: {prob.tier or prob.difficulty}"
         )
         db.add(act)
 
     db.commit()
     db.refresh(attempt)
     return attempt
+
+@router.post("/sql/run", response_model=SqlRunResponse)
+def run_sql_query(
+    data: SqlRunRequest,
+    learner: Learner = Depends(get_current_learner)
+):
+    from app.services.sql_sandbox_service import execute_user_query
+    res = execute_user_query(data.query, problem_id=data.problem_id)
+    return SqlRunResponse(**res)
+
+@router.get("/sql/schema")
+def get_sql_sandbox_schema():
+    from app.services.sql_sandbox_service import get_schema_summary
+    return get_schema_summary()
 
 @router.get("/mocks")
 def get_coding_mocks():

@@ -26,14 +26,14 @@ export default function MockTestsPage() {
               Exam Simulation
             </span>
             <span className="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20">
-              Full Mocks 1–5 & Coding Drills
+              FirstLabs FED-2026 Mocks
             </span>
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight">
-            DeltaX Mock Tests Hub
+            Mock Tests & Assessment Simulator
           </h1>
-          <p className="text-slate-400 mt-1 max-w-3xl">
-            Simulate real exam conditions with strict countdown timers, auto-submission, and comprehensive scoring across Round 1 MCQs and Round 3 Coding assessments.
+          <p className="text-slate-400 mt-1 max-w-3xl text-sm leading-relaxed">
+            Simulate realistic exam conditions with strict countdown timers, auto-scoring, and comprehensive explanations across Round 1 Screening and Round 2 Coding + SQL challenges.
           </p>
         </div>
       </div>
@@ -49,31 +49,15 @@ export default function MockTestsPage() {
           }`}
         >
           <FileText className="w-4 h-4" />
-          Round 1 MCQ Mocks (5 Full Tests)
+          Round 1 Screening Mocks ({mockTestsData.length} Tests)
         </button>
 
         <button
-          onClick={() => { setActiveTab('coding_current'); setSelectedCodingMock(null); }}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
-            activeTab === 'coding_current'
-              ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/30'
-              : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
-          }`}
+          onClick={() => navigate('/round-2')}
+          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800/60 transition-all"
         >
-          <Clock className="w-4 h-4" />
-          Current Drive 30-Min Coding Mocks (10 Tests)
-        </button>
-
-        <button
-          onClick={() => { setActiveTab('coding_historical'); setSelectedCodingMock(null); }}
-          className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-all ${
-            activeTab === 'coding_historical'
-              ? 'bg-amber-600 text-white shadow-lg shadow-amber-600/30'
-              : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
-          }`}
-        >
-          <AlertTriangle className="w-4 h-4" />
-          Historical 120-Min Coding Mocks (55% Cutoff)
+          <Code2 className="w-4 h-4 text-emerald-400" />
+          Round 2 Coding & SQL Sandbox
         </button>
       </div>
 
@@ -83,9 +67,9 @@ export default function MockTestsPage() {
           <div className="p-4 rounded-xl bg-blue-950/20 border border-blue-500/20 flex items-start gap-3">
             <Shield className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
             <div className="text-sm text-slate-300 space-y-1">
-              <span className="font-semibold text-blue-300">Official Exam Format:</span> 50 Questions in 45 Minutes (~54 seconds per question).
-              <p className="text-xs text-slate-400">
-                Covers Programming Language Traps, DSA, Microprocessors & Architecture, Computer Networks, Operating Systems, DBMS, OOP, and Cybersecurity. Includes strict timer, auto-submit at 00:00, and browser refresh state recovery.
+              <span className="font-semibold text-blue-300">Screening Simulation Format:</span> Timed Multiple Choice Questions covering JavaScript, DOM, Web Standards, and Analytical Problem-Solving.
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Includes strict countdown timers, instant flag-for-review, browser refresh recovery, and comprehensive post-submission diagnostic explanations.
               </p>
             </div>
           </div>
@@ -112,25 +96,25 @@ export default function MockTestsPage() {
                       {mock.title}
                     </h3>
                     <p className="text-xs text-slate-400 mt-2 leading-relaxed">
-                      {mock.instructions}
+                      {mock.description || mock.instructions}
                     </p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-800/80">
                     <div className="p-2.5 rounded-lg bg-slate-800/40 text-center">
                       <div className="text-xs text-slate-400">Questions</div>
-                      <div className="text-base font-bold text-white mt-0.5">{mock.total_questions}</div>
+                      <div className="text-base font-bold text-white mt-0.5">{mock.total_questions || mock.questions?.length}</div>
                     </div>
                     <div className="p-2.5 rounded-lg bg-slate-800/40 text-center">
                       <div className="text-xs text-slate-400">Target Pace</div>
-                      <div className="text-base font-bold text-emerald-400 mt-0.5">54s / Q</div>
+                      <div className="text-base font-bold text-emerald-400 mt-0.5">~1.5m / Q</div>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-slate-800">
                   <button
-                    onClick={() => navigate('/quiz', { state: { mock_id: mock.mock_id, mockId: mock.mock_id, quiz_type: 'mock_test', timed: true, count: 50, duration: 45 } })}
+                    onClick={() => navigate('/quiz', { state: { mock_id: mock.mock_id, mockId: mock.mock_id, quiz_type: 'mock_test', timed: true, count: mock.total_questions || 15, duration: mock.duration_minutes || 45 } })}
                     className="w-full py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-600/20 group-hover:shadow-blue-600/40"
                   >
                     <Play className="w-4 h-4 fill-white" />

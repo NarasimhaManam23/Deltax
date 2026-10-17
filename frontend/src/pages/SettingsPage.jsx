@@ -28,7 +28,7 @@ export default function SettingsPage() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `deltax_prep_progress_${new Date().toISOString().slice(0, 10)}.json`;
+      a.download = `firstlabs_fed2026_progress_${new Date().toISOString().slice(0, 10)}.json`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -45,7 +45,7 @@ export default function SettingsPage() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `deltax_prep_local_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      a.download = `firstlabs_fed2026_local_backup_${new Date().toISOString().slice(0, 10)}.json`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -68,7 +68,7 @@ export default function SettingsPage() {
       setImportStatus({ success: true, message: 'Progress imported successfully! Refreshed stats.' });
       refreshDashboard();
     } catch (err) {
-      setImportStatus({ success: false, message: 'Failed to import backup file. Ensure it is valid DeltaX JSON.' });
+      setImportStatus({ success: false, message: 'Failed to import backup file. Ensure it is valid FirstLabs JSON.' });
     } finally {
       setIsImporting(false);
     }
